@@ -14,6 +14,8 @@ export default defineNuxtConfig({
     "@nuxtjs/fontaine",
   ],
   icon: {
+    mode: "css",
+    cssLayer: "base",
     customCollections: [
       {
         prefix: "s",
