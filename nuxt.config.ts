@@ -1,4 +1,6 @@
+import { definePreset } from "@primeuix/themes";
 import Aura from "@primeuix/themes/aura";
+import { colorScheme } from "@primeuix/themes/aura/autocomplete";
 import tailwindcss from "@tailwindcss/vite";
 import svgLoader from "vite-svg-loader";
 
@@ -11,16 +13,86 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/image",
     "@primevue/nuxt-module",
+    "@nuxtjs/fontaine",
   ],
   css: ["~/assets/css/main.css"],
   vite: {
     plugins: [tailwindcss(), svgLoader()],
+    server: {
+      allowedHosts: ["6a3f505a.r15.cpolar.top"],
+    },
   },
   primevue: {
     /* Configuration */
     options: {
       theme: {
-        preset: Aura,
+        preset: definePreset(Aura, {
+          primitive: {
+            secondary: {
+              50: "#fdf2ef",
+              100: "#f7dcd5",
+              200: "#f0c6bc",
+              300: "#e6b0a3",
+              400: "#da998a",
+              500: "#cc8271",
+              600: "#ba6b58",
+              700: "#a55440",
+              800: "#873d2c",
+              900: "#5d231a",
+              950: "#1b0000",
+            },
+          },
+          semantic: {
+            primary: {
+              50: "#fff7f2",
+              100: "#ffe5da",
+              200: "#ffd2c1",
+              300: "#ffbda7",
+              400: "#ffa891", //← 深色主题色
+              500: "#f98c6c",
+              600: "#c4320d", //← 浅色主题色
+              700: "#9c260a",
+              800: "#731c07",
+              900: "#4a1204",
+              950: "#260902,",
+            },
+            colorScheme: {
+              light: {
+                surface: {
+                  50: "#f7f7f7",
+                  100: "#dadada",
+                  200: "#bdbdbd",
+                  300: "#a0a0a0",
+                  400: "#838383",
+                  500: "#666666",
+                  600: "#575757",
+                  700: "#474747",
+                  800: "#383838",
+                  900: "#292929",
+                  950: "#1a1a1a",
+                },
+                primary: {
+                  color: "{primary.600}",
+                },
+              },
+              dark: {
+                surface: {
+                  50: "#f7f7f7",
+                  100: "#dadada",
+                  200: "#bdbdbd",
+                  300: "#a0a0a0",
+                  400: "#838383",
+                  500: "#666666",
+                  600: "#575757",
+                  700: "#474747",
+                  800: "#383838",
+                  900: "#292929",
+                  950: "#1a1a1a",
+                },
+              },
+            },
+          },
+        }),
       },
     },
   },

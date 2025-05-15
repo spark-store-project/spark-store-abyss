@@ -1,2 +1,12 @@
 @import "tailwindcss";
-@import 'primeicons/primeicons.css'
+@import 'primeicons/primeicons.css';
+
+@font-face {
+  font-family: 'KNYuanmo';
+  font-display: swap;
+  src: url('../fonts/KNYuanmo-Regular.ttf');
+}
+
+:root {
+  background-color: var(--p-secondary-50) !important;
+}
