@@ -56,7 +56,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nuxt-build-
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --unsafe-perm
       - name: Static HTML export with Nuxt
         run: pnpm generate
       - name: Upload artifact
