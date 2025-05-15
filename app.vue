@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import ScrollPanel from "primevue/scrollpanel";
-import SparkIcon from "~/assets/icons/spark.svg";
+import type { ComponentPublicInstance } from "vue";
 
 const path = computed(() => {
   return useRoute().path;
 });
 const sProgress = ref(path.value === "/" ? 1 : 0);
-const scrollPanel =
-  useTemplateRef<InstanceType<typeof ScrollPanel>>("scrollPanel");
+const scrollPanel = useTemplateRef<ComponentPublicInstance>("scrollPanel");
 const sX = ref(0);
 const sY = ref(0);
 const sWidth = ref(0);
@@ -15,28 +14,27 @@ const sHeight = ref(0);
 const mounted = ref(false);
 
 const handleScrollOrResize = () => {
+  const navEl = document.querySelector("header nav");
+  const el = document.querySelector("header .active");
+  if (el && navEl) {
+    sX.value = el.getBoundingClientRect().x - navEl.getBoundingClientRect().x;
+    sY.value = el.getBoundingClientRect().y - navEl.getBoundingClientRect().y;
+    sWidth.value = el.getBoundingClientRect().width;
+    sHeight.value = el.getBoundingClientRect().height;
+  }
   if (path.value !== "/") {
     sProgress.value = 0;
     return;
   }
-  const scrollTop = scrollPanel.value?.lastScrollTop;
+  const scrollTop = (scrollPanel.value as unknown as { lastScrollTop: number })
+    .lastScrollTop;
   const clientHeight = scrollPanel.value?.$el.clientHeight;
   sProgress.value = 1 - Math.min(scrollTop / clientHeight, 1);
 };
 
 onMounted(() => {
+  addEventListener("resize", handleScrollOrResize);
   watchEffect(handleScrollOrResize);
-  watchEffect(() => {
-    console.log("path changed", path.value);
-    const navEl = document.querySelector("header nav");
-    const el = document.querySelector("header .active");
-    if (el && navEl) {
-      sX.value = el.getBoundingClientRect().x - navEl.getBoundingClientRect().x;
-      sY.value = el.getBoundingClientRect().y - navEl.getBoundingClientRect().y;
-      sWidth.value = el.getBoundingClientRect().width;
-      sHeight.value = el.getBoundingClientRect().height;
-    }
-  });
   nextTick(() => {
     mounted.value = true;
   });
@@ -60,7 +58,11 @@ onMounted(() => {
         }"
       >
         <NuxtLink to="/" class="flex items-center">
-          <SparkIcon class="w-10 h-10 mr-2 fill-(--p-primary-color)" />
+          <Icon
+            name="s:spark"
+            class="text-4xl mr-2 fill-(--p-primary-color)"
+            mode="svg"
+          />
           <h1>SPARK</h1>
         </NuxtLink>
         <div class="grow" />

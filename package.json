@@ -30,7 +30,6 @@
     "@primevue/nuxt-module": "^4.3.4",
     "sass": "^1.88.0",
     "typescript": "^5.8.3",
-    "vite-svg-loader": "^5.1.0",
     "vue-tsc": "^2.2.10"
   }
 }

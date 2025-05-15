@@ -1,8 +1,6 @@
 import { definePreset } from "@primeuix/themes";
 import Aura from "@primeuix/themes/aura";
-import { colorScheme } from "@primeuix/themes/aura/autocomplete";
 import tailwindcss from "@tailwindcss/vite";
-import svgLoader from "vite-svg-loader";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -15,9 +13,17 @@ export default defineNuxtConfig({
     "@primevue/nuxt-module",
     "@nuxtjs/fontaine",
   ],
+  icon: {
+    customCollections: [
+      {
+        prefix: "s",
+        dir: "./assets/icons",
+      },
+    ],
+  },
   css: ["~/assets/css/main.css"],
   vite: {
-    plugins: [tailwindcss(), svgLoader()],
+    plugins: [tailwindcss()],
     server: {
       allowedHosts: ["6a3f505a.r15.cpolar.top"],
     },
