@@ -56,9 +56,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nuxt-build-
       - name: Install dependencies
-        run: |
-          echo "y" | pnpm approve-builds
-          pnpm install
+        run: pnpm install
       - name: Static HTML export with Nuxt
         run: pnpm generate
       - name: Upload artifact
