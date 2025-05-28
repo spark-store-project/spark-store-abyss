@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ScrollPanel from "primevue/scrollpanel";
-import type { ComponentPublicInstance } from "vue";
+import Button from "primevue/button";
 
 const path = computed(() => {
   return useRoute().path;
@@ -12,6 +12,8 @@ const sY = ref(0);
 const sWidth = ref(0);
 const sHeight = ref(0);
 const mounted = ref(false);
+
+provide("scrollPanel", scrollPanel);
 
 const handleScrollOrResize = () => {
   const navEl = document.querySelector("header nav");
@@ -117,7 +119,7 @@ header {
     right: 0;
     transform: translateX(calc(var(--s-progress) * 12 * var(--spacing)));
     width: calc(100% - var(--s-progress) * 24 * var(--spacing));
-    border-radius: calc(var(--s-progress) * 6 * var(--spacing));
+    border-radius: calc(var(--s-progress) * 4 * var(--spacing));
     height: 100%;
     background-color: #fff;
     z-index: -1;
