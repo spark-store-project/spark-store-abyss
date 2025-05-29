@@ -40,7 +40,7 @@ export default defineNuxtConfig({
               50: "#fdf2ef",
               100: "#f7dcd5",
               200: "#f0c6bc",
-              300: "#e6b0a3",
+              300: "#e9b0a3",
               400: "#da998a",
               500: "#cc8271",
               600: "#ba6b58",

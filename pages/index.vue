@@ -123,6 +123,97 @@ onMounted(() => {
         </div>
       </div>
     </section>
+    <section
+      class="flex flex-col justify-center items-center min-h-[80vh] gap-8 relative"
+    >
+      <div class="fixed top-0 left-0 w-full h-full z-[-1]">
+        <div
+          class="absolute top-0 left-0 w-full h-full flex pt-15 justify-between items-center s2d"
+          :style="{
+            transform: `rotate(${
+              (riro(range(-0.5, 0.5, sProgress - 1) + 0.5) - 0.5) * -60
+            }deg)`,
+            opacity:
+              1 -
+              Math.abs(riro(range(-0.5, 0.5, sProgress - 1) + 0.5) - 0.5) * 2,
+          }"
+        ></div>
+        <div
+          class="absolute bottom-0 left-1/2 -translate-x-1/2 rounded-t-4xl px-6 pt-4 flex gap-6 from-(--p-primary-300) to-[transparent] bg-linear-to-b after:from-(transparent) after:from-50 after:to-(--s-to) after:bg-linear-to-b after:absolute after:top-0 after:left-0 after:w-full after:h-full after:z-2"
+          style="
+            --s-to: color-mix(in srgb, var(--s-background), transparent 20%);
+          "
+          :style="{
+            transform: `translateY(${
+              range(-0.5, 0.5, sProgress - 1) * -100
+            }%) scale(${1 + range(-0.5, 0.5, sProgress - 1) * 0.2})`,
+            opacity: 1 - Math.abs(range(-0.5, 0.5, sProgress - 1)) * 2,
+          }"
+        >
+          <div
+            class="flex flex-col items-center justify-between mt-2 mb-6 gap-5"
+          >
+            <h2
+              class="text-3xl text-(--p-primary-500) font-[KNYuanmo] tracking-widest"
+            >
+              SPARK
+            </h2>
+
+            <div
+              v-for="i in 3"
+              :key="i"
+              class="w-full rounded-full p-3 from-(--p-primary-400) to-(--p-primary-200) bg-linear-to-b"
+            ></div>
+          </div>
+          <div class="flex flex-col gap-4 w-full">
+            <div class="flex gap-4 pl-2">
+              <div
+                v-for="i in 2"
+                :key="i"
+                class="p-3 rounded-full bg-(--p-primary-500)"
+              ></div>
+
+              <div class="w-40 p-3 rounded-full bg-(--p-primary-500)"></div>
+
+              <div class="grow-1"></div>
+
+              <div
+                v-for="i in 3"
+                :key="i"
+                class="p-3 rounded-full bg-(--p-primary-500)"
+              ></div>
+            </div>
+
+            <div
+              class="rounded-t-2xl p-4 flex gap-4 w-full from-(--p-primary-400) to-[transparent] bg-linear-to-b grow-1"
+            >
+              <div
+                v-for="i in 3"
+                :key="i"
+                class="w-45 h-27 rounded-xl flex items-center justify-center from-(--p-primary-500) to-(--p-primary-300) bg-linear-to-b"
+              >
+                <i
+                  class="pi text-5xl! text-(--p-primary-600)"
+                  :class="`pi-${['th-large', 'cog', 'thumbs-up'][i - 1]}`"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="text-center text-6xl font-bold text-(--p-primary-color)">
+        星星之火，可以燎原。
+      </h2>
+      <p class="text-center text-xl leading-[2em]">
+        每个普通用户的需求反馈、每名开发者的代码贡献、每一次社区的互助分享，<br />
+        都在为 Linux 桌面生态注入蓬勃活力。<br />
+        我们深信“人人为我，我为人人”，以共享之火照亮开源之路。<br />
+        您上传的应用可能成为他人工作的桥梁，他人分享的工具也可能为您带来方便。<br />
+        我们珍视开源世界的共建基因，以微小而持久的善意融入这场共享长跑，<br />
+        让技术普惠的星火在彼此照映中汇聚成光。
+      </p>
+      <div class="h-24"></div>
+    </section>
     <section></section>
     <section></section>
     <section></section>
@@ -137,6 +228,7 @@ onMounted(() => {
 section {
   width: 100%;
   height: 100vh;
+  scroll-snap-align: start;
 }
 
 .s-dots {
@@ -205,6 +297,30 @@ section {
     background-clip: padding-box;
     border: 3px solid transparent;
     z-index: -1;
+  }
+}
+
+.s2d {
+  &::before {
+    content: "";
+    width: calc(64 * var(--spacing));
+    height: calc(128 * var(--spacing));
+    background-image: url("~/assets/images/index/s2d.avif");
+    background-image: url("~/assets/images/index/s2d.webp");
+    background-image: url("~/assets/images/index/s2d.png");
+    background-size: contain;
+    background-position: center;
+  }
+  &::after {
+    content: "";
+    width: calc(64 * var(--spacing));
+    height: calc(128 * var(--spacing));
+    background-image: url("~/assets/images/index/s2d.avif");
+    background-image: url("~/assets/images/index/s2d.webp");
+    background-image: url("~/assets/images/index/s2d.png");
+    background-size: contain;
+    background-position: center;
+    transform: rotate(180deg);
   }
 }
 </style>

@@ -44,7 +44,18 @@ onMounted(() => {
 </script>
 
 <template>
-  <ScrollPanel ref="scrollPanel" style="width: 100vw; height: 100vh">
+  <ScrollPanel
+    ref="scrollPanel"
+    style="width: 100vw; height: 100vh"
+    :pt="{
+      content: {
+        class: 'snap-y snap-mandatory scroll-smooth',
+        style: {
+          scrollDuration: '2s',
+        },
+      },
+    }"
+  >
     <header
       class="fixed w-full z-10 px-12"
       :style="{ '--s-progress': sProgress }"
