@@ -100,9 +100,9 @@ onMounted(() => {
         <div class="flex gap-4">
           <NuxtLink
             to="/download"
-            class="px-14 py-2.5 text-2xl font-bold text-white from-(--p-primary-400) to-(--p-primary-500) bg-linear-to-r rounded-full"
+            class="px-12 py-2.5 text-2xl font-bold text-white from-(--p-primary-400) to-(--p-primary-500) bg-linear-to-r rounded-full"
           >
-            <i class="pi pi-download text-xl! font-bold!" /> 前往下载
+            <i class="pi pi-download text-xl! font-bold! pr-4" /> 前往下载
           </NuxtLink>
           <a
             class="px-2.5 bg-(--p-primary-200) border-(--p-primary-400) border-4 rounded-full flex items-center justify-center"
