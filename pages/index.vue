@@ -19,10 +19,10 @@ onMounted(() => {
       <div
         class="fixed w-full h-full top-0 left-0 z-[-1] flex items-end justify-center"
         :style="{
-          opacity: Math.max(0, (1 - sProgress * 2) * 1),
+          opacity: 1 - range(0, 0.5, sProgress) * 2,
           '--s-size': 5.5,
           '--s-n': 16,
-          '--s-progress': Math.min(1, sProgress * 2),
+          '--s-progress': range(0, 0.5, sProgress) * 2,
         }"
       >
         <div class="absolute top-0 left-0 flex flex-col">
@@ -56,7 +56,9 @@ onMounted(() => {
         <div
           class="flex flex-col items-center justify-center mb-10 text-(--p-secondary-400) text-lg gap-2 tracking-[0.5em] transition-all duration-[.03s]"
           :style="{
-            transform: `translateY(${Math.min(0, sProgress * -500)}%)`,
+            transform: `translateY(${range(0, 0.5, sProgress) * -500}%) scale(${
+              1 + range(0, 0.5, sProgress) * 0.2
+            })`,
           }"
         >
           <p>了解更多</p>
