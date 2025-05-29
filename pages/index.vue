@@ -294,7 +294,9 @@ section {
     background-image: linear-gradient(
       135deg,
       var(--p-primary-300),
-      var(--s-background) 36%
+      var(--s-background) 36%,
+      var(--s-background) 50%,
+      transparent
     );
     background-clip: padding-box;
     border: 3px solid transparent;
