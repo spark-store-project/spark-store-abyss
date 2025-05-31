@@ -2,6 +2,57 @@
 const scrollPanel = inject<Ref<ComponentPublicInstance>>("scrollPanel");
 const sProgress = ref(0);
 
+const appIcons = ref([
+  "hmcl",
+  "firefox",
+  "123pan",
+  "netease-cloud", //
+  "qq-music",
+  "kugou-music",
+  "kuwo-music",
+  "youku",
+  "bilibili",
+  "alipan",
+  "github-desktop",
+  "feishu",
+  "dingtalk", //
+  "pycharm",
+  "vscode",
+  "wine",
+  "wechat",
+  "qq",
+  "hoyolauncher",
+  "inkscape",
+  "monumentvalley2",
+  "kdenlive", //
+  "zwcad",
+  "jianying",
+  "meituxiuxiu",
+  "photoshop",
+  "canva",
+  "mpv",
+  "osu-lazer",
+  "sunlogin",
+  "todesk", //
+  "drawio",
+  "blender",
+  "baidu-translate",
+  "caj-viewer",
+  "yuque",
+  "photogimp",
+  "sysbro",
+  "sr-cloud",
+  "tencent-meeting", //
+  "wps-office",
+  "steam",
+  "minecraft",
+  "angry-birds",
+  "genshin-impact",
+  "welink",
+  "xmind",
+  "xterminal",
+]);
+
 onMounted(() => {
   watchEffect(() => {
     const scrollTop = (
@@ -214,7 +265,70 @@ onMounted(() => {
         我们珍视开源世界的共建基因，以微小而持久的善意融入这场共享长跑，<br />
         让技术普惠的星火在彼此照映中汇聚成光。
       </p>
-      <div class="h-24"></div>
+    <section class="flex items-center justify-center gap-16 pt-15">
+      <div
+        class="flex bg-(--p-primary-200) rounded-4xl px-6 py-4 h-134 gap-6 overflow-hidden"
+      >
+        <div
+          v-for="i in 5"
+          :key="i"
+          class="flex flex-col gap-6"
+          :class="i % 2 === 0 ? '-mt-55' : '-mt-66'"
+          :style="{
+            transform: `translateY(calc(${
+              (getCubicBezier(
+                -1 * (5 - i),
+                1.0 - 0.2 * (5 - i),
+                1 + 1 * (5 - i),
+                0.2 * (5 - i)
+              )((range(-1, 1, sProgress - 2) + 1) * 0.5) -
+                0.5) *
+              66 *
+              (i % 2 === 0 ? 1 : -1)
+            } * var(--spacing)))`,
+            transition: `transform 0.01s ease-in-out`,
+          }"
+        >
+          <div
+            v-for="j in 12"
+            :key="j"
+            class="w-16 h-16 bg-white rounded-2xl shrink-0 app-icon bg-contain"
+            :style="{
+              '--s-avif': `url('/app-icons/${
+                appIcons[(i - 1) * 9 + j - 1]
+              }.avif')`,
+              '--s-webp': `url('/app-icons/${
+                appIcons[(i - 1) * 9 + j - 1]
+              }.webp')`,
+              '--s-png': `url('/app-icons/${
+                appIcons[(i - 1) * 9 + j - 1]
+              }.png')`,
+            }"
+          ></div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-3">
+        <div class="flex items-center gap-6">
+          <Icon
+            name="s:spark"
+            class="text-6xl fill-(--p-primary-500)"
+            mode="svg"
+          />
+          <h2 class="text-4xl font-[KNYuanmo] text-(--p-primary-500)">
+            WHAT'S NEW ?
+          </h2>
+        </div>
+        <p class="text-5xl leading-[1.5]">
+          不想错过 Linux<br />
+          日新月异的软件生态？
+        </p>
+        <p class="text-5xl leading-[1.5] font-bold">
+          或许现在，<br />
+          你只需要一个<br />
+          <span class="text-(--p-primary-color)">星火应用商店。</span>
+        </p>
+      </div>
+    </section>
     </section>
     <section></section>
     <section></section>
