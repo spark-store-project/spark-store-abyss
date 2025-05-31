@@ -257,7 +257,7 @@ onMounted(() => {
       <h2 class="text-center text-6xl font-bold text-(--p-primary-color)">
         星星之火，可以燎原。
       </h2>
-      <p class="text-center text-xl leading-[2em]">
+      <p class="text-center text-xl leading-[2]">
         每个普通用户的需求反馈、每名开发者的代码贡献、每一次社区的互助分享，<br />
         都在为 Linux 桌面生态注入蓬勃活力。<br />
         我们深信“人人为我，我为人人”，以共享之火照亮开源之路。<br />
@@ -265,6 +265,8 @@ onMounted(() => {
         我们珍视开源世界的共建基因，以微小而持久的善意融入这场共享长跑，<br />
         让技术普惠的星火在彼此照映中汇聚成光。
       </p>
+      <div class="h-35"></div>
+    </section>
     <section class="flex items-center justify-center gap-16 pt-15">
       <div
         class="flex bg-(--p-primary-200) rounded-4xl px-6 py-4 h-134 gap-6 overflow-hidden"
