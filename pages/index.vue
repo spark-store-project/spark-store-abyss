@@ -444,4 +444,10 @@ section {
     transform: rotate(180deg);
   }
 }
+
+.app-icon {
+  background-image: var(--s-avif);
+  background-image: var(--s-webp);
+  background-image: var(--s-png);
+}
 </style>
