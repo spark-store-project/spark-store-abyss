@@ -126,11 +126,11 @@ onMounted(() => {
       </div>
     </section>
     <section
-      class="flex flex-col justify-center items-center min-h-[80vh] gap-8 relative"
+      class="flex flex-col justify-center items-center gap-8 relative pt-15"
     >
       <div class="fixed top-0 left-0 w-full h-full z-[-1]">
         <div
-          class="absolute top-0 left-0 w-full h-full flex pt-15 justify-between items-center s2d"
+          class="absolute top-0 left-0 w-full h-full flex justify-between items-center s2d"
           :style="{
             transform: `rotate(${
               (riro(range(-0.5, 0.5, sProgress - 1) + 0.5) - 0.5) * -60
