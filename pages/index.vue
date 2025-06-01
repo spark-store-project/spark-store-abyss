@@ -331,7 +331,94 @@ onMounted(() => {
         </p>
       </div>
     </section>
-    <section>
+    <section class="flex flex-col items-center justify-center gap-10 pt-15">
+      <div class="flex items-center justify-center gap-6">
+        <Icon
+          name="s:community"
+          mode="svg"
+          :style="{
+            height: '100%',
+            width: 'auto',
+            '--s-deco': 'var(--p-secondary-700)',
+            '--s-bg': 'var(--p-secondary-100)',
+            '--s-bg-2': 'var(--p-secondary-200)',
+            '--s-bg-3': 'var(--p-secondary-400)',
+          }"
+        />
+        <div class="flex flex-col">
+          <h2 class="text-5xl font-[KNYuanmo] text-(--p-primary-400)">
+            COMMUNITY
+          </h2>
+          <h2 class="text-5xl font-bold text-(--p-primary-600) mt-2">
+            社区共筑&nbsp;&nbsp;精挑细选
+          </h2>
+        </div>
+      </div>
+      <div class="flex gap-16">
+        <!-- 左侧内容区域 -->
+        <div class="flex flex-col py-12 gap-6">
+          <div class="flex flex-col">
+            <p class="text-5xl leading-[1.5]">凝聚开发者智慧</p>
+            <p class="text-5xl font-bold leading-[1.5]">
+              以开源精神守护应用品质
+            </p>
+          </div>
+          <p class="text-lg leading-[2]">
+            星火社区构建Linux生态“应用银河”，持续上架丰富的跨平台、跨生态<br />
+            应用程序，涵盖系统工具、影音娱乐等精选资源，精准匹配用户需求。<br />
+            年轻开发团队以00后为主力，致力让技术成果如星火般点亮数字原野。<br />
+          </p>
+          <div class="flex items-center gap-4">
+            <p class="font-bold text-3xl text-(--p-primary-500)">
+              全架构<br />
+              上架应用
+            </p>
+            <p class="text-7xl font-[KNYuanmo] text-(--p-primary-500)">
+              {{
+                Math.floor(
+                  2200 *
+                    ((getCubicBezier(
+                      0,
+                      1,
+                      1,
+                      0
+                    )(range(-0.25, 0.25, sProgress - 3) * 2 + 0.5) -
+                      0.5) *
+                      2 +
+                      1)
+                )
+              }}<span
+                class="inline-block"
+                :style="{
+                  opacity:
+                    1 -
+                    Math.abs(
+                      riro(range(-0.05, 0.05, sProgress - 3) * 10 + 0.5) - 0.5
+                    ) *
+                      2,
+                  transform: `scale(${
+                    1 +
+                    Math.abs(range(-0.05, 0.05, sProgress - 3) * 10 + 0.5 - 0.5)
+                  })`,
+                }"
+                >+</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <!-- 右侧图片区域 -->
+        <Icon
+          name="s:community-deco"
+          mode="svg"
+          :style="{
+            height: '100%',
+            width: 'auto',
+            '--s-deco': 'var(--p-secondary-900)',
+            '--s-bg': 'var(--p-primary-200)',
+          }"
+        />
+      </div>
     </section>
     <section></section>
     <section></section>
