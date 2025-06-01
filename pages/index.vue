@@ -279,9 +279,9 @@ onMounted(() => {
           :style="{
             transform: `translateY(calc(${
               (getCubicBezier(
-                -1 * (5 - i),
+                0,
                 1.0 - 0.2 * (5 - i),
-                1 + 1 * (5 - i),
+                1,
                 0.2 * (5 - i)
               )((range(-1, 1, sProgress - 2) + 1) * 0.5) -
                 0.5) *
