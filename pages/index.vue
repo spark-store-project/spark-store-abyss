@@ -418,13 +418,60 @@ onMounted(() => {
         />
       </div>
     </section>
-    <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
+    <section class="flex flex-col items-center justify-center gap-10 pt-15">
+      <div class="flex items-center justify-center gap-6">
+        <Icon
+          name="s:superspeed"
+          mode="svg"
+          :style="{
+            height: '100%',
+            width: 'auto',
+            '--s-deco': 'var(--p-secondary-700)',
+            '--s-bg': 'var(--p-secondary-100)',
+            '--s-bg-2': 'var(--p-secondary-200)',
+            '--s-bg-3': 'var(--p-secondary-400)',
+          }"
+        />
+        <h2 class="text-5xl text-(--p-primary-600) font-bold leading-[1.3]">
+          <span class="font-[KNYuanmo] text-(--p-primary-400) font-normal"
+            >SUPERSPEED</span
+          ><br />
+          极速下载&nbsp;&nbsp;瞬息可达
+        </h2>
+      </div>
+      <div class="flex gap-16">
+        <!-- 左侧图片区域 -->
+        <Icon
+          name="s:superspeed-deco"
+          mode="svg"
+          :style="{
+            height: '100%',
+            width: 'auto',
+            '--s-deco': 'var(--p-secondary-900)',
+            '--s-bg': 'var(--p-primary-200)',
+          }"
+        />
+
+        <!--      右侧内容区域 -->
+        <div class="flex flex-col py-12 gap-6">
+          <div class="flex flex-col">
+            <p class="text-5xl leading-[1.5]">下载“黑科技”</p>
+            <p class="text-5xl font-bold leading-[1.5]">APTSS 重构智能网络</p>
+          </div>
+          <p class="text-lg text-(--p-surface-700) leading-[2]">
+            下载速度是应用商店的关键指标，而星火应用商店在这方面表现卓越。<br />
+            在软件分发阶段，商店采用基于 APT-Fast 优化的下载工具 APTSS，准<br />
+            备速度较原版提升 300% 以上，处理复杂应用依赖关系亦流畅迅捷；同<br />
+            时支持多线程下载加速，充分利用网络带宽资源，告别卡顿等待。
+          </p>
+          <a
+            href="https://gitee.com/GXDE-OS/aptss"
+            class="text-xl font-bold text-(--p-secondary-600)"
+            >🎯APTSS 源码仓库地址 →</a
+          >
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
