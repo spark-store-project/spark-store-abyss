@@ -472,6 +472,57 @@ onMounted(() => {
         </div>
       </div>
     </section>
+    <section class="flex flex-col items-center justify-center gap-10 pt-15">
+      <div class="flex items-center justify-center gap-6">
+        <Icon
+          name="s:convenience"
+          mode="svg"
+          :style="{
+            height: '100%',
+            width: 'auto',
+            '--s-deco': 'var(--p-secondary-700)',
+            '--s-bg': 'var(--p-secondary-100)',
+            '--s-bg-2': 'var(--p-secondary-200)',
+            '--s-bg-3': 'var(--p-secondary-400)',
+          }"
+        />
+        <h2 class="text-5xl text-(--p-primary-600) font-bold leading-[1.3]">
+          <span class="font-[KNYuanmo] text-(--p-primary-400) font-normal"
+            >CONVENIENCE</span
+          ><br />
+          一键安装&nbsp;&nbsp;即刻掌控
+        </h2>
+      </div>
+      <div class="flex gap-16">
+        <!--左侧内容区域 -->
+        <div class="flex flex-col py-12 gap-6">
+          <div class="flex flex-col">
+            <p class="text-5xl leading-[1.5]">一站式安装体验</p>
+            <p class="text-5xl font-bold leading-[1.5]">
+              让技术普惠真正触手可及
+            </p>
+          </div>
+          <p class="text-lg text-(--p-surface-700) leading-[2]">
+            星火商店所有程序经过深度适配优化；用户轻点按钮，系统自动完成依<br />
+            赖解析与环境配置，处理复杂软件如搭积木般严丝合缝。从图形应用到<br />
+            编程工具，从 Wine 移植应用到 Android APP，皆可轻松实现“零门槛<br />
+            安装”。上架应用均通过严格测试，社区开发者持续维护更新，确保每<br />
+            款软件始终良好稳定运行。
+          </p>
+        </div>
+        <!--右侧图片区域 -->
+        <Icon
+          name="s:convenience-deco"
+          mode="svg"
+          :style="{
+            height: '100%',
+            width: 'auto',
+            '--s-deco': 'var(--p-secondary-900)',
+            '--s-bg': 'var(--p-primary-200)',
+          }"
+        />
+      </div>
+    </section>
   </div>
 </template>
 
