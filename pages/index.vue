@@ -452,7 +452,7 @@ onMounted(() => {
           }"
         />
 
-        <!--      右侧内容区域 -->
+        <!-- 右侧内容区域 -->
         <div class="flex flex-col py-12 gap-6">
           <div class="flex flex-col">
             <p class="text-5xl leading-[1.5]">下载“黑科技”</p>
@@ -510,7 +510,7 @@ onMounted(() => {
             款软件始终良好稳定运行。
           </p>
         </div>
-        <!--右侧图片区域 -->
+        <!-- 右侧图片区域 -->
         <Icon
           name="s:convenience-deco"
           mode="svg"
