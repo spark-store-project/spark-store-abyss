@@ -361,10 +361,10 @@ onMounted(() => {
               以开源精神守护应用品质
             </p>
           </div>
-          <p class="text-lg leading-[2]">
+          <p class="text-lg text-(--p-surface-700) leading-[2]">
             星火社区构建Linux生态“应用银河”，持续上架丰富的跨平台、跨生态<br />
             应用程序，涵盖系统工具、影音娱乐等精选资源，精准匹配用户需求。<br />
-            年轻开发团队以00后为主力，致力让技术成果如星火般点亮数字原野。<br />
+            年轻开发团队以00后为主力，致力让技术成果如星火般点亮数字原野。
           </p>
           <div class="flex items-center gap-4">
             <p class="font-bold text-3xl text-(--p-primary-500)">
