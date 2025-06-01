@@ -345,14 +345,12 @@ onMounted(() => {
             '--s-bg-3': 'var(--p-secondary-400)',
           }"
         />
-        <div class="flex flex-col">
-          <h2 class="text-5xl font-[KNYuanmo] text-(--p-primary-400)">
-            COMMUNITY
-          </h2>
-          <h2 class="text-5xl font-bold text-(--p-primary-600) mt-2">
+        <h2 class="text-5xl text-(--p-primary-600) font-bold leading-[1.3]">
+          <span class="font-[KNYuanmo] text-(--p-primary-400) font-normal"
+            >COMMUNITY</span
+          ><br />
             社区共筑&nbsp;&nbsp;精挑细选
           </h2>
-        </div>
       </div>
       <div class="flex gap-16">
         <!-- 左侧内容区域 -->
