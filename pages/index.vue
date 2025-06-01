@@ -467,7 +467,7 @@ onMounted(() => {
           <a
             href="https://gitee.com/GXDE-OS/aptss"
             class="text-xl font-bold text-(--p-secondary-600)"
-            >🎯APTSS 源码仓库地址 →</a
+            >🎯 APTSS 源码仓库地址 →</a
           >
         </div>
       </div>
