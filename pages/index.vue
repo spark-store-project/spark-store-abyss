@@ -371,10 +371,10 @@ onMounted(() => {
               以开源精神守护应用品质
             </p>
           </div>
-          <p class="text-lg text-(--p-surface-700) leading-[2]">
-            星火社区构建Linux生态「应用银河」，持续上架丰富的跨平台、跨生态<br />
-            应用程序，涵盖系统工具、影音娱乐等精选资源，精准匹配用户需求。<br />
-            年轻开发团队以00后为主力，致力让技术成果如星火般点亮数字原野。
+          <p class="text-lg text-(--p-surface-700) leading-[2] max-w-[31.8em]">
+            星火社区构建 Linux
+            生态「应用银河」，持续上架丰富的跨平台、跨生态应用程序，涵盖系统工具、影音娱乐等精选资源，精准匹配用户需求。年轻开发团队以
+            00 后为主力，致力让技术成果如星火般点亮数字原野。
           </p>
           <div class="flex items-center gap-4">
             <p class="font-bold text-3xl text-(--p-primary-500)">
@@ -471,11 +471,10 @@ onMounted(() => {
             <p class="text-5xl leading-[1.5]">下载「黑科技」</p>
             <p class="text-5xl font-bold leading-[1.5]">APTSS 重构智能网络</p>
           </div>
-          <p class="text-lg text-(--p-surface-700) leading-[2]">
-            下载速度是应用商店的关键指标，而星火应用商店在这方面表现卓越。<br />
-            在软件分发阶段，商店采用基于 APT-Fast 优化的下载工具 APTSS，准<br />
-            备速度较原版提升 300% 以上，处理复杂应用依赖关系亦流畅迅捷；同<br />
-            时支持多线程下载加速，充分利用网络带宽资源，告别卡顿等待。
+          <p class="text-lg text-(--p-surface-700) leading-[2] max-w-[31em]">
+            下载速度是应用商店的关键指标，而星火应用商店在这方面表现卓越。在软件分发阶段，商店采用基于
+            APT-Fast 优化的下载工具 APTSS，准备速度较原版提升 300%
+            以上，处理复杂应用依赖关系亦流畅迅捷；同时支持多线程下载加速，充分利用网络带宽资源，告别卡顿等待。
           </p>
           <a
             href="https://gitee.com/GXDE-OS/aptss"
@@ -516,12 +515,10 @@ onMounted(() => {
               让技术普惠真正触手可及
             </p>
           </div>
-          <p class="text-lg text-(--p-surface-700) leading-[2]">
-            星火商店所有程序经过深度适配优化；用户轻点按钮，系统自动完成依<br />
-            赖解析与环境配置，处理复杂软件如搭积木般严丝合缝。从图形应用到<br />
-            编程工具，从 Wine 移植应用到 Android APP，皆可轻松实现「零门槛<br />
-            安装」。上架应用均通过严格测试，社区开发者持续维护更新，确保每<br />
-            款软件始终良好稳定运行。
+          <p class="text-lg text-(--p-surface-700) leading-[2] max-w-[31em]">
+            星火商店所有程序经过深度适配优化；用户轻点按钮，系统自动完成依赖解析与环境配置，处理复杂软件如搭积木般严丝合缝。从图形应用到编程工具，从
+            Wine 移植应用到 Android
+            APP，皆可轻松实现「零门槛安装」。上架应用均通过严格测试，社区开发者持续维护更新，确保每款软件始终良好稳定运行。
           </p>
         </div>
         <!-- 右侧图片区域 -->

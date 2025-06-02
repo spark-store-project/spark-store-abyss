@@ -157,12 +157,11 @@ onMounted(() => {
       </div>
       <div class="flex flex-col gap-4">
         <h2 class="text-2xl font-bold">关于星火社区</h2>
-        <p class="leading-[2] text-(--p-surface-600)">
-          星火社区是以丰富 Linux 应用生态为核心目标的开源协作<br />
-          平台，汇聚年轻开发者团队。核心项目星火应用商店通过<br />
-          整合分散资源、提供海量软件下载及安装功能，解决 Linux<br />
-          用户获取应用难题。社区以「星火燎原」为理念，通过论<br />
-          坛、Wiki 和形象 IP 等传播方式构建开放协作生态。
+        <p class="leading-[2] text-(--p-surface-600) max-w-[25.8em]">
+          星火社区是以丰富 Linux
+          应用生态为核心目标的开源协作平台，汇聚年轻开发者团队。核心项目星火应用商店通过整合分散资源、提供海量软件下载及安装功能，解决
+          Linux 用户获取应用难题。社区以「星火燎原」为理念，通过论坛、Wiki
+          和形象 IP 等传播方式构建开放协作生态。
         </p>
       </div>
       <div class="flex flex-col items-end gap-8">
