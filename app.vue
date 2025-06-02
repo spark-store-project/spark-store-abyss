@@ -76,7 +76,7 @@ onMounted(() => {
             class="text-4xl mr-2 fill-(--p-primary-color)"
             mode="svg"
           />
-          <h1>SPARK</h1>
+          <h1 class="font-(family-name:--s-title-font)">SPARK</h1>
         </NuxtLink>
         <div class="grow" />
         <NuxtLink to="/" class="nav-link" active-class="active">
@@ -141,7 +141,6 @@ header {
   }
 
   h1 {
-    font-family: "KNYuanmo";
     font-size: 1.75em;
     color: var(--p-surface-500);
   }

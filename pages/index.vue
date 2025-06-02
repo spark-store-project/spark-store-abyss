@@ -119,16 +119,14 @@ onMounted(() => {
       <i class="w-96 h-144 figure-container" />
       <div class="card flex flex-col px-9 py-15 rounded-tl-3xl gap-8">
         <div class="flex gap-4">
-          <h1 class="font-bold text-6xl leading-[0.9] -translate-y-1/20">
-            星火应用商店
-          </h1>
+          <h1 class="font-bold text-6xl -translate-y-1/20">星火应用商店</h1>
           <div class="flex flex-col items-start justify-between">
             <span
-              class="font-[KNYuanmo] px-4 py-0.5 text-white from-(--p-primary-400) to-(--p-primary-500) bg-linear-to-r rounded-full"
+              class="font-(family-name:--s-title-font) px-4 py-0.5 text-white from-(--p-primary-400) to-(--p-primary-500) bg-linear-to-r rounded-full"
               >V4.5.2</span
             >
             <h2
-              class="text-lg font-[KNYuanmo] text-(--p-primary-500) leading-[0.8]"
+              class="text-lg font-(family-name:--s-title-font) text-(--p-primary-500)"
             >
               SPARK STORE
             </h2>
@@ -207,7 +205,7 @@ onMounted(() => {
             class="flex flex-col items-center justify-between mt-2 mb-6 gap-5"
           >
             <h2
-              class="text-3xl text-(--p-primary-500) font-[KNYuanmo] tracking-widest"
+              class="text-3xl text-(--p-primary-500) font-(family-name:--s-title-font) tracking-widest"
             >
               SPARK
             </h2>
@@ -316,7 +314,9 @@ onMounted(() => {
             class="text-6xl fill-(--p-primary-500)"
             mode="svg"
           />
-          <h2 class="text-4xl font-[KNYuanmo] text-(--p-primary-500)">
+          <h2
+            class="text-4xl font-(family-name:--s-title-font) text-(--p-primary-500)"
+          >
             WHAT'S NEW ?
           </h2>
         </div>
@@ -346,7 +346,8 @@ onMounted(() => {
           }"
         />
         <h2 class="text-5xl text-(--p-primary-600) font-bold leading-[1.3]">
-          <span class="font-[KNYuanmo] text-(--p-primary-400) font-normal"
+          <span
+            class="font-(family-name:--s-title-font) text-(--p-primary-400) font-normal"
             >COMMUNITY</span
           ><br />
             社区共筑&nbsp;&nbsp;精挑细选
@@ -371,7 +372,9 @@ onMounted(() => {
               全架构<br />
               上架应用
             </p>
-            <p class="text-7xl font-[KNYuanmo] text-(--p-primary-500)">
+            <p
+              class="text-7xl font-(family-name:--s-title-font) text-(--p-primary-500)"
+            >
               {{
                 Math.floor(
                   2200 *
@@ -433,7 +436,8 @@ onMounted(() => {
           }"
         />
         <h2 class="text-5xl text-(--p-primary-600) font-bold leading-[1.3]">
-          <span class="font-[KNYuanmo] text-(--p-primary-400) font-normal"
+          <span
+            class="font-(family-name:--s-title-font) text-(--p-primary-400) font-normal"
             >SUPERSPEED</span
           ><br />
           极速下载&nbsp;&nbsp;瞬息可达
@@ -487,7 +491,8 @@ onMounted(() => {
           }"
         />
         <h2 class="text-5xl text-(--p-primary-600) font-bold leading-[1.3]">
-          <span class="font-[KNYuanmo] text-(--p-primary-400) font-normal"
+          <span
+            class="font-(family-name:--s-title-font) text-(--p-primary-400) font-normal"
             >CONVENIENCE</span
           ><br />
           一键安装&nbsp;&nbsp;即刻掌控

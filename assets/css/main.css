@@ -1,13 +1,10 @@
 @import "tailwindcss";
 @import 'primeicons/primeicons.css';
-
-@font-face {
-  font-family: 'KNYuanmo';
-  font-display: swap;
-  src: url('../fonts/KNYuanmo-Regular.ttf');
-}
+@import '../fonts/KNYuanmo-Regular/result.css';
 
 :root {
+  font-family: 'BlinkMacSystemFont', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --s-title-font: 'KN Yuanmo SC', sans-serif;
   --s-background: var(--p-secondary-50);
   background-color: var(--s-background) !important;
 }
