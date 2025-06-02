@@ -32,10 +32,10 @@ const handleScrollOrResize = () => {
     .lastScrollTop;
   const clientHeight = scrollPanel.value?.$el.clientHeight;
   if (path.value === "/") {
-  sProgress.value =
-    1 -
-    range(0, 1, scrollTop / clientHeight) +
-    1 -
+    sProgress.value =
+      1 -
+      range(0, 1, scrollTop / clientHeight) +
+      1 -
       Math.abs(range(-1, 1, scrollTop / clientHeight - 6));
     return;
   }
@@ -48,6 +48,18 @@ onMounted(() => {
   nextTick(() => {
     mounted.value = true;
   });
+});
+
+const qrWidth = ref(0);
+
+onMounted(() => {
+  const qrEl = document.querySelector("footer .flex:nth-child(3) svg");
+  if (qrEl) {
+    qrEl.addEventListener("resize", () => {
+      qrWidth.value = qrEl.getBoundingClientRect().height;
+    });
+    qrWidth.value = qrEl.getBoundingClientRect().height;
+  }
 });
 </script>
 
@@ -124,7 +136,54 @@ onMounted(() => {
     <div>
       <NuxtPage />
     </div>
-    <footer></footer>
+    <footer
+      class="w-full flex justify-around bg-white snap-start overflow-hidden p-14"
+    >
+      <div class="flex flex-col items-start gap-6">
+        <Icon
+          name="s:spark"
+          class="grow"
+          mode="svg"
+          :style="{
+            width: 'auto',
+            height: 'auto',
+          }"
+        />
+        <h2
+          class="font-(family-name:--s-title-font) text-5xl text-(--p-surface-500)"
+        >
+          SPARK
+        </h2>
+      </div>
+      <div class="flex flex-col gap-4">
+        <h2 class="text-2xl font-bold">关于星火社区</h2>
+        <p class="leading-[2] text-(--p-surface-600)">
+          星火社区是以丰富 Linux 应用生态为核心目标的开源协作<br />
+          平台，汇聚年轻开发者团队。核心项目星火应用商店通过<br />
+          整合分散资源、提供海量软件下载及安装功能，解决 Linux<br />
+          用户获取应用难题。社区以「星火燎原」为理念，通过论<br />
+          坛、Wiki 和形象 IP 等传播方式构建开放协作生态。
+        </p>
+      </div>
+      <div class="flex flex-col items-end gap-8">
+        <div class="flex grow items-end gap-6">
+          <h2 class="whitespace-nowrap text-right text-2xl font-bold">
+            加入星火应用商店<br />
+            用户交流群
+          </h2>
+          <Icon
+            name="s:qrcode-3"
+            mode="svg"
+            :style="{
+              width: qrWidth + 'px',
+              height: '100%',
+              '--s-color': '#000000',
+            }"
+          />
+        </div>
+        <p class="text-2xl">© 2020-{{ new Date().getFullYear() }} 星火社区</p>
+      </div>
+    </footer>
   </ScrollPanel>
 </template>
 
