@@ -5,7 +5,7 @@ import Button from "primevue/button";
 const path = computed(() => {
   return useRoute().path;
 });
-const sProgress = ref(path.value === "/" ? 1 : 0);
+const sProgress = ref(["/", "/download"].includes(path.value) ? 1 : 0);
 const scrollPanel = useTemplateRef<ComponentPublicInstance>("scrollPanel");
 const sX = ref(0);
 const sY = ref(0);
@@ -24,7 +24,7 @@ const handleScrollOrResize = () => {
     sWidth.value = el.getBoundingClientRect().width;
     sHeight.value = el.getBoundingClientRect().height;
   }
-  if (path.value !== "/") {
+  if (!["/", "/download"].includes(path.value)) {
     sProgress.value = 0;
     return;
   }
