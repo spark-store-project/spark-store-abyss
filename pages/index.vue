@@ -119,7 +119,7 @@ onMounted(() => {
       <i class="w-96 h-144 figure-container" />
       <div class="card flex flex-col px-9 py-15 rounded-tl-3xl gap-8">
         <div class="flex gap-4">
-          <h1 class="font-bold text-6xl -translate-y-1/20">星火应用商店</h1>
+          <h1 class="font-bold text-6xl">星火应用商店</h1>
           <div class="flex flex-col items-start justify-between">
             <span
               class="font-(family-name:--s-title-font) px-4 py-0.5 text-white from-(--p-primary-400) to-(--p-primary-500) bg-linear-to-r rounded-full"
