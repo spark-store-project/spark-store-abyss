@@ -1,5 +1,10 @@
 # Spark Store Abyss
 
+[![GitHub License](https://img.shields.io/github/license/jiwangyihao/spark-store-abyss)](https://github.com/jiwangyihao/spark-store-abyss/blob/main/LICENSE)
+[![wakatime](https://wakatime.com/badge/user/7ef6dafe-00d7-45e3-b4c7-27b1f5d4d735/project/fa95e054-a4d8-48af-8857-22773d075230.svg)](https://wakatime.com/badge/user/7ef6dafe-00d7-45e3-b4c7-27b1f5d4d735/project/fa95e054-a4d8-48af-8857-22773d075230)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/jiwangyihao/spark-store-abyss/.github%2Fworkflows%2Fnuxtjs.yml)](https://github.com/jiwangyihao/spark-store-abyss/actions)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/w/jiwangyihao/spark-store-abyss)](https://github.com/jiwangyihao/spark-store-abyss/commits)
+
 代号 Abyss，全新重生的星火应用商店官网，基于 Nuxt 3 + Vue 3 + Vite + TailwindCSS 4 构建，采用全新设计语言，提供更快的加载速度和更好的用户体验。
 
 支持 SSR/SSG。
