@@ -614,9 +614,9 @@ section {
     content: "";
     width: calc(64 * var(--spacing));
     height: calc(128 * var(--spacing));
-    background-image: url("~/assets/images/index/s2d.avif");
-    background-image: url("~/assets/images/index/s2d.webp");
     background-image: url("~/assets/images/index/s2d.png");
+    background-image: url("~/assets/images/index/s2d.webp");
+    background-image: url("~/assets/images/index/s2d.avif");
     background-size: contain;
     background-position: center;
   }
@@ -624,9 +624,9 @@ section {
     content: "";
     width: calc(64 * var(--spacing));
     height: calc(128 * var(--spacing));
-    background-image: url("~/assets/images/index/s2d.avif");
-    background-image: url("~/assets/images/index/s2d.webp");
     background-image: url("~/assets/images/index/s2d.png");
+    background-image: url("~/assets/images/index/s2d.webp");
+    background-image: url("~/assets/images/index/s2d.avif");
     background-size: contain;
     background-position: center;
     transform: rotate(180deg);
@@ -634,8 +634,8 @@ section {
 }
 
 .app-icon {
-  background-image: var(--s-avif);
-  background-image: var(--s-webp);
   background-image: var(--s-png);
+  background-image: var(--s-webp);
+  background-image: var(--s-avif);
 }
 </style>
