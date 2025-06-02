@@ -1,23 +1,37 @@
-# Nuxt Minimal Starter
+# Spark Store Abyss
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+代号 Abyss，全新重生的星火应用商店官网，基于 Nuxt 3 + Vue 3 + Vite + TailwindCSS 4 构建，采用全新设计语言，提供更快的加载速度和更好的用户体验。
+
+支持 SSR/SSG。
 
 ## Setup
+
+### Install Node.js
+
+Using tools like [nvm](https://nvm.sh) or [fnm](https://github.com/Schniz/fnm) is recommended to manage Node.js versions. Also, the latest LTS version is recommended.
+
+You can check your current Node.js version with:
+
+```bash
+node -v
+```
+
+### Install Corepack
+
+Corepack is a tool that helps manage package managers like npm, pnpm, yarn, and bun. It is included with Node.js versions 16.9.0 and later.
+
+To enable Corepack, run the following command:
+
+```bash
+corepack enable
+```
+
+### Install Dependencies
 
 Make sure to install dependencies:
 
 ```bash
-# npm
-npm install
-
-# pnpm
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
 ## Development Server
@@ -25,51 +39,21 @@ bun install
 Start the development server on `http://localhost:3000`:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
 pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
 ## Production
 
-Build the application for production:
+Build the application for production (SSR mode):
 
 ```bash
-# npm
-npm run build
-
-# pnpm
 pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+Locally preview production build (SSR mode):
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
 pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
