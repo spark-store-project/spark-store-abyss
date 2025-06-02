@@ -77,8 +77,17 @@ onMounted(() => {
         <NuxtLink to="/" class="flex items-center">
           <Icon
             name="s:spark"
-            class="text-4xl mr-2 fill-(--p-primary-color)"
+            class="text-4xl mr-2"
             mode="svg"
+            :style="{
+              '--s-c1': 'var(--p-primary-color)',
+              '--s-c2': 'var(--p-primary-color)',
+              '--s-c3': 'var(--p-primary-color)',
+              '--s-c4': 'var(--p-primary-color)',
+              '--s-c5': 'var(--p-primary-color)',
+              '--s-c6': 'var(--p-primary-color)',
+              '--s-c7': 'var(--p-primary-color)',
+            }"
           />
           <h1 class="font-(family-name:--s-title-font)">SPARK</h1>
         </NuxtLink>

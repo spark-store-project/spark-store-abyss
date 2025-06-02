@@ -311,8 +311,17 @@ onMounted(() => {
         <div class="flex items-center gap-6">
           <Icon
             name="s:spark"
-            class="text-6xl fill-(--p-primary-500)"
+            class="text-6xl"
             mode="svg"
+            :style="{
+              '--s-c1': 'var(--p-primary-500)',
+              '--s-c2': 'var(--p-primary-500)',
+              '--s-c3': 'var(--p-primary-500)',
+              '--s-c4': 'var(--p-primary-500)',
+              '--s-c5': 'var(--p-primary-500)',
+              '--s-c6': 'var(--p-primary-500)',
+              '--s-c7': 'var(--p-primary-500)',
+            }"
           />
           <h2
             class="text-4xl font-(family-name:--s-title-font) text-(--p-primary-500)"
@@ -540,11 +549,18 @@ onMounted(() => {
       >
         <Icon
           name="s:spark"
-          class="fill-(--p-primary-100) absolute top-1/2 -translate-y-1/2"
+          class="absolute top-1/2 -translate-y-1/2"
           mode="svg"
           :style="{
             height: 'auto',
             width: '100%',
+            '--s-c1': 'var(--p-primary-100)',
+            '--s-c2': 'var(--p-primary-100)',
+            '--s-c3': 'var(--p-primary-100)',
+            '--s-c4': 'var(--p-primary-100)',
+            '--s-c5': 'var(--p-primary-100)',
+            '--s-c6': 'var(--p-primary-100)',
+            '--s-c7': 'var(--p-primary-100)',
           }"
         />
       </div>
