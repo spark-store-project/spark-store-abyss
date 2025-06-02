@@ -31,7 +31,11 @@ const handleScrollOrResize = () => {
   const scrollTop = (scrollPanel.value as unknown as { lastScrollTop: number })
     .lastScrollTop;
   const clientHeight = scrollPanel.value?.$el.clientHeight;
-  sProgress.value = 1 - Math.min(scrollTop / clientHeight, 1);
+  sProgress.value =
+    1 -
+    range(0, 1, scrollTop / clientHeight) +
+    1 -
+    Math.abs(range(-0.5, 0.5, scrollTop / clientHeight - 6) * 2);
 };
 
 onMounted(() => {

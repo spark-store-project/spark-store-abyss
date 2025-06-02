@@ -350,8 +350,8 @@ onMounted(() => {
             class="font-(family-name:--s-title-font) text-(--p-primary-400) font-normal"
             >COMMUNITY</span
           ><br />
-            社区共筑&nbsp;&nbsp;精挑细选
-          </h2>
+          社区共筑&nbsp;&nbsp;精挑细选
+        </h2>
       </div>
       <div class="flex gap-16">
         <!-- 左侧内容区域 -->
@@ -526,6 +526,56 @@ onMounted(() => {
             '--s-bg': 'var(--p-primary-200)',
           }"
         />
+      </div>
+    </section>
+    <section class="flex items-center justify-center gap-6 pt-15">
+      <div
+        class="fixed top-0 left-0 w-full h-full z-[-1]"
+        :style="{
+          opacity: 1 - Math.abs(range(-0.5, 0.5, sProgress - 6)) * 2,
+          transform: `scale(${1 - range(-0.5, 0.5, sProgress - 6)}) rotate(${
+            range(-0.5, 0.5, sProgress - 6) * 180
+          }deg)`,
+        }"
+      >
+        <Icon
+          name="s:spark"
+          class="fill-(--p-primary-100) absolute top-1/2 -translate-y-1/2"
+          mode="svg"
+          :style="{
+            height: 'auto',
+            width: '100%',
+          }"
+        />
+      </div>
+      <!-- 左侧内容区域 -->
+      <div class="flex flex-col gap-4 items-start">
+        <div class="flex items-center gap-4">
+          <p class="font-bold text-3xl text-(--p-primary-600)">星火应用商店</p>
+          <p
+            class="font-bold text-2xl text-(--p-secondary-300) font-(family-name:--s-title-font)"
+          >
+            SPARK STORE
+          </p>
+        </div>
+        <p class="text-5xl leading-[1.5]">
+          更多精彩，<br />
+          <span class="font-bold">邀您下载体验。</span>
+        </p>
+        <p class="text-lg leading-[2] text-(--p-surface-700)">
+          Linux 软件生态的构建并非依赖个体的孤立努力，而需要全社区共同参与；<br />
+          只有当大家的“星火”聚集一处，方可引发“燎原之势”。
+        </p>
+        <NuxtLink
+          to="/download"
+          class="px-14 py-3 text-2xl font-bold text-white from-(--p-primary-400) to-(--p-primary-500) bg-linear-to-r rounded-full"
+        >
+          <i class="pi pi-download text-xl! font-bold! pr-4" /> 前往下载
+        </NuxtLink>
+      </div>
+      <!-- 右侧图片区域 -->
+      <div class="flex items-center">
+        <i class="w-96 h-144 figure-container" />
       </div>
     </section>
   </div>
