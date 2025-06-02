@@ -31,11 +31,15 @@ const handleScrollOrResize = () => {
   const scrollTop = (scrollPanel.value as unknown as { lastScrollTop: number })
     .lastScrollTop;
   const clientHeight = scrollPanel.value?.$el.clientHeight;
+  if (path.value === "/") {
   sProgress.value =
     1 -
     range(0, 1, scrollTop / clientHeight) +
     1 -
-    Math.abs(range(-0.5, 0.5, scrollTop / clientHeight - 6) * 2);
+      Math.abs(range(-1, 1, scrollTop / clientHeight - 6));
+    return;
+  }
+  sProgress.value = 1 - range(0, 1, scrollTop / clientHeight);
 };
 
 onMounted(() => {
@@ -53,10 +57,7 @@ onMounted(() => {
     style="width: 100vw; height: 100vh"
     :pt="{
       content: {
-        class: 'snap-y snap-mandatory scroll-smooth',
-        style: {
-          scrollDuration: '2s',
-        },
+        class: 'snap-y snap-mandatory scroll-smooth overflow-x-hidden!',
       },
     }"
   >

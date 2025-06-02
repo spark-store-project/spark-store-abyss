@@ -258,7 +258,7 @@ onMounted(() => {
       <p class="text-center text-xl leading-[2]">
         每个普通用户的需求反馈、每名开发者的代码贡献、每一次社区的互助分享，<br />
         都在为 Linux 桌面生态注入蓬勃活力。<br />
-        我们深信“人人为我，我为人人”，以共享之火照亮开源之路。<br />
+        我们深信「人人为我，我为人人」，以共享之火照亮开源之路。<br />
         您上传的应用可能成为他人工作的桥梁，他人分享的工具也可能为您带来方便。<br />
         我们珍视开源世界的共建基因，以微小而持久的善意融入这场共享长跑，<br />
         让技术普惠的星火在彼此照映中汇聚成光。
@@ -372,7 +372,7 @@ onMounted(() => {
             </p>
           </div>
           <p class="text-lg text-(--p-surface-700) leading-[2]">
-            星火社区构建Linux生态“应用银河”，持续上架丰富的跨平台、跨生态<br />
+            星火社区构建Linux生态「应用银河」，持续上架丰富的跨平台、跨生态<br />
             应用程序，涵盖系统工具、影音娱乐等精选资源，精准匹配用户需求。<br />
             年轻开发团队以00后为主力，致力让技术成果如星火般点亮数字原野。
           </p>
@@ -468,7 +468,7 @@ onMounted(() => {
         <!-- 右侧内容区域 -->
         <div class="flex flex-col py-12 gap-6">
           <div class="flex flex-col">
-            <p class="text-5xl leading-[1.5]">下载“黑科技”</p>
+            <p class="text-5xl leading-[1.5]">下载「黑科技」</p>
             <p class="text-5xl font-bold leading-[1.5]">APTSS 重构智能网络</p>
           </div>
           <p class="text-lg text-(--p-surface-700) leading-[2]">
@@ -519,8 +519,8 @@ onMounted(() => {
           <p class="text-lg text-(--p-surface-700) leading-[2]">
             星火商店所有程序经过深度适配优化；用户轻点按钮，系统自动完成依<br />
             赖解析与环境配置，处理复杂软件如搭积木般严丝合缝。从图形应用到<br />
-            编程工具，从 Wine 移植应用到 Android APP，皆可轻松实现“零门槛<br />
-            安装”。上架应用均通过严格测试，社区开发者持续维护更新，确保每<br />
+            编程工具，从 Wine 移植应用到 Android APP，皆可轻松实现「零门槛<br />
+            安装」。上架应用均通过严格测试，社区开发者持续维护更新，确保每<br />
             款软件始终良好稳定运行。
           </p>
         </div>
@@ -580,7 +580,7 @@ onMounted(() => {
         </p>
         <p class="text-lg leading-[2] text-(--p-surface-700)">
           Linux 软件生态的构建并非依赖个体的孤立努力，而需要全社区共同参与；<br />
-          只有当大家的“星火”聚集一处，方可引发“燎原之势”。
+          只有当大家的「星火」聚集一处，方可引发「燎原之势」。
         </p>
         <NuxtLink
           to="/download"
