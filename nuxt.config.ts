@@ -26,9 +26,6 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
   vite: {
     plugins: [tailwindcss()],
-    server: {
-      allowedHosts: ["6a3f505a.r15.cpolar.top"],
-    },
   },
   primevue: {
     /* Configuration */
