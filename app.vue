@@ -48,6 +48,15 @@ onMounted(() => {
   nextTick(() => {
     mounted.value = true;
   });
+
+  watchEffect(() => {
+    if (path.value) {
+      scrollPanel.value?.$el.firstChild.firstChild.scrollTo({
+        top: 0,
+        behavior: "instant",
+      });
+    }
+  });
 });
 
 const qrWidth = ref(0);
