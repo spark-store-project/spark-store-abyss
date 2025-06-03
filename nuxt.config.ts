@@ -38,6 +38,11 @@ export default defineNuxtConfig({
           href: "/icon/spark.svg",
         },
       ],
+      script: [
+        {
+          src: "/init_dark.js",
+        },
+      ],
     },
   },
   vite: {

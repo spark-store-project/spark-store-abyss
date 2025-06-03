@@ -120,36 +120,47 @@ onMounted(() => {
   if (savedDarkMode) {
     sDarkConfig.value = savedDarkMode;
   }
-  watchEffect(async () => {
-    const sDarkValue = sDark.value;
+  watch(
+    sDark,
+    async (newValue, oldValue) => {
+      console.log("Dark mode changed:", newValue, oldValue);
+      const sDarkValue = newValue;
 
-    if (!enableTransitions()) {
-      document.documentElement.classList.toggle("s-dark", sDarkValue);
-      return;
-    }
-
-    const clipPath = [
-      `circle(0px at ${mouseX.value}px ${mouseY.value}px)`,
-      `circle(${Math.hypot(
-        Math.max(mouseX.value, innerWidth - mouseX.value),
-        Math.max(mouseY.value, innerHeight - mouseY.value)
-      )}px at ${mouseX.value}px ${mouseY.value}px)`,
-    ];
-
-    await document.startViewTransition(async () => {
-      document.documentElement.classList.toggle("s-dark", sDarkValue);
-      await nextTick();
-    }).ready;
-
-    document.documentElement.animate(
-      { clipPath: sDarkValue ? clipPath.reverse() : clipPath },
-      {
-        duration: 300,
-        easing: "ease-in",
-        pseudoElement: `::view-transition-${sDarkValue ? "old" : "new"}(root)`,
+      if (oldValue === undefined) {
+        return;
       }
-    );
-  });
+
+      if (!enableTransitions()) {
+        document.documentElement.classList.toggle("s-dark", sDarkValue);
+        return;
+      }
+
+      const clipPath = [
+        `circle(0px at ${mouseX.value}px ${mouseY.value}px)`,
+        `circle(${Math.hypot(
+          Math.max(mouseX.value, innerWidth - mouseX.value),
+          Math.max(mouseY.value, innerHeight - mouseY.value)
+        )}px at ${mouseX.value}px ${mouseY.value}px)`,
+      ];
+
+      await document.startViewTransition(async () => {
+        document.documentElement.classList.toggle("s-dark", sDarkValue);
+        await nextTick();
+      }).ready;
+
+      document.documentElement.animate(
+        { clipPath: sDarkValue ? clipPath.reverse() : clipPath },
+        {
+          duration: 300,
+          easing: "ease-in",
+          pseudoElement: `::view-transition-${
+            sDarkValue ? "old" : "new"
+          }(root)`,
+        }
+      );
+    },
+    { immediate: true }
+  );
 });
 </script>
 
