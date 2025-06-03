@@ -318,7 +318,7 @@ onMounted(() => {
       <div class="flex flex-col gap-3">
         <div class="flex items-center gap-6">
           <Icon
-            name="s:spark"
+            name="sp:spark"
             class="text-6xl s-color-primary-500"
             mode="svg"
           />
@@ -543,7 +543,7 @@ onMounted(() => {
         }"
       >
         <Icon
-          name="s:spark"
+          name="sp:spark"
           class="absolute top-1/2 -translate-y-1/2 s-color-primary-500"
           mode="svg"
           :style="{

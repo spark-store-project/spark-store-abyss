@@ -180,7 +180,7 @@ onMounted(() => {
       >
         <NuxtLink to="/" class="flex items-center">
           <Icon
-            name="s:spark"
+            name="sp:spark"
             class="text-4xl mr-2 s-color-primary-color"
             mode="svg"
           />
@@ -230,7 +230,7 @@ onMounted(() => {
     >
       <div class="flex flex-col items-start gap-6">
         <Icon
-          name="s:spark"
+          name="sp:spark"
           class="grow"
           mode="svg"
           :style="{

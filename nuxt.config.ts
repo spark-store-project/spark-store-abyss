@@ -21,9 +21,25 @@ export default defineNuxtConfig({
         prefix: "s",
         dir: "./assets/icons",
       },
+      {
+        prefix: "sp",
+        dir: "./public/icon",
+      },
     ],
   },
   css: ["~/assets/css/main.css"],
+  app: {
+    head: {
+      title: "Spark Store",
+      link: [
+        {
+          rel: "icon",
+          type: "image/svg+xml",
+          href: "/icon/spark.svg",
+        },
+      ],
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
   },
