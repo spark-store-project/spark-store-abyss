@@ -301,10 +301,6 @@ header {
       property: transform, width, border-radius;
       duration: 0.1s;
     }
-
-    @variant dark {
-      background-color: var(--p-surface-900);
-    }
   }
 
   h1 {
