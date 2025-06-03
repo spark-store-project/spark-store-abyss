@@ -98,6 +98,9 @@ export default defineNuxtConfig({
             },
           },
         }),
+        options: {
+          darkModeSelector: ".s-dark",
+        },
       },
     },
   },

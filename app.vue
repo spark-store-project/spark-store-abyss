@@ -70,6 +70,87 @@ onMounted(() => {
     qrWidth.value = qrEl.getBoundingClientRect().height;
   }
 });
+
+const sDarkConfig = ref("auto");
+
+const isDarkMode = ref(false);
+
+const sDark = computed(() => {
+  return sDarkConfig.value === "auto"
+    ? isDarkMode.value
+      ? true
+      : false
+    : sDarkConfig.value === "dark"
+    ? true
+    : false;
+});
+
+provide("sDark", sDark);
+
+const enableTransitions = () =>
+  "startViewTransition" in document &&
+  window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
+
+const mouseX = ref(0);
+const mouseY = ref(0);
+
+const toggleDarkMode = async ({ clientX: x, clientY: y }: MouseEvent) => {
+  if (sDarkConfig.value === "auto") {
+    sDarkConfig.value = isDarkMode.value ? "light" : "dark";
+  } else if (sDarkConfig.value === "dark" && isDarkMode.value) {
+    sDarkConfig.value = "auto";
+  } else if (sDarkConfig.value === "light" && !isDarkMode.value) {
+    sDarkConfig.value = "auto";
+  } else {
+    sDarkConfig.value = isDarkMode.value ? "dark" : "light";
+  }
+  localStorage.setItem("darkMode", sDarkConfig.value);
+
+  mouseX.value = x;
+  mouseY.value = y;
+};
+
+onMounted(() => {
+  const schemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  isDarkMode.value = schemeQuery.matches;
+  schemeQuery.addEventListener("change", (e) => {
+    isDarkMode.value = e.matches;
+  });
+  const savedDarkMode = localStorage.getItem("darkMode");
+  if (savedDarkMode) {
+    sDarkConfig.value = savedDarkMode;
+  }
+  watchEffect(async () => {
+    const sDarkValue = sDark.value;
+
+    if (!enableTransitions()) {
+      document.documentElement.classList.toggle("s-dark", sDarkValue);
+      return;
+    }
+
+    const clipPath = [
+      `circle(0px at ${mouseX.value}px ${mouseY.value}px)`,
+      `circle(${Math.hypot(
+        Math.max(mouseX.value, innerWidth - mouseX.value),
+        Math.max(mouseY.value, innerHeight - mouseY.value)
+      )}px at ${mouseX.value}px ${mouseY.value}px)`,
+    ];
+
+    await document.startViewTransition(async () => {
+      document.documentElement.classList.toggle("s-dark", sDarkValue);
+      await nextTick();
+    }).ready;
+
+    document.documentElement.animate(
+      { clipPath: sDarkValue ? clipPath.reverse() : clipPath },
+      {
+        duration: 300,
+        easing: "ease-in",
+        pseudoElement: `::view-transition-${sDarkValue ? "old" : "new"}(root)`,
+      }
+    );
+  });
+});
 </script>
 
 <template>
@@ -100,17 +181,8 @@ onMounted(() => {
         <NuxtLink to="/" class="flex items-center">
           <Icon
             name="s:spark"
-            class="text-4xl mr-2"
+            class="text-4xl mr-2 s-color-primary-color"
             mode="svg"
-            :style="{
-              '--s-c1': 'var(--p-primary-color)',
-              '--s-c2': 'var(--p-primary-color)',
-              '--s-c3': 'var(--p-primary-color)',
-              '--s-c4': 'var(--p-primary-color)',
-              '--s-c5': 'var(--p-primary-color)',
-              '--s-c6': 'var(--p-primary-color)',
-              '--s-c7': 'var(--p-primary-color)',
-            }"
           />
           <h1 class="font-(family-name:--s-title-font)">SPARK</h1>
         </NuxtLink>
@@ -134,12 +206,19 @@ onMounted(() => {
           GXDE OS
         </NuxtLink>
         <Button
-          icon="pi pi-sun"
+          :icon="`pi ${
+            sDarkConfig === 'auto'
+              ? 'pi-bullseye'
+              : sDarkConfig === 'dark'
+              ? 'pi-moon'
+              : 'pi-sun'
+          }`"
           aria-label="Toggle Dark Mode"
           size="small"
           class="shrink-0"
           rounded
           severity="secondary"
+          @click="toggleDarkMode"
         />
       </nav>
     </header>
@@ -147,7 +226,7 @@ onMounted(() => {
       <NuxtPage />
     </div>
     <footer
-      class="w-full flex justify-around bg-white snap-start overflow-hidden p-14"
+      class="w-full flex justify-around bg-white snap-start overflow-hidden p-14 dark:bg-surface-900"
     >
       <div class="flex flex-col items-start gap-6">
         <Icon
@@ -160,14 +239,16 @@ onMounted(() => {
           }"
         />
         <h2
-          class="font-(family-name:--s-title-font) text-5xl text-(--p-surface-500)"
+          class="font-(family-name:--s-title-font) text-5xl text-surface-500 dark:text-surface-100"
         >
           SPARK
         </h2>
       </div>
       <div class="flex flex-col gap-4">
-        <h2 class="text-2xl font-bold">关于星火社区</h2>
-        <p class="leading-[2] text-(--p-surface-600) max-w-[25.8em]">
+        <h2 class="text-2xl font-bold dark:text-surface-100">关于星火社区</h2>
+        <p
+          class="leading-[2] text-surface-600 max-w-[25.8em] dark:text-surface-200"
+        >
           星火社区是以丰富 Linux
           应用生态为核心目标的开源协作平台，汇聚年轻开发者团队。核心项目星火应用商店通过整合分散资源、提供海量软件下载及安装功能，解决
           Linux 用户获取应用难题。社区以「星火燎原」为理念，通过论坛、Wiki
@@ -182,11 +263,11 @@ onMounted(() => {
           </h2>
           <Icon
             name="s:qrcode-3"
+            class="s-color-[black] dark:s-color-[white]"
             mode="svg"
             :style="{
               width: qrWidth + 'px',
               height: '100%',
-              '--s-color': '#000000',
             }"
           />
         </div>
@@ -214,11 +295,15 @@ header {
     width: calc(100% - var(--s-progress) * 24 * var(--spacing));
     border-radius: calc(var(--s-progress) * 4 * var(--spacing));
     height: 100%;
-    background-color: #fff;
+    background-color: var(--p-surface-0);
     z-index: -1;
     transition: {
       property: transform, width, border-radius;
       duration: 0.1s;
+    }
+
+    @variant dark {
+      background-color: var(--p-surface-900);
     }
   }
 
@@ -261,6 +346,39 @@ header {
       }
     }
 
+    .nav-link {
+      background-color: unset;
+
+      &:hover {
+        background-color: rgba(from var(--p-surface-400) r g b / 0.1);
+      }
+    }
+  }
+}
+
+.s-dark header {
+  &::before {
+    background-color: var(--p-surface-900);
+  }
+
+  h1 {
+    color: var(--p-surface-100);
+  }
+
+  nav::before {
+    background-color: rgb(from var(--p-primary-500) r g b / 0.3);
+  }
+
+  .nav-link {
+    color: var(--p-surface-300);
+
+    &.active {
+      color: var(--p-primary-400);
+      background-color: rgb(from var(--p-primary-500) r g b / 0.3);
+    }
+  }
+
+  nav.mounted {
     .nav-link {
       background-color: unset;
 

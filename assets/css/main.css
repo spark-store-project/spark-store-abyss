@@ -2,9 +2,109 @@
 @import 'primeicons/primeicons.css';
 @import '../fonts/KNYuanmo-Regular/result.css';
 
-:root {
-  font-family: 'BlinkMacSystemFont', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+@custom-variant dark (&:where(.s-dark, .s-dark *));
+
+@theme {
+  --color-primary-color: var(--p-primary-color);
+  --color-primary-50: var(--p-primary-50);
+  --color-primary-100: var(--p-primary-100);
+  --color-primary-200: var(--p-primary-200);
+  --color-primary-300: var(--p-primary-300);
+  --color-primary-400: var(--p-primary-400);
+  --color-primary-500: var(--p-primary-500);
+  --color-primary-600: var(--p-primary-600);
+  --color-primary-700: var(--p-primary-700);
+  --color-primary-800: var(--p-primary-800);
+  --color-primary-900: var(--p-primary-900);
+  --color-primary-950: var(--p-primary-950);
+  --color-secondary-50: var(--p-secondary-50);
+  --color-secondary-100: var(--p-secondary-100);
+  --color-secondary-200: var(--p-secondary-200);
+  --color-secondary-300: var(--p-secondary-300);
+  --color-secondary-400: var(--p-secondary-400);
+  --color-secondary-500: var(--p-secondary-500);
+  --color-secondary-600: var(--p-secondary-600);
+  --color-secondary-700: var(--p-secondary-700);
+  --color-secondary-800: var(--p-secondary-800);
+  --color-secondary-900: var(--p-secondary-900);
+  --color-secondary-950: var(--p-secondary-950);
+  --color-surface-50: var(--p-surface-50);
+  --color-surface-100: var(--p-surface-100);
+  --color-surface-200: var(--p-surface-200);
+  --color-surface-300: var(--p-surface-300);
+  --color-surface-400: var(--p-surface-400);
+  --color-surface-500: var(--p-surface-500);
+  --color-surface-600: var(--p-surface-600);
+  --color-surface-700: var(--p-surface-700);
+  --color-surface-800: var(--p-surface-800);
+  --color-surface-900: var(--p-surface-900);
+  --color-surface-950: var(--p-surface-950);
   --s-title-font: 'KN Yuanmo SC', sans-serif;
   --s-background: var(--p-secondary-50);
+}
+
+:root {
+  font-family: 'BlinkMacSystemFont', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   background-color: var(--s-background) !important;
+}
+
+.s-dark {
+  --s-background: var(--p-secondary-950);
+}
+
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root),
+.s-dark::view-transition-new(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root),
+.s-dark::view-transition-old(root) {
+  z-index: 9999;
+}
+
+
+@utility s-color-* {
+  --s-color: --value([color]);
+  --s-c1: --value([color]);
+  --s-c2: --value([color]);
+  --s-c3: --value([color]);
+  --s-c4: --value([color]);
+  --s-c5: --value([color]);
+  --s-c6: --value([color]);
+  --s-c7: --value([color]);
+  --s-color: --value(--color-*);
+  --s-c1: --value(--color-*);
+  --s-c2: --value(--color-*);
+  --s-c3: --value(--color-*);
+  --s-c4: --value(--color-*);
+  --s-c5: --value(--color-*);
+  --s-c6: --value(--color-*);
+  --s-c7: --value(--color-*);
+}
+
+@utility s-deco-* {
+  --s-deco: --value([color]);
+  --s-deco: --value(--color-*);
+}
+
+@utility s-bg-* {
+  --s-bg: --value([color]);
+  --s-bg: --value(--color-*);
+}
+
+@utility s-bg-2-* {
+  --s-bg-2: --value([color]);
+  --s-bg-2: --value(--color-*);
+}
+
+@utility s-bg-3-* {
+  --s-bg-3: --value([color]);
+  --s-bg-3: --value(--color-*);
 }
