@@ -26,6 +26,12 @@ export default defineNuxtConfig({
         dir: "./public/icon",
       },
     ],
+    clientBundle: {
+      scan: {
+        globInclude: ["pages/*.vue", "app.vue"],
+        globExclude: ["node_modules", "dist"],
+      },
+    },
   },
   css: ["~/assets/css/main.css"],
   app: {
