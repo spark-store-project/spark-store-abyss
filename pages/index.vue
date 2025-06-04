@@ -172,6 +172,7 @@ onMounted(() => {
           </a>
           <a
             class="px-2.5 bg-primary-200 border-primary-400 border-4 rounded-full flex items-center justify-center dark:bg-primary-900 dark:border-secondary-600"
+            href="https://github.com/spark-store-project"
           >
             <i class="pi pi-github text-2xl! font-bold! text-primary-color" />
           </a>
