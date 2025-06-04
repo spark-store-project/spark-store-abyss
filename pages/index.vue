@@ -26,7 +26,7 @@ const appIcons = ref([
   "monumentvalley2",
   "kdenlive", //
   "zwcad",
-  "jianying",
+  "amber-ce",
   "meituxiuxiu",
   "photoshop",
   "canva",
@@ -150,8 +150,8 @@ onMounted(() => {
           <p>适用于 Debian 社区和其他 Linux 发行版的社区应用商店；</p>
           <p>从社区中来，到社区中去，聚星星之火，成燎原之势。</p>
           <p class="text-lg font-bold text-black dark:text-surface-100">
-            🎉星火应用商店吉祥物「星小火」现已上线！
-            <a class="text-secondary-600">了解更多 →</a>
+            🎉社区吉祥物「星小火」
+            <a href="https://tai3.cn" class="text-secondary-600">了解更多 →</a>
           </p>
         </div>
         <div class="flex gap-4">
