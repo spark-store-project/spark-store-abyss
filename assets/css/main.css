@@ -50,8 +50,8 @@
 
 .s-dark {
   --s-background: var(--p-secondary-950);
-  --p-highlight-color: var(--p-primary-color);
-  --p-highlight-focus-color: var(--p-primary-color);
+  --p-highlight-color: var(--p-primary-color) !important;
+  --p-highlight-focus-color: var(--p-primary-color) !important;
 }
 
 
