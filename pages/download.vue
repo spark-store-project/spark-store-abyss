@@ -31,7 +31,7 @@ const archList = [
             :options="archList"
             option-label="name"
             option-value="value"
-            class="border-2! s-deco-primary-color s-bg-primary-200 s-bg-2-primary-400 s-bg-3-secondary-600 gap-6 dark:s-bg-primary-900 dark:s-bg-2-secondary-700 dark:s-bg-3-secondary-500"
+            class="min-w-72 border-2! s-deco-primary-color s-bg-primary-200 s-bg-2-primary-400 s-bg-3-secondary-600 dark:s-bg-primary-900 dark:s-bg-2-secondary-700 dark:s-bg-3-secondary-500"
             :style="{
               '--p-select-border-radius': 'calc(3 * var(--spacing))',
               '--p-select-border-color': 'var(--s-bg-2)',
