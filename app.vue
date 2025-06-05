@@ -223,18 +223,26 @@ provide("latestRelease", latestRelease);
         <NuxtLink to="/download" class="nav-link" active-class="active">
           下载
         </NuxtLink>
-        <NuxtLink to="/news" class="nav-link" active-class="active">
-          新闻
-        </NuxtLink>
-        <NuxtLink to="/faq" class="nav-link" active-class="active">
+        <a
+          href="https://bbs.spark-app.store/"
+          class="nav-link"
+          active-class="active"
+        >
+          社区
+        </a>
+        <a
+          href="https://wiki.spark-app.store/"
+          class="nav-link"
+          active-class="active"
+        >
           帮助
-        </NuxtLink>
+        </a>
         <NuxtLink to="/about" class="nav-link" active-class="active">
           关于
         </NuxtLink>
-        <NuxtLink to="/gxde" class="nav-link" active-class="active">
+        <a href="https://gxde.top/" class="nav-link" active-class="active">
           GXDE OS
-        </NuxtLink>
+        </a>
         <Button
           :icon="`pi ${
             sDarkConfig === 'auto'
