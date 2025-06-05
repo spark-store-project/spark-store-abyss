@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { Release } from "~/app.vue";
 
+const appConfig = useAppConfig();
+
 const scrollPanel = inject<Ref<ComponentPublicInstance>>("scrollPanel");
 const sProgress = ref(0);
 
@@ -154,8 +156,10 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
           <p>适用于 Debian 社区和其他 Linux 发行版的社区应用商店；</p>
           <p>从社区中来，到社区中去，聚星星之火，成燎原之势。</p>
           <p class="text-lg font-bold text-black dark:text-surface-100">
-            🎉社区吉祥物「星小火」
-            <a href="https://tai3.cn" class="text-secondary-600">了解更多 →</a>
+            {{ appConfig.latestNews.title }}
+            <a :href="appConfig.latestNews.link" class="text-secondary-600"
+              >了解更多 →</a
+            >
           </p>
         </div>
         <div class="flex gap-4">

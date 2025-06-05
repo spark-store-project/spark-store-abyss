@@ -2,6 +2,8 @@
 import ScrollPanel from "primevue/scrollpanel";
 import Button from "primevue/button";
 
+const appConfig = useAppConfig();
+
 const path = computed(() => {
   return useRoute().path;
 });
@@ -176,9 +178,21 @@ export interface Release {
   body: string;
 }
 
-const { data: latestRelease }: { data: Ref<Release> } = await useFetch(
-  "https://gitee.com/api/v5/repos/spark-store-project/spark-store/releases/latest"
-);
+const latestRelease: Ref<Release> = ref({
+  assets: [],
+  tag_name: "",
+  created_at: "",
+  body: "",
+});
+
+if (appConfig.latestRelease) {
+  latestRelease.value = appConfig.latestRelease as Release;
+} else {
+  const { data: data }: { data: Ref<Release> } = await useFetch(
+    "https://gitee.com/api/v5/repos/spark-store-project/spark-store/releases/latest"
+  );
+  latestRelease.value = data.value;
+}
 
 provide("latestRelease", latestRelease);
 </script>
