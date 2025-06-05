@@ -18,6 +18,7 @@
     "@primevue/forms": "^4.3.5",
     "@tailwindcss/vite": "^4.1.8",
     "eslint": "^9.28.0",
+    "md-editor-v3": "^5.6.1",
     "nuxt": "^3.17.4",
     "primeicons": "^7.0.0",
     "primevue": "^4.3.5",
