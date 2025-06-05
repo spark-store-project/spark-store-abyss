@@ -26,6 +26,11 @@ export default defineNuxtConfig({
         dir: "./public/icon",
       },
     ],
+    serverBundle: {
+      remote: (name: string) =>
+        `https://gcore.jsdelivr.net/npm/@iconify-json/${name}/icons.json`,
+      externalizeIconsJson: true,
+    },
     clientBundle: {
       scan: {
         globInclude: ["pages/*.vue", "app.vue"],
