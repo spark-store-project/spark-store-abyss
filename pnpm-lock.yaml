@@ -54,12 +54,6 @@ importers:
         specifier: ^4.5.1
         version: 4.5.1(vue@3.5.16(typescript@5.8.3))
     devDependencies:
-      '@iconify-json/proicons':
-        specifier: ^1.2.16
-        version: 1.2.16
-      '@iconify-json/simple-icons':
-        specifier: ^1.2.37
-        version: 1.2.37
       '@primevue/nuxt-module':
         specifier: ^4.3.5
         version: 4.3.5(@babel/parser@7.27.4)(magicast@0.3.5)(vue@3.5.16(typescript@5.8.3))
@@ -716,12 +710,6 @@ packages:
   '@humanwhocodes/retry@0.4.3':
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
-
-  '@iconify-json/proicons@1.2.16':
-    resolution: {integrity: sha512-WzcdNidbPLA3iN7/NfM9vqc7ycE8wW2+d+kVf7CtkVERhs6EcUF8NKwnW8vuuT/oZnenE5rT1ZrNDzt5TJZ2Mw==}
-
-  '@iconify-json/simple-icons@1.2.37':
-    resolution: {integrity: sha512-jZwTBznpYVDYKWyAuRpepPpCiHScVrX6f8WRX8ReX6pdii99LYVHwJywKcH2excWQrWmBomC9nkxGlEKzXZ/wQ==}
 
   '@iconify/collections@1.0.555':
     resolution: {integrity: sha512-lI82hhzkE4la6zjy/t4hbd6pQtl5HjASxsm+Rzcy6P9B9/2pk1FtnWzjDAaSfdHnc2wCsmZZzZW9jSz2LvtlrQ==}
@@ -5794,14 +5782,6 @@ snapshots:
   '@humanwhocodes/retry@0.3.1': {}
 
   '@humanwhocodes/retry@0.4.3': {}
-
-  '@iconify-json/proicons@1.2.16':
-    dependencies:
-      '@iconify/types': 2.0.0
-
-  '@iconify-json/simple-icons@1.2.37':
-    dependencies:
-      '@iconify/types': 2.0.0
 
   '@iconify/collections@1.0.555':
     dependencies:

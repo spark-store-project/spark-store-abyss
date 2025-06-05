@@ -26,12 +26,9 @@ export default defineNuxtConfig({
         dir: "./public/icon",
       },
     ],
-    serverBundle: {
-      remote: (name: string) =>
-        `https://gcore.jsdelivr.net/npm/@iconify-json/${name}/icons.json`,
-      externalizeIconsJson: true,
-    },
+    serverBundle: false,
     clientBundle: {
+      icons: ["proicons:terminal", "line-md:download-loop"],
       scan: {
         globInclude: ["pages/*.vue", "app.vue"],
         globExclude: ["node_modules", "dist"],
