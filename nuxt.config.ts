@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@primevue/nuxt-module",
     "@nuxtjs/fontaine",
+    "@nuxt/content",
   ],
   icon: {
     mode: "css",
