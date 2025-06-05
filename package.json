@@ -10,6 +10,8 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@iconify-json/line-md": "^1.2.8",
+    "@iconify-json/proicons": "^1.2.16",
     "@nuxt/eslint": "1.4.1",
     "@nuxt/icon": "1.13.0",
     "@nuxt/image": "1.10.0",

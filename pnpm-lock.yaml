@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@iconify-json/line-md':
+        specifier: ^1.2.8
+        version: 1.2.8
+      '@iconify-json/proicons':
+        specifier: ^1.2.16
+        version: 1.2.16
       '@nuxt/eslint':
         specifier: 1.4.1
         version: 1.4.1(@typescript-eslint/utils@8.33.0(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3))(@vue/compiler-sfc@3.5.16)(eslint-import-resolver-node@0.3.9)(eslint@9.28.0(jiti@2.4.2))(magicast@0.3.5)(typescript@5.8.3)(vite@6.3.5(@types/node@22.15.29)(jiti@2.4.2)(lightningcss@1.30.1)(sass@1.89.1)(terser@5.40.0)(yaml@2.8.0))
@@ -710,6 +716,12 @@ packages:
   '@humanwhocodes/retry@0.4.3':
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
+
+  '@iconify-json/line-md@1.2.8':
+    resolution: {integrity: sha512-jWFsu6OZ1xAd4U0MLc/dgawC8nCbSn+a+WjTv+luiihpb6rrGLMw+Vy3wQ01hGf77v+fwt8sTvwm6K9zN3r4vQ==}
+
+  '@iconify-json/proicons@1.2.16':
+    resolution: {integrity: sha512-WzcdNidbPLA3iN7/NfM9vqc7ycE8wW2+d+kVf7CtkVERhs6EcUF8NKwnW8vuuT/oZnenE5rT1ZrNDzt5TJZ2Mw==}
 
   '@iconify/collections@1.0.555':
     resolution: {integrity: sha512-lI82hhzkE4la6zjy/t4hbd6pQtl5HjASxsm+Rzcy6P9B9/2pk1FtnWzjDAaSfdHnc2wCsmZZzZW9jSz2LvtlrQ==}
@@ -5782,6 +5794,14 @@ snapshots:
   '@humanwhocodes/retry@0.3.1': {}
 
   '@humanwhocodes/retry@0.4.3': {}
+
+  '@iconify-json/line-md@1.2.8':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/proicons@1.2.16':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify/collections@1.0.555':
     dependencies:
