@@ -178,21 +178,18 @@ export interface Release {
   body: string;
 }
 
-const latestRelease: Ref<Release> = ref({
-  assets: [],
-  tag_name: "",
-  created_at: "",
-  body: "",
-});
-
-if (appConfig.latestRelease) {
-  latestRelease.value = appConfig.latestRelease as Release;
-} else {
-  const { data: data }: { data: Ref<Release> } = await useFetch(
-    "https://gitee.com/api/v5/repos/spark-store-project/spark-store/releases/latest"
-  );
-  latestRelease.value = data.value;
-}
+const { data: latestRelease } = await useAsyncData(
+  "latestRelease",
+  async () => {
+    if (appConfig.latestRelease) {
+      return appConfig.latestRelease;
+    } else {
+      return await $fetch(
+        "https://gitee.com/api/v5/repos/spark-store-project/spark-store/releases/latest"
+      );
+    }
+  }
+);
 
 provide("latestRelease", latestRelease);
 </script>
