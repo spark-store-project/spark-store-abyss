@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { MdPreview } from "md-editor-v3";
 import "md-editor-v3/lib/preview.css";
+import type { Release } from "~/app.vue";
+
+import { useToast } from "primevue/usetoast";
+const toast = useToast();
 
 const selectedArch = ref("amd64");
 const archList = [
@@ -37,12 +41,45 @@ const faqContent = ref(
 
 const startDownload = () => {
   downloadStarted.value = true;
-  // 模拟下载过程
-  // setTimeout(() => {
-  //   dialog.value = false;
-  //   // 在这里可以添加实际的下载逻辑
-  //   // 比如调用 API 创建下载任务等
-  // }, 2000);
+  if (selectedArch.value === "loong64") {
+    toast.add({
+      severity: "error",
+      summary: "请前往 Gitee 手动下载",
+      detail:
+        "loong64 架构的安装包不同发行版有所不同，请前往 Gitee 手动下载。\n5s 后自动跳转。",
+      life: 5000,
+    });
+    setTimeout(() => {
+      window.open(
+        "https://gitee.com/spark-store-project/spark-store/releases/latest",
+        "_blank"
+      );
+    }, 5000);
+  } else {
+    // 创建下载任务
+    const downloadLink = downloadUrl.value;
+    if (downloadLink) {
+      const a = document.createElement("a");
+      a.href = downloadLink;
+      a.download = `spark-store-${selectedArch.value}.deb`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      toast.add({
+        severity: "success",
+        summary: "下载任务已创建",
+        detail: `正在下载适用于 ${selectedArch.value} 架构的星火应用商店安装包，请在浏览器下载管理器中查看进度。`,
+        life: 5000,
+      });
+    } else {
+      toast.add({
+        severity: "error",
+        summary: "下载链接错误",
+        detail: "无法找到适合您架构的下载链接，请稍后再试。",
+        life: 5000,
+      });
+    }
+  }
 };
 
 watchEffect(() => {
@@ -50,6 +87,29 @@ watchEffect(() => {
     // 重置下载状态
     downloadStarted.value = false;
   }
+});
+
+const latestRelease = inject<Ref<Release>>("latestRelease");
+
+const downloadUrl = computed(() => {
+  if (selectedArch.value === "loong64") {
+    return "https://gitee.com/spark-store-project/spark-store/releases/latest";
+  }
+  for (const asset of latestRelease?.value.assets || []) {
+    if (asset.name.includes(selectedArch.value)) {
+      return asset.browser_download_url;
+    }
+  }
+  return "";
+});
+
+const consoleDownloadUrl = computed(() => {
+  for (const asset of latestRelease?.value.assets || []) {
+    if (asset.name.includes("all")) {
+      return asset.browser_download_url;
+    }
+  }
+  return "";
 });
 </script>
 
@@ -105,7 +165,14 @@ watchEffect(() => {
           @click="dialog = true"
         >
           <p class="translate-y-0.5">下载最新版本</p>
-          <p class="text-lg opacity-75">V4.5.2 | 2025-03-15</p>
+          <p class="text-lg opacity-75">
+            V{{ latestRelease?.tag_name }} |
+            {{
+              new Date(latestRelease!.created_at)
+                .toLocaleDateString()
+                .replace(/\//g, "-")
+            }}
+          </p>
           <Icon
             name="sp:spark"
             class="absolute top-0 right-0 s-color-primary-200 w-20 translate-x-1/6 -translate-y-2/9 opacity-60"
@@ -115,7 +182,8 @@ watchEffect(() => {
             }"
           />
         </button>
-        <button
+        <a
+          :href="consoleDownloadUrl"
           class="relative items-center gap-2 flex py-2 px-4 font-bold rounded-2xl overflow-hidden from-primary-400 to-primary-500 bg-linear-to-r dark:from-primary-500 dark:to-primary-600 before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:border-5 before:border-[transparent] before:rounded-2xl before:bg-white before:bg-clip-content before:opacity-50 dark:before:bg-secondary-950 dark:before:opacity-80"
         >
           <Icon name="proicons:terminal" class="text-primary-500 text-6xl" />
@@ -125,7 +193,7 @@ watchEffect(() => {
               全平台支持 仅包含基本功能
             </p>
           </div>
-        </button>
+        </a>
       </div>
       <div class="flex flex-col items-center justify-center gap-2">
         <div class="flex gap-8 font-bold text-lg">
@@ -229,6 +297,9 @@ watchEffect(() => {
             阅读以下安装须知，了解星火应用商店在不同发行版的安装方式。
           </p>
         </div>
+        <Message v-if="selectedArch === 'loong64'" severity="error">
+          loong64 架构的安装包不同发行版有所不同，请前往 Gitee 手动下载。
+        </Message>
         <div class="flex-grow bg-surface-100 rounded-xl h-[0] dark:bg-black">
           <ScrollPanel
             ref="scrollPanel"
@@ -246,6 +317,18 @@ watchEffect(() => {
           >
             <MdPreview
               :model-value="faqContent"
+              :theme="sDark ? 'dark' : 'light'"
+              preview-theme="github"
+            />
+            <a
+              href="https://gitee.com/spark-store-project/spark-store/releases/latest"
+              class="font-bold text-xl text-primary-color hover:underline pl-4"
+              target="_blank"
+            >
+              V{{ latestRelease?.tag_name }}
+            </a>
+            <MdPreview
+              :model-value="latestRelease?.body || ''"
               :theme="sDark ? 'dark' : 'light'"
               preview-theme="github"
             />
@@ -287,7 +370,7 @@ watchEffect(() => {
           </div>
           <p class="text-lg leading-[2]">
             应用商店安装包下载已开始，<br />如果创建下载任务失败，请<a
-              href="#"
+              :href="downloadUrl"
               class="text-primary-color underline"
               >点击此处重试</a
             >。
@@ -303,6 +386,7 @@ watchEffect(() => {
         </div>
       </div>
     </Dialog>
+    <Toast />
   </div>
 </template>
 

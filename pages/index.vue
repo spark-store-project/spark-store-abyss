@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { Release } from "~/app.vue";
+
 const scrollPanel = inject<Ref<ComponentPublicInstance>>("scrollPanel");
 const sProgress = ref(0);
 
@@ -62,6 +64,8 @@ onMounted(() => {
     sProgress.value = scrollTop / clientHeight;
   });
 });
+
+const latestRelease = inject<Ref<Release>>("latestRelease");
 </script>
 
 <template>
@@ -123,7 +127,7 @@ onMounted(() => {
           <div class="flex flex-col items-start justify-between">
             <span
               class="font-(family-name:--s-title-font) px-4 py-0.5 text-white from-primary-400 to-primary-500 bg-linear-to-r rounded-full dark:from-primary-500 dark:to-primary-600"
-              >V4.5.2</span
+              >V{{ latestRelease?.tag_name }}</span
             >
             <h2
               class="text-lg font-(family-name:--s-title-font) text-primary-500"

@@ -162,6 +162,23 @@ onMounted(() => {
     { immediate: true }
   );
 });
+
+// 数据获取
+export interface Release {
+  assets: {
+    name: string;
+    browser_download_url: string;
+  }[];
+  tag_name: string;
+  created_at: string;
+  body: string;
+}
+
+const { data: latestRelease }: { data: Ref<Release> } = await useFetch(
+  "https://gitee.com/api/v5/repos/spark-store-project/spark-store/releases/latest"
+);
+
+provide("latestRelease", latestRelease);
 </script>
 
 <template>
