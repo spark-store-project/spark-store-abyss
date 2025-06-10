@@ -95,10 +95,6 @@ const consoleDownloadUrl = computed(() => {
 const { data: faqContent } = await useAsyncData("/download/faq", () => {
   return queryCollection("download").path("/download/faq").first();
 });
-
-onMounted(() => {
-  console.log(faqContent.value);
-});
 </script>
 
 <template>
