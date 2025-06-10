@@ -6,56 +6,7 @@ const appConfig = useAppConfig();
 const scrollPanel = inject<Ref<ComponentPublicInstance>>("scrollPanel");
 const sProgress = ref(0);
 
-const appIcons = ref([
-  "hmcl",
-  "firefox",
-  "123pan",
-  "netease-cloud", //
-  "qq-music",
-  "kugou-music",
-  "kuwo-music",
-  "youku",
-  "bilibili",
-  "alipan",
-  "github-desktop",
-  "feishu",
-  "dingtalk", //
-  "pycharm",
-  "vscode",
-  "wine",
-  "wechat",
-  "qq",
-  "hoyolauncher",
-  "inkscape",
-  "monumentvalley2",
-  "kdenlive", //
-  "zwcad",
-  "amber-ce",
-  "meituxiuxiu",
-  "photoshop",
-  "canva",
-  "mpv",
-  "osu-lazer",
-  "sunlogin",
-  "todesk", //
-  "drawio",
-  "blender",
-  "baidu-translate",
-  "caj-viewer",
-  "yuque",
-  "photogimp",
-  "sysbro",
-  "sr-cloud",
-  "tencent-meeting", //
-  "wps-office",
-  "steam",
-  "minecraft",
-  "angry-birds",
-  "genshin-impact",
-  "welink",
-  "xmind",
-  "xterminal",
-]);
+const appIcons = appConfig.appIcons;
 
 onMounted(() => {
   watchEffect(() => {
