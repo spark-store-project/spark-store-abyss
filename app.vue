@@ -7,9 +7,7 @@ const appConfig = useAppConfig();
 const path = computed(() => {
   return useRoute().path;
 });
-const sProgress = ref(
-  ["/", "/download", "/download/"].includes(path.value) ? 1 : 0
-);
+const sProgress = ref(1);
 const scrollPanel = useTemplateRef<ComponentPublicInstance>("scrollPanel");
 const sX = ref(0);
 const sY = ref(0);
@@ -27,10 +25,6 @@ const handleScrollOrResize = () => {
     sY.value = el.getBoundingClientRect().y - navEl.getBoundingClientRect().y;
     sWidth.value = el.getBoundingClientRect().width;
     sHeight.value = el.getBoundingClientRect().height;
-  }
-  if (!["/", "/download", "/download/"].includes(path.value)) {
-    sProgress.value = 0;
-    return;
   }
   const scrollTop = (scrollPanel.value as unknown as { lastScrollTop: number })
     .lastScrollTop;
