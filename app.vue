@@ -204,7 +204,7 @@ provide("latestRelease", latestRelease);
       :style="{ '--s-progress': sProgress }"
     >
       <nav
-        class="relative flex px-8 py-2 items-center"
+        class="relative flex px-8 h-15 items-center"
         :class="{ mounted }"
         :style="{
           '--s-x': sX,
