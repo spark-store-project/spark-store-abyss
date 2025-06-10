@@ -34,6 +34,7 @@ export default defineNuxtConfig({
         globInclude: ["pages/*.vue", "app.vue"],
         globExclude: ["node_modules", "dist"],
       },
+      sizeLimitKb: 512,
     },
   },
   css: ["~/assets/css/main.css"],

@@ -1,0 +1,12 @@
+<svg viewBox="62 0 574 166"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" overflow="hidden">
+    <style>
+        :root {
+            --s-color: #FEDDD7;
+        }
+    </style>
+    <g transform="translate(-892 -1090)">
+        <path d="M635.753 165.643C578.386 165.643 525.073 135.304 496.433 85.5497 466.999 34.42 411.847 0 348.656 0 285.468 0 230.312 34.42 200.878 85.5497 172.242 135.304 118.925 165.643 61.5585 165.643L0 165.643 676.096 165.643 635.753 165.643Z" style="fill: var(--s-color)" transform="matrix(1 0 0 1.00215 892 1090)"/>
+    </g>
+</svg>

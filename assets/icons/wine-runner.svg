@@ -1,0 +1,45 @@
+<svg viewBox="0 0 296 272"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" overflow="hidden">
+    <style>
+        :root {
+            --s-bg: rgb(from #D66447 r g b / 0.55);
+            --s-deco: #D66447;
+        }
+    </style>
+    <defs>
+        <clipPath id="clip0">
+            <rect x="0" y="0" width="245858" height="620463"/>
+        </clipPath>
+        <mask id="image-mask">
+            <image width="89" height="224" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFkAAADgCAMAAABfEDogAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAzUExURQAAAP///////////////////////////////////////////////////////////////7eV4oIAAAARdFJOUwAQv9+A/58g7zCPUHCvYEDP34KeDQAAAAlwSFlzAAAOwwAADsMBx2+oZAAABCVJREFUeF7tmt2yqyAMhUvbY63VXd//ac8gpoYICmRx4Qzf5a57DbNIQvi53QTm/ijhbqTQjue/MjopJHn18l9SeUspQSf/IZm7lPJ5ye8zOB70ID/P4NDpcpctLynHKA0Mx8GgzUN+nEUfj+mP/DaTUQr+uMtPM+mlIPGWX2bzkZIr5VlCTFLSYVQh5wgHni7kHIMUXdCFnCM4h9qQc/xJ2dvtNsmPigjMIWL+LPs5xJgRsgNjRsgORGRYdmUJZcbeDs1i4iPtQJmxS5av/F2BbweiZhD+ooUzQ9hh5K8qeBriYs7Cl0OkzX7cIW32jMbazI3G2syNxtrMjdZ2MJKf0WibN6ORRcNBvdIof1DzXJX1XZeEphC1BG7QFGIzcMEJa/ZTMdw+Cx8alIX40KDgwIcGBQc6ty0uOCqExqoMakJ9lh5M/hGCVa4Rzi6g9bvAEN9KieJasD/5Rwg2CWukoEvCOsp2y4nryTm2IUW3BI4rKlufr6iMbhcdNgfrZLftkurUOquM7xctS89YZU1ZlGf5VwDzsg7WKByuK6gR0O50rUZAu9a8RnCs2wn8FLoJrDGFdIiJN/p3WozOlf63PUb3udseFl2U2NE5ttF9bMLgPon2mRZssnjHucg59A8Zka2uuPrAbYPkPSEu8GxP7oFyWh7l4sJjN2TUoEN3hJDLia0WcRCJyNOPoY+8WV4frKj96KMX09rmMXbxqF4Rw1d4K5plPGayQ5EvfSBHOOXrePxKeqU0FQ9NdpRJd4cmr5RIJwmX5OJxWDBypZOFc6UzhG8mJ2NyhLOk52BJPiD1uDvhiZMkrToN+cJpe66EzAtxWq57eU+czPt4kekPKv0Zh9Ia4cOnT2f1+IzoE6X4appKrP9VWeEINziF4eYTysapJEF2BBocvcmO/WlvpH3LR8bH7vVHMXISYUOWToeb5DL8irrfipTjN2XKtPbhcxh821UMtwNpht9I4iLDwo0GRoZlMxprMzcaazM3GmszP0uARrM3heAJZKeF8gc11ELyIzMM1FLTMS0OCjt5TKSH+kfIou1B6wo6nLdUOd2qZkPKxY1tlHrK1KbXUwZ0igLqSa+kTGUUXUSbsk9T5jRlTlPmNGUOVf4rKuNXq6bMuaJyve6rvnK9XrQpW5oyp55yvV3blZXr7bubsqUpc+gcqSlbmjKnKXOuqExXpvhTYlLGn2zTWyL0FdB2642/m6ArMfSF2G9Dj78D2m7T0cGxvX0C28GfzEB3V4Y/14IO2n+zAEyWUbyzgPWjUhhVlsywE8YY8pWPN1aUjpgx/hpuLrfk/ekCPnCmMfO9jHl/xuEecUEydc+/72ktMe/PcJ9PBhrmMXVj9CjPPBOHGWcIDv5bNFZJqKiEnkrlE1py0t4tnhFaJk2X9/40QD9Pm9H/AagYx1ZmKgUpAAAAAElFTkSuQmCC" preserveAspectRatio="none" id="img1"></image>
+        </mask>
+        <clipPath id="clip2">
+            <rect x="0" y="0" width="245858" height="618789"/>
+        </clipPath>
+        <clipPath id="clip3">
+            <path d="M3343.19 3130.95 3569 3105.6 3596.62 3351.62 3370.81 3376.97 3343.19 3130.95Z" fill-rule="evenodd" clip-rule="evenodd"/>
+        </clipPath>
+        <clipPath id="clip4">
+            <path d="M3343.19 3130.95 3569 3105.6 3596.62 3351.62 3370.81 3376.97Z" fill-rule="evenodd" clip-rule="evenodd"/>
+        </clipPath>
+        <clipPath id="clip5">
+            <path d="M3343.19 3130.95 3569 3105.6 3596.62 3351.62 3370.81 3376.97Z" fill-rule="evenodd" clip-rule="evenodd"/>
+        </clipPath>
+    </defs>
+    <g transform="translate(-3301 -3105)">
+        <g clip-path="url(#clip0)" transform="matrix(0.00033967 -0.000121934 0.000121934 0.00033967 3301.94 3145.61)">
+            <g clip-path="url(#clip2)" transform="matrix(1 -2.44866e-08 2.55831e-08 1.00271 -9.31323e-10 0)">
+                <rect width="100%" height="100%" style="fill: var(--s-bg)" transform="scale(2762.45 2762.45)" mask="url(#image-mask)" />
+            </g>
+        </g>
+        <g clip-path="url(#clip3)">
+            <g clip-path="url(#clip4)">
+                <g clip-path="url(#clip5)">
+                    <path d="M3532.01 3161.91C3546.86 3160.24 3557.6 3147.33 3556.01 3133.12 3554.41 3118.9 3541.08 3108.73 3526.23 3110.4 3511.34 3112.07 3500.6 3124.95 3502.19 3139.16 3503.79 3153.37 3517.12 3163.58 3532.01 3161.91" style="fill: var(--s-deco)"/>
+                    <path d="M3455.28 3177.71 3430.25 3220.06C3428.78 3222.72 3426.32 3224.53 3423.35 3224.86 3418.09 3225.45 3413.28 3221.04 3412.61 3215.02 3412.24 3211.74 3413.14 3208.68 3414.89 3206.45L3441.91 3160.92C3443.38 3158.32 3445.84 3156.48 3448.81 3156.15L3494.71 3150.96C3498.09 3150.58 3501.29 3151.82 3503.8 3154.03L3536.85 3184.38 3557.99 3153.84C3559.52 3151.97 3561.61 3150.74 3564.01 3150.47 3569.44 3149.86 3574.39 3154.42 3575.09 3160.67 3575.39 3163.39 3574.87 3165.95 3573.69 3168.07L3548.25 3205.22C3540.5 3216.4 3532.38 3208.56 3532.38 3208.56L3512.11 3189.85 3488.25 3230.28 3517.26 3256.93C3517.26 3256.93 3523.34 3262.1 3521.52 3273.94L3515.39 3349.36C3514.97 3355.9 3510.59 3361.28 3504.7 3361.94 3497.93 3362.7 3491.76 3357 3490.89 3349.25 3490.75 3348.01 3490.73 3346.81 3490.87 3345.66L3495.93 3283.8 3463.06 3254.46 3441.54 3289.47C3441.54 3289.47 3438.13 3295.67 3427.31 3296.46L3376.35 3302.28C3370.67 3303.01 3365 3299.13 3362.99 3292.63 3360.63 3285.25 3363.86 3277.37 3370.27 3274.95 3371.27 3274.58 3372.29 3274.36 3373.29 3274.28L3417.13 3269.49 3472.24 3175.9 3455.28 3177.71Z" style="fill: var(--s-deco)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
