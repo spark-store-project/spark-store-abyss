@@ -48,7 +48,7 @@ onMounted(() => {
               >「星火应用商店」</span
             >整合了海量分散的 Linux 应用资源，覆盖各类应用程序。同时开发的
             <span class="font-bold"
-              >GXDE OS、Wine 运⾏器、Amber CE 兼容环境 </span
+              >GXDE OS、Wine 运⾏器、Amber CE 兼容环境</span
             >等项目，均围绕“让 Linux 更易用”的理念丰富用户体验。
           </p>
           <p class="text-lg indent-[2em]">
