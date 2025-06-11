@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const scrollPanel = inject<Ref<ComponentPublicInstance>>("scrollPanel");
-const sProgress = ref(0.001);
+const sDark = inject<ComputedRef<boolean>>("sDark");
+const sProgress = ref(0);
 
 onMounted(() => {
   watchEffect(() => {
@@ -15,7 +16,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="page bg-primary-100"
+    class="page bg-primary-100 bg-dark"
     :style="{
       transform: sProgress > 6 ? 'translate(0)' : 'none',
     }"
@@ -73,7 +74,7 @@ onMounted(() => {
     </section>
     <div v-for="i in 6" :key="i" class="w-full h-screen snap-start" />
     <nav
-      class="flex justify-center gap-14 fixed bottom-0 z-[0] w-full h-45 bg-primary-50 pointer-events-none"
+      class="flex justify-center gap-14 fixed bottom-0 z-[0] w-full h-45 bg-(--s-background) pointer-events-none"
       :style="{
         transform: `translateY(calc(${-range(
           0,
@@ -91,38 +92,43 @@ onMounted(() => {
         }"
       >
         <h2
-          class="absolute left-0 -translate-x-[calc(100%+14*var(--spacing))] font-(family-name:--s-title-font) text-4xl text-primary-400 w-36 self-center pointer-events-auto"
+          class="absolute left-0 font-(family-name:--s-title-font) text-4xl text-primary-400 w-36 self-center pointer-events-auto dark:opacity-75"
           :style="{
-            transform: `translateX(calc(${
-              25 * range(0, 1, sProgress)
-            } * var(--spacing))`,
-            opacity: 1 - range(0, 1, sProgress),
+            translate: `calc(${
+              -50 * (1 - range(0, 1, sProgress))
+            } * var(--spacing)) 0`,
+            opacity: sDark
+              ? 0.75 - range(0, 1, sProgress) * 0.75
+              : 1 - range(0, 1, sProgress),
           }"
         >
           点击了解<br />星火软件
         </h2>
         <Icon
           name="s:about-indicator"
-          class="absolute left-3 bottom-0 w-20 h-[auto]! s-color-primary-100"
+          class="absolute left-3 bottom-0 w-20 h-[auto]! s-color-primary-100 dark:s-color-primary-500 dark:opacity-50"
           mode="svg"
           :style="{
-            transform: `translateX(calc(${
-              40 * (sProgress - 1)
-            } * var(--spacing))`,
-            opacity:
-              (range(0, 0.5, sProgress - 0.5) -
-                range(0, 0.5, sProgress - 6.5)) *
-              2,
+            translate: `calc(${40 * (sProgress - 1)} * var(--spacing)) 0`,
+            opacity: sDark
+              ? (range(0, 0.5, sProgress - 0.5) -
+                  range(0, 0.5, sProgress - 6.5)) *
+                0.38
+              : (range(0, 0.5, sProgress - 0.5) -
+                  range(0, 0.5, sProgress - 6.5)) *
+                2,
           }"
         />
-        <div class="relative p-5 rounded-full bg-white pointer-events-auto">
+        <div
+          class="relative p-5 rounded-full bg-white pointer-events-auto dark:bg-primary-900"
+        >
           <Icon
             name="sp:spark"
             class="w-16 h-16 s-color-primary-color"
             mode="svg"
           />
           <div
-            class="absolute p-5 w-full h-full rounded-full top-0 left-0 from-primary-400 to-primary-500 bg-linear-to-br"
+            class="absolute p-5 w-full h-full rounded-full top-0 left-0 from-primary-400 to-primary-500 bg-linear-to-br dark:from-primary-500 dark:to-primary-600"
             :style="{
               clipPath:
                 sProgress <= 1
@@ -135,14 +141,16 @@ onMounted(() => {
             <Icon name="sp:spark" class="w-16 h-16 s-color-white" mode="svg" />
           </div>
         </div>
-        <div class="relative p-5 rounded-full bg-white pointer-events-auto">
+        <div
+          class="relative p-5 rounded-full bg-white pointer-events-auto dark:bg-primary-900"
+        >
           <Icon
             name="s:gxde"
-            class="w-16 h-16 s-deco-primary-color s-bg-primary-400"
+            class="w-16 h-16 s-deco-primary-color s-bg-primary-400 s-bg-dark"
             mode="svg"
           />
           <div
-            class="absolute p-5 w-full h-full rounded-full top-0 left-0 from-primary-400 to-primary-500 bg-linear-to-br"
+            class="absolute p-5 w-full h-full rounded-full top-0 left-0 from-primary-400 to-primary-500 bg-linear-to-br dark:from-primary-500 dark:to-primary-600"
             :style="{
               clipPath:
                 sProgress <= 2
@@ -159,14 +167,16 @@ onMounted(() => {
             />
           </div>
         </div>
-        <div class="relative p-5 rounded-full bg-white pointer-events-auto">
+        <div
+          class="relative p-5 rounded-full bg-white pointer-events-auto dark:bg-primary-900"
+        >
           <Icon
             name="s:wine-runner"
-            class="w-16 h-16 s-deco-primary-color s-bg-primary-400"
+            class="w-16 h-16 s-deco-primary-color s-bg-primary-400 s-bg-dark"
             mode="svg"
           />
           <div
-            class="absolute p-5 w-full h-full rounded-full top-0 left-0 from-primary-400 to-primary-500 bg-linear-to-br"
+            class="absolute p-5 w-full h-full rounded-full top-0 left-0 from-primary-400 to-primary-500 bg-linear-to-br dark:from-primary-500 dark:to-primary-600"
             :style="{
               clipPath:
                 sProgress <= 3
@@ -183,14 +193,16 @@ onMounted(() => {
             />
           </div>
         </div>
-        <div class="relative p-5 rounded-full bg-white pointer-events-auto">
+        <div
+          class="relative p-5 rounded-full bg-white pointer-events-auto dark:bg-primary-900"
+        >
           <Icon
             name="s:amber-ce"
             class="w-16 h-16 s-deco-primary-color"
             mode="svg"
           />
           <div
-            class="absolute p-5 w-full h-full rounded-full top-0 left-0 from-primary-400 to-primary-500 bg-linear-to-br"
+            class="absolute p-5 w-full h-full rounded-full top-0 left-0 from-primary-400 to-primary-500 bg-linear-to-br dark:from-primary-500 dark:to-primary-600"
             :style="{
               clipPath:
                 sProgress <= 4
@@ -203,14 +215,16 @@ onMounted(() => {
             <Icon name="s:amber-ce" class="w-16 h-16 s-deco-white" mode="svg" />
           </div>
         </div>
-        <div class="relative p-7 rounded-full bg-white pointer-events-auto">
+        <div
+          class="relative p-7 rounded-full bg-white pointer-events-auto dark:bg-primary-900"
+        >
           <Icon
             name="s:package-manager"
-            class="w-12 h-12 s-deco-primary-color s-bg-primary-400"
+            class="w-12 h-12 s-deco-primary-color s-bg-primary-400 s-bg-dark"
             mode="svg"
           />
           <div
-            class="absolute p-7 w-full h-full rounded-full top-0 left-0 from-primary-400 to-primary-500 bg-linear-to-br"
+            class="absolute p-7 w-full h-full rounded-full top-0 left-0 from-primary-400 to-primary-500 bg-linear-to-br dark:from-primary-500 dark:to-primary-600"
             :style="{
               clipPath:
                 sProgress <= 5
@@ -227,14 +241,16 @@ onMounted(() => {
             />
           </div>
         </div>
-        <div class="relative p-5 rounded-full bg-white pointer-events-auto">
+        <div
+          class="relative p-5 rounded-full bg-white pointer-events-auto dark:bg-primary-900"
+        >
           <Icon
             name="s:fantascene"
-            class="w-16 h-16 s-deco-primary-color s-bg-white"
+            class="w-16 h-16 s-deco-primary-color s-bg-white dark:s-bg-primary-900"
             mode="svg"
           />
           <div
-            class="absolute p-5 w-full h-full rounded-full top-0 left-0 from-primary-400 to-primary-500 bg-linear-to-br"
+            class="absolute p-5 w-full h-full rounded-full top-0 left-0 from-primary-400 to-primary-500 bg-linear-to-br dark:from-primary-500 dark:to-primary-600"
             :style="{
               clipPath:
                 sProgress <= 6
@@ -254,7 +270,7 @@ onMounted(() => {
       </div>
     </nav>
     <div
-      class="fixed bottom-0 z-[0] flex h-[calc(100vh-60*var(--spacing))] bg-primary-100 pointer-events-none"
+      class="fixed bottom-0 z-[0] flex h-[calc(100vh-60*var(--spacing))] bg-primary-100 pointer-events-none bg-dark"
       :style="{
         transform: `translateY(${
           100 - range(0, 1, sProgress) * 100
@@ -490,6 +506,13 @@ onMounted(() => {
 </template>
 
 <style scoped lang="scss">
+.s-dark .bg-dark {
+  background-color: rgb(from var(--p-primary-500) r g b / 0.1);
+}
+.s-dark .s-bg-dark {
+  --s-bg: rgb(from var(--p-primary-500) r g b / 0.5);
+}
+
 .image {
   background-size: cover;
   background-repeat: no-repeat;
