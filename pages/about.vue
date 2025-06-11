@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const scrollPanel = inject<Ref<ComponentPublicInstance>>("scrollPanel");
-const sProgress = ref(0);
+const sProgress = ref(0.001);
 
 onMounted(() => {
   watchEffect(() => {
@@ -73,7 +73,7 @@ onMounted(() => {
     </section>
     <div v-for="i in 6" :key="i" class="w-full h-screen snap-start" />
     <nav
-      class="flex justify-center gap-14 fixed bottom-0 z-[0] w-full h-45 bg-primary-50 transition-transform duration-100 pointer-events-none"
+      class="flex justify-center gap-14 fixed bottom-0 z-[0] w-full h-45 bg-primary-50 pointer-events-none"
       :style="{
         transform: `translateY(calc(${-range(
           0,
@@ -254,7 +254,7 @@ onMounted(() => {
       </div>
     </nav>
     <div
-      class="fixed bottom-0 z-[0] flex h-[calc(100vh-60*var(--spacing))] bg-primary-100 pointer-events-none transition-transform duration-100"
+      class="fixed bottom-0 z-[0] flex h-[calc(100vh-60*var(--spacing))] bg-primary-100 pointer-events-none"
       :style="{
         transform: `translateY(${
           100 - range(0, 1, sProgress) * 100
@@ -262,26 +262,274 @@ onMounted(() => {
       }"
     >
       <section class="flex w-screen h-full items-center justify-center gap-16">
-        <div class="relative w-130 h-92 bg-white rounded-3xl"></div>
-        <div class="flex w-134 h-92 bg-white pointer-events-auto">
-          <div class="flex"></div>
+        <div class="relative w-128 h-96 bg-white rounded-3xl"></div>
+        <div class="flex flex-col w-140 h-96 justify-between">
+          <div class="flex items-end gap-6">
+            <div
+              class="w-40 h-40 rounded-4xl border-surface-100 border-3 drop-shadow-lg image spark"
+            ></div>
+            <div class="flex flex-col gap-4">
+              <h3
+                class="text-3xl font-bold text-primary-color pointer-events-auto"
+              >
+                Spark Store
+              </h3>
+              <h2 class="text-5xl font-bold pointer-events-auto">
+                星火应用商店
+              </h2>
+            </div>
+          </div>
+          <div class="flex">
+            <p
+              class="text-left text-xl leading-[1.8] pointer-events-auto dark:text-surfacce-200"
+            >
+              星火应用商店是专为 Linux
+              发行版打造的社区软件平台，提供安全便捷的应用投递、下载与安装服务，让获取
+              Linux 应用变得更简单。
+            </p>
+          </div>
+
+          <a
+            href="https://gitee.com/spark-store-project/spark-store"
+            class="px-8 py-2.5 text-2xl font-bold text-white self-end pointer-events-auto from-primary-400 to-primary-500 bg-linear-to-r rounded-full dark:from-primary-500 dark:to-primary-600"
+          >
+            <span class="font-(family-name:--s-title-font) opacity-60 mr-4"
+              >MORE</span
+            >
+            了解更多
+          </a>
         </div>
       </section>
-      <section class="flex w-screen h-full item-center justify-center">
-        2
+      <section class="flex w-screen h-full items-center justify-center gap-16">
+        <div class="relative w-128 h-96 bg-white rounded-3xl"></div>
+        <div class="flex flex-col w-140 h-96 justify-between">
+          <div class="flex items-end gap-6">
+            <div class="w-40 h-40 rounded-4xl drop-shadow-lg image gxde"></div>
+            <div class="flex flex-col gap-4">
+              <h3
+                class="text-3xl font-bold text-primary-color pointer-events-auto"
+              >
+                Classics Reborn
+              </h3>
+              <h2 class="text-5xl font-bold pointer-events-auto">GXDE</h2>
+            </div>
+          </div>
+          <div class="flex">
+            <p
+              class="text-left text-xl leading-[1.8] pointer-events-auto dark:text-surfacce-200"
+            >
+              GXDE OS 是基于 Debian 的 Linux 发行版，是以经典 DDE 15
+              桌面环境为核⼼，融合轻量化设计、开箱即用
+              体验与本土化生态支持的操作系统。
+            </p>
+          </div>
+
+          <a
+            href="https://gitee.com/GXDE-OS"
+            class="px-8 py-2.5 text-2xl font-bold text-white self-end pointer-events-auto from-primary-400 to-primary-500 bg-linear-to-r rounded-full dark:from-primary-500 dark:to-primary-600"
+          >
+            <span class="font-(family-name:--s-title-font) opacity-60 mr-4"
+              >MORE</span
+            >
+            了解更多
+          </a>
+        </div>
       </section>
-      <section class="flex w-screen h-full item-center justify-center">
-        3
+      <section class="flex w-screen h-full items-center justify-center gap-16">
+        <div class="relative w-128 h-96 bg-white rounded-3xl"></div>
+        <div class="flex flex-col w-140 h-96 justify-between">
+          <div class="flex items-end gap-6">
+            <div
+              class="w-40 h-40 rounded-4xl drop-shadow-lg image wine-runner"
+            ></div>
+            <div class="flex flex-col gap-4">
+              <h3
+                class="text-3xl font-bold text-primary-color pointer-events-auto"
+              >
+                Wine Runner
+              </h3>
+              <h2 class="text-5xl font-bold pointer-events-auto">
+                Wine 运行器
+              </h2>
+            </div>
+          </div>
+          <div class="flex">
+            <p
+              class="text-left text-xl leading-[1.8] pointer-events-auto dark:text-surfacce-200"
+            >
+              Wine 运行器是专为 Linux 用户设计的图形化工具， 通过集成 Wine
+              环境、打包器和虚拟机功能，实现 Windows 应用程序的简化部署与运行。
+            </p>
+          </div>
+
+          <a
+            href="https://gitee.com/gfdgd-xi/deep-wine-runner"
+            class="px-8 py-2.5 text-2xl font-bold text-white self-end pointer-events-auto from-primary-400 to-primary-500 bg-linear-to-r rounded-full dark:from-primary-500 dark:to-primary-600"
+          >
+            <span class="font-(family-name:--s-title-font) opacity-60 mr-4"
+              >MORE</span
+            >
+            了解更多
+          </a>
+        </div>
       </section>
-      <section class="flex w-screen h-full item-center justify-center">
-        4
+      <section class="flex w-screen h-full items-center justify-center gap-16">
+        <div class="relative w-128 h-96 bg-white rounded-3xl"></div>
+        <div class="flex flex-col w-140 h-96 justify-between">
+          <div class="flex items-end gap-6">
+            <div
+              class="w-40 h-40 rounded-4xl border-surface-100 border-3 drop-shadow-lg image amber-ce"
+            ></div>
+            <div class="flex flex-col gap-4">
+              <h3
+                class="text-3xl font-bold text-primary-color pointer-events-auto"
+              >
+                Amber CE
+              </h3>
+              <h2 class="text-5xl font-bold pointer-events-auto">
+                ACE 兼容环境
+              </h2>
+            </div>
+          </div>
+          <div class="flex">
+            <p
+              class="text-left text-xl leading-[1.8] pointer-events-auto dark:text-surfacce-200"
+            >
+              ACE 兼容环境是一款基于 Bubblewrap
+              的容器化应用打包和分发方案，使任意平台的 Linux 发行版能无缝运行
+              Debian 操作系统容器，提升软件兼容性。
+            </p>
+          </div>
+
+          <a
+            href="https://gitee.com/amber-ce/"
+            class="px-8 py-2.5 text-2xl font-bold text-white self-end pointer-events-auto from-primary-400 to-primary-500 bg-linear-to-r rounded-full dark:from-primary-500 dark:to-primary-600"
+          >
+            <span class="font-(family-name:--s-title-font) opacity-60 mr-4"
+              >MORE</span
+            >
+            了解更多
+          </a>
+        </div>
       </section>
-      <section class="flex w-screen h-full item-center justify-center">
-        5
+      <section class="flex w-screen h-full items-center justify-center gap-16">
+        <div class="relative w-128 h-96 bg-white rounded-3xl"></div>
+        <div class="flex flex-col w-140 h-96 justify-between">
+          <div class="flex items-end gap-6">
+            <div
+              class="w-40 h-40 rounded-4xl drop-shadow-lg image package-manager"
+            ></div>
+            <div class="flex flex-col gap-4">
+              <h3
+                class="text-3xl font-bold text-primary-color pointer-events-auto"
+              >
+                Package Manager
+              </h3>
+              <h2 class="text-5xl font-bold pointer-events-auto">应用管理器</h2>
+            </div>
+          </div>
+          <div class="flex">
+            <p
+              class="text-left text-xl leading-[1.8] pointer-events-auto dark:text-surfacce-200"
+            >
+              星火应用管理器是星火社区生态中的本地化应用管理工具，支持启动应用、信息查看、一键卸载及提取安装包等核心功能。
+            </p>
+          </div>
+
+          <a
+            href="https://gitee.com/spark-store-project/ccc-app-manager"
+            class="px-8 py-2.5 text-2xl font-bold text-white self-end pointer-events-auto from-primary-400 to-primary-500 bg-linear-to-r rounded-full dark:from-primary-500 dark:to-primary-600"
+          >
+            <span class="font-(family-name:--s-title-font) opacity-60 mr-4"
+              >MORE</span
+            >
+            了解更多
+          </a>
+        </div>
       </section>
-      <section class="flex w-screen h-full item-center justify-center">
-        6
+      <section class="flex w-screen h-full items-center justify-center gap-16">
+        <div class="relative w-128 h-96 bg-white rounded-3xl"></div>
+        <div class="flex flex-col w-140 h-96 justify-between">
+          <div class="flex items-end gap-6">
+            <div
+              class="w-40 h-40 rounded-4xl drop-shadow-lg image fantascene"
+            ></div>
+            <div class="flex flex-col gap-4">
+              <h3
+                class="text-3xl font-bold text-primary-color pointer-events-auto"
+              >
+                Fantascene Wallpaper
+              </h3>
+              <h2 class="text-5xl font-bold pointer-events-auto">
+                星火动态壁纸
+              </h2>
+            </div>
+          </div>
+          <div class="flex">
+            <p
+              class="text-left text-xl leading-[1.8] pointer-events-auto dark:text-surfacce-200"
+            >
+              星火动态壁纸是基于 X11 显式协议的高性能动态壁纸渲染引擎，专为
+              Linux 平台深度优化，实现资源占用与视觉效果的极致平衡。
+            </p>
+          </div>
+
+          <a
+            href="https://gitee.com/liuminghang/fantascene-dynamic-wallpaper"
+            class="px-8 py-2.5 text-2xl font-bold text-white self-end pointer-events-auto from-primary-400 to-primary-500 bg-linear-to-r rounded-full dark:from-primary-500 dark:to-primary-600"
+          >
+            <span class="font-(family-name:--s-title-font) opacity-60 mr-4"
+              >MORE</span
+            >
+            了解更多
+          </a>
+        </div>
       </section>
     </div>
   </div>
 </template>
+
+<style scoped lang="scss">
+.image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.spark {
+  background-image: url("~/assets/images/about/spark.png");
+  background-image: url("~/assets/images/about/spark.webp");
+  background-image: url("~/assets/images/about/spark.avif");
+}
+
+.gxde {
+  background-size: contain;
+  background-image: url("~/assets/images/about/gxde.png");
+  background-image: url("~/assets/images/about/gxde.webp");
+  background-image: url("~/assets/images/about/gxde.avif");
+}
+
+.wine-runner {
+  background-image: url("~/assets/images/about/wine-runner.png");
+  background-image: url("~/assets/images/about/wine-runner.webp");
+  background-image: url("~/assets/images/about/wine-runner.avif");
+}
+
+.amber-ce {
+  background-image: url("~/assets/images/about/amber-ce.png");
+  background-image: url("~/assets/images/about/amber-ce.webp");
+  background-image: url("~/assets/images/about/amber-ce.avif");
+}
+
+.package-manager {
+  background-image: url("~/assets/images/about/package-manager.png");
+  background-image: url("~/assets/images/about/package-manager.webp");
+  background-image: url("~/assets/images/about/package-manager.avif");
+}
+
+.fantascene {
+  background-image: url("~/assets/images/about/fantascene.png");
+  background-image: url("~/assets/images/about/fantascene.webp");
+  background-image: url("~/assets/images/about/fantascene.avif");
+}
+</style>
