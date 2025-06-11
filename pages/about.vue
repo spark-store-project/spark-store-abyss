@@ -12,6 +12,16 @@ onMounted(() => {
     sProgress.value = scrollTop / clientHeight;
   });
 });
+
+function scrollIntoView(id: string) {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+}
 </script>
 
 <template>
@@ -72,7 +82,12 @@ onMounted(() => {
         :style="{ height: '80%', width: 'auto' }"
       />
     </section>
-    <div v-for="i in 6" :key="i" class="w-full h-screen snap-start" />
+    <div
+      v-for="i in 6"
+      :id="'section-' + i"
+      :key="i"
+      class="w-full h-screen snap-start"
+    />
     <nav
       class="flex justify-center gap-14 fixed bottom-0 z-[0] w-full h-45 bg-(--s-background) pointer-events-none"
       :style="{
@@ -119,8 +134,9 @@ onMounted(() => {
                 2,
           }"
         />
-        <div
-          class="relative p-5 rounded-full bg-white pointer-events-auto dark:bg-primary-900"
+        <button
+          class="relative p-5 rounded-full bg-white pointer-events-auto cursor-pointer dark:bg-primary-900 hover:bg-surface-50 hover:dark:bg-primary-800"
+          @click="scrollIntoView('section-1')"
         >
           <Icon
             name="sp:spark"
@@ -140,9 +156,10 @@ onMounted(() => {
           >
             <Icon name="sp:spark" class="w-16 h-16 s-color-white" mode="svg" />
           </div>
-        </div>
-        <div
-          class="relative p-5 rounded-full bg-white pointer-events-auto dark:bg-primary-900"
+        </button>
+        <button
+          class="relative p-5 rounded-full bg-white pointer-events-auto cursor-pointer dark:bg-primary-900 hover:bg-surface-50 hover:dark:bg-primary-800"
+          @click="scrollIntoView('section-2')"
         >
           <Icon
             name="s:gxde"
@@ -166,9 +183,10 @@ onMounted(() => {
               mode="svg"
             />
           </div>
-        </div>
-        <div
-          class="relative p-5 rounded-full bg-white pointer-events-auto dark:bg-primary-900"
+        </button>
+        <button
+          class="relative p-5 rounded-full bg-white pointer-events-auto cursor-pointer dark:bg-primary-900 hover:bg-surface-50 hover:dark:bg-primary-800"
+          @click="scrollIntoView('section-3')"
         >
           <Icon
             name="s:wine-runner"
@@ -192,9 +210,10 @@ onMounted(() => {
               mode="svg"
             />
           </div>
-        </div>
-        <div
-          class="relative p-5 rounded-full bg-white pointer-events-auto dark:bg-primary-900"
+        </button>
+        <button
+          class="relative p-5 rounded-full bg-white pointer-events-auto cursor-pointer dark:bg-primary-900 hover:bg-surface-50 hover:dark:bg-primary-800"
+          @click="scrollIntoView('section-4')"
         >
           <Icon
             name="s:amber-ce"
@@ -214,9 +233,10 @@ onMounted(() => {
           >
             <Icon name="s:amber-ce" class="w-16 h-16 s-deco-white" mode="svg" />
           </div>
-        </div>
-        <div
-          class="relative p-7 rounded-full bg-white pointer-events-auto dark:bg-primary-900"
+        </button>
+        <button
+          class="relative p-7 rounded-full bg-white pointer-events-auto cursor-pointer dark:bg-primary-900 hover:bg-surface-50 hover:dark:bg-primary-800"
+          @click="scrollIntoView('section-5')"
         >
           <Icon
             name="s:package-manager"
@@ -240,9 +260,10 @@ onMounted(() => {
               mode="svg"
             />
           </div>
-        </div>
-        <div
-          class="relative p-5 rounded-full bg-white pointer-events-auto dark:bg-primary-900"
+        </button>
+        <button
+          class="relative p-5 rounded-full bg-white pointer-events-auto cursor-pointer dark:bg-primary-900 hover:bg-surface-50 hover:dark:bg-primary-800"
+          @click="scrollIntoView('section-6')"
         >
           <Icon
             name="s:fantascene"
@@ -266,7 +287,7 @@ onMounted(() => {
               mode="svg"
             />
           </div>
-        </div>
+        </button>
       </div>
     </nav>
     <div
