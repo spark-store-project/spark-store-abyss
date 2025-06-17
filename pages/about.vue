@@ -299,7 +299,9 @@ function scrollIntoView(id: string) {
       }"
     >
       <section class="flex w-screen h-full items-center justify-center gap-16">
-        <div class="relative w-128 h-96 bg-white rounded-3xl"></div>
+        <div
+          class="relative w-128 h-96 rounded-3xl spark-placeholder image"
+        ></div>
         <div class="flex flex-col w-140 h-96 justify-between">
           <div class="flex items-end gap-6">
             <div
@@ -338,7 +340,9 @@ function scrollIntoView(id: string) {
         </div>
       </section>
       <section class="flex w-screen h-full items-center justify-center gap-16">
-        <div class="relative w-128 h-96 bg-white rounded-3xl"></div>
+        <div
+          class="relative w-128 h-96 rounded-3xl gxde-placeholder image"
+        ></div>
         <div class="flex flex-col w-140 h-96 justify-between">
           <div class="flex items-end gap-6">
             <div class="w-40 h-40 rounded-4xl drop-shadow-lg image gxde"></div>
@@ -373,7 +377,9 @@ function scrollIntoView(id: string) {
         </div>
       </section>
       <section class="flex w-screen h-full items-center justify-center gap-16">
-        <div class="relative w-128 h-96 bg-white rounded-3xl"></div>
+        <div
+          class="relative w-128 h-96 rounded-3xl wine-runner-placeholder image"
+        ></div>
         <div class="flex flex-col w-140 h-96 justify-between">
           <div class="flex items-end gap-6">
             <div
@@ -411,7 +417,9 @@ function scrollIntoView(id: string) {
         </div>
       </section>
       <section class="flex w-screen h-full items-center justify-center gap-16">
-        <div class="relative w-128 h-96 bg-white rounded-3xl"></div>
+        <div
+          class="relative w-128 h-96 rounded-3xl amber-ce-placeholder image"
+        ></div>
         <div class="flex flex-col w-140 h-96 justify-between">
           <div class="flex items-end gap-6">
             <div
@@ -450,7 +458,9 @@ function scrollIntoView(id: string) {
         </div>
       </section>
       <section class="flex w-screen h-full items-center justify-center gap-16">
-        <div class="relative w-128 h-96 bg-white rounded-3xl"></div>
+        <div
+          class="relative w-128 h-96 rounded-3xl package-manager-placeholder image"
+        ></div>
         <div class="flex flex-col w-140 h-96 justify-between">
           <div class="flex items-end gap-6">
             <div
@@ -485,7 +495,9 @@ function scrollIntoView(id: string) {
         </div>
       </section>
       <section class="flex w-screen h-full items-center justify-center gap-16">
-        <div class="relative w-128 h-96 bg-white rounded-3xl"></div>
+        <div
+          class="relative w-128 h-96 rounded-3xl fantascene-placeholder image"
+        ></div>
         <div class="flex flex-col w-140 h-96 justify-between">
           <div class="flex items-end gap-6">
             <div
@@ -575,5 +587,79 @@ function scrollIntoView(id: string) {
   background-image: url("~/assets/images/about/fantascene.png");
   background-image: url("~/assets/images/about/fantascene.webp");
   background-image: url("~/assets/images/about/fantascene.avif");
+}
+
+.spark-placeholder {
+  background-image: url("~/assets/images/about/spark/placeholder.png");
+  background-image: url("~/assets/images/about/spark/placeholder.webp");
+  background-image: url("~/assets/images/about/spark/placeholder.avif");
+}
+
+.gxde-placeholder {
+  background-image: url("~/assets/images/about/gxde/placeholder.png");
+  background-image: url("~/assets/images/about/gxde/placeholder.webp");
+  background-image: url("~/assets/images/about/gxde/placeholder.avif");
+}
+
+.wine-runner-placeholder {
+  background-image: url("~/assets/images/about/wine-runner/placeholder.png");
+  background-image: url("~/assets/images/about/wine-runner/placeholder.webp");
+  background-image: url("~/assets/images/about/wine-runner/placeholder.avif");
+}
+
+.amber-ce-placeholder {
+  background-image: url("~/assets/images/about/amber-ce/placeholder.png");
+  background-image: url("~/assets/images/about/amber-ce/placeholder.webp");
+  background-image: url("~/assets/images/about/amber-ce/placeholder.avif");
+}
+
+.package-manager-placeholder {
+  background-image: url("~/assets/images/about/package-manager/placeholder.png");
+  background-image: url("~/assets/images/about/package-manager/placeholder.webp");
+  background-image: url("~/assets/images/about/package-manager/placeholder.avif");
+}
+
+.fantascene-placeholder {
+  background-image: url("~/assets/images/about/fantascene/placeholder.png");
+  background-image: url("~/assets/images/about/fantascene/placeholder.webp");
+  background-image: url("~/assets/images/about/fantascene/placeholder.avif");
+}
+
+.s-dark {
+  .spark-placeholder {
+    background-image: url("~/assets/images/about/spark/placeholder-dark.png");
+    background-image: url("~/assets/images/about/spark/placeholder-dark.webp");
+    background-image: url("~/assets/images/about/spark/placeholder-dark.avif");
+  }
+
+  .gxde-placeholder {
+    background-image: url("~/assets/images/about/gxde/placeholder-dark.png");
+    background-image: url("~/assets/images/about/gxde/placeholder-dark.webp");
+    background-image: url("~/assets/images/about/gxde/placeholder-dark.avif");
+  }
+
+  .wine-runner-placeholder {
+    background-image: url("~/assets/images/about/wine-runner/placeholder-dark.png");
+    background-image: url("~/assets/images/about/wine-runner/placeholder-dark.webp");
+    background-image: url("~/assets/images/about/wine-runner/placeholder-dark.avif");
+  }
+
+  .amber-ce-placeholder {
+    background-image: url("~/assets/images/about/amber-ce/placeholder-dark.png");
+    background-image: url("~/assets/images/about/amber-ce/placeholder-dark.webp");
+    background-image: url("~/assets/images/about/amber-ce/placeholder-dark.avif");
+  }
+
+  .package-manager-placeholder {
+    background-image: url("~/assets/images/about/package-manager/placeholder-dark.png");
+    background-image: url("~/assets/images/about/package-manager/placeholder-dark.webp");
+    background-image: url("~/assets/images/about/package-manager/placeholder-dark.avif");
+  }
+
+  .fantascene-placeholder {
+    background-image: url("~/assets/images/about/fantascene/placeholder-dark.png");
+    background-image: url("~/assets/images/about/fantascene/placeholder-dark.webp");
+    background-image: url("~/assets/images/about/fantascene/placeholder-dark.avif");
+  }
 }
 </style>
