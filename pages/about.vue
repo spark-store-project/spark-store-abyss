@@ -217,7 +217,7 @@ function scrollIntoView(id: string) {
         >
           <Icon
             name="s:amber-ce"
-            class="w-16 h-16 s-deco-primary-color"
+            class="w-16 h-16 s-deco-primary-color s-bg-primary-400 s-deco-dark dark:s-bg-primary-color"
             mode="svg"
           />
           <div
@@ -231,7 +231,11 @@ function scrollIntoView(id: string) {
                     }% at right 80%)`,
             }"
           >
-            <Icon name="s:amber-ce" class="w-16 h-16 s-deco-white" mode="svg" />
+            <Icon
+              name="s:amber-ce"
+              class="w-16 h-16 s-deco-[rgba(255,255,255,0.5)] s-bg-white"
+              mode="svg"
+            />
           </div>
         </button>
         <button
@@ -267,7 +271,7 @@ function scrollIntoView(id: string) {
         >
           <Icon
             name="s:fantascene"
-            class="w-16 h-16 s-deco-primary-color s-bg-white dark:s-bg-primary-900"
+            class="w-16 h-16 s-deco-primary-color s-bg-primary-400 s-bg-dark"
             mode="svg"
           />
           <div
@@ -283,7 +287,7 @@ function scrollIntoView(id: string) {
           >
             <Icon
               name="s:fantascene"
-              class="w-16 h-16 s-deco-white s-bg-primary-400"
+              class="w-16 h-16 s-deco-white s-bg-[rgba(255,255,255,0.5)]"
               mode="svg"
             />
           </div>
@@ -501,7 +505,7 @@ function scrollIntoView(id: string) {
         <div class="flex flex-col w-140 h-96 justify-between">
           <div class="flex items-end gap-6">
             <div
-              class="w-40 h-40 rounded-4xl drop-shadow-lg image fantascene"
+              class="w-40 h-40 rounded-4xl border-surface-100 border-3 drop-shadow-lg image fantascene"
             ></div>
             <div class="flex flex-col gap-4">
               <h3
@@ -544,6 +548,9 @@ function scrollIntoView(id: string) {
 }
 .s-dark .s-bg-dark {
   --s-bg: rgb(from var(--p-primary-500) r g b / 0.5);
+}
+.s-dark .s-deco-dark {
+  --s-deco: rgb(from var(--p-primary-500) r g b / 0.5);
 }
 
 .image {
