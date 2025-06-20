@@ -121,17 +121,12 @@ function scrollIntoView(id: string) {
         </h2>
         <Icon
           name="s:about-indicator"
-          class="absolute left-3 bottom-0 w-20 h-[auto]! s-color-primary-100 dark:s-color-primary-500 dark:opacity-50"
+          class="absolute left-3 bottom-0 w-20 h-[auto]! s-color-primary-100 opacity-[calc(2*var(--s-opacity))] dark:s-color-primary-500 dark:opacity-[calc(0.38*var(--s-opacity))]"
           mode="svg"
           :style="{
             translate: `calc(${40 * (sProgress - 1)} * var(--spacing)) 0`,
-            opacity: sDark
-              ? (range(0, 0.5, sProgress - 0.5) -
-                  range(0, 0.5, sProgress - 6.5)) *
-                0.38
-              : (range(0, 0.5, sProgress - 0.5) -
-                  range(0, 0.5, sProgress - 6.5)) *
-                2,
+            '--s-opacity':
+              range(0, 0.5, sProgress - 0.5) - range(0, 0.5, sProgress - 6.5),
           }"
         />
         <button
