@@ -263,13 +263,13 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
             class="w-16 h-16 bg-white rounded-2xl shrink-0 app-icon bg-contain"
             :style="{
               '--s-avif': `url('/app-icons/${
-                appIcons[(i - 1) * 9 + j - 1]
+                appIcons[((i - 1) * 9 + j - 1) % appIcons.length]
               }.avif')`,
               '--s-webp': `url('/app-icons/${
-                appIcons[(i - 1) * 9 + j - 1]
+                appIcons[((i - 1) * 9 + j - 1) % appIcons.length]
               }.webp')`,
               '--s-png': `url('/app-icons/${
-                appIcons[(i - 1) * 9 + j - 1]
+                appIcons[((i - 1) * 9 + j - 1) % appIcons.length]
               }.png')`,
             }"
           ></div>

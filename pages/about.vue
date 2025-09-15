@@ -319,7 +319,7 @@ function scrollIntoView(id: string) {
           </div>
           <div class="flex">
             <p
-              class="text-left text-xl leading-[1.8] pointer-events-auto dark:text-surfacce-200"
+              class="text-left text-xl leading-[1.8] pointer-events-auto dark:text-surface-200"
             >
               星火应用商店是专为 Linux
               发行版打造的社区软件平台，提供安全便捷的应用投递、下载与安装服务，让获取
@@ -356,7 +356,7 @@ function scrollIntoView(id: string) {
           </div>
           <div class="flex">
             <p
-              class="text-left text-xl leading-[1.8] pointer-events-auto dark:text-surfacce-200"
+              class="text-left text-xl leading-[1.8] pointer-events-auto dark:text-surface-200"
             >
               GXDE OS 是基于 Debian 的 Linux 发行版，是以经典 DDE 15
               桌面环境为核⼼，融合轻量化设计、开箱即用
@@ -397,7 +397,7 @@ function scrollIntoView(id: string) {
           </div>
           <div class="flex">
             <p
-              class="text-left text-xl leading-[1.8] pointer-events-auto dark:text-surfacce-200"
+              class="text-left text-xl leading-[1.8] pointer-events-auto dark:text-surface-200"
             >
               Wine 运行器是专为 Linux 用户设计的图形化工具， 通过集成 Wine
               环境、打包器和虚拟机功能，实现 Windows 应用程序的简化部署与运行。
@@ -437,7 +437,7 @@ function scrollIntoView(id: string) {
           </div>
           <div class="flex">
             <p
-              class="text-left text-xl leading-[1.8] pointer-events-auto dark:text-surfacce-200"
+              class="text-left text-xl leading-[1.8] pointer-events-auto dark:text-surface-200"
             >
               ACE 兼容环境是一款基于 Bubblewrap
               的容器化应用打包和分发方案，使任意平台的 Linux 发行版能无缝运行
@@ -476,7 +476,7 @@ function scrollIntoView(id: string) {
           </div>
           <div class="flex">
             <p
-              class="text-left text-xl leading-[1.8] pointer-events-auto dark:text-surfacce-200"
+              class="text-left text-xl leading-[1.8] pointer-events-auto dark:text-surface-200"
             >
               星火应用管理器是星火社区生态中的本地化应用管理工具，支持启动应用、信息查看、一键卸载及提取安装包等核心功能。
             </p>
@@ -515,7 +515,7 @@ function scrollIntoView(id: string) {
           </div>
           <div class="flex">
             <p
-              class="text-left text-xl leading-[1.8] pointer-events-auto dark:text-surfacce-200"
+              class="text-left text-xl leading-[1.8] pointer-events-auto dark:text-surface-200"
             >
               星火动态壁纸是基于 X11 显式协议的高性能动态壁纸渲染引擎，专为
               Linux 平台深度优化，实现资源占用与视觉效果的极致平衡。
@@ -625,6 +625,12 @@ function scrollIntoView(id: string) {
   background-image: url("~/assets/images/about/fantascene/placeholder.png");
   background-image: url("~/assets/images/about/fantascene/placeholder.webp");
   background-image: url("~/assets/images/about/fantascene/placeholder.avif");
+}
+
+.spark-background {
+  background-image: url("~/assets/images/about/spark/background.png");
+  background-image: url("~/assets/images/about/spark/background.webp");
+  background-image: url("~/assets/images/about/spark/background.avif");
 }
 
 .s-dark {
