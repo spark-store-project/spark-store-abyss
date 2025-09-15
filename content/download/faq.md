@@ -14,5 +14,15 @@
 
    ```bash
    cd ~/Downloads
-   sudo apt install ./spark-store-\*.deb
+   sudo apt install ./spark-store-*.deb
    ```
+3. **ACE兼容环境**
+
+   如果您正在使用银河麒麟或者非Debian发行版，请参考以下链接来配置兼容环境以安装：https://blog.shenmo.tech/post/%E6%95%85%E9%9A%9C%E5%85%AC%E5%91%8A/
+
+   
+4. **社群地址**
+
+请点击以下链接来进入我们的用户群
+
+https://blog.shenmo.tech/post/%E6%95%85%E9%9A%9C%E5%85%AC%E5%91%8A/
