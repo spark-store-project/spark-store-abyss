@@ -1,6 +1,6 @@
 @import "tailwindcss";
-@import 'primeicons/primeicons.css';
-@import '../fonts/KNYuanmo-Regular/result.css';
+@import "primeicons/primeicons.css";
+@import "../fonts/KNYuanmo-Regular/result.css";
 
 @custom-variant dark (&:where(.s-dark, .s-dark *));
 
@@ -39,12 +39,13 @@
   --color-surface-800: var(--p-surface-800);
   --color-surface-900: var(--p-surface-900);
   --color-surface-950: var(--p-surface-950);
-  --s-title-font: 'KN Yuanmo SC', sans-serif;
+  --s-title-font: "KN Yuanmo SC", sans-serif;
   --s-background: var(--p-secondary-50);
 }
 
 :root {
-  font-family: 'BlinkMacSystemFont', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: "BlinkMacSystemFont", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background-color: var(--s-background) !important;
 }
 
@@ -53,7 +54,6 @@
   --p-highlight-color: var(--p-primary-color) !important;
   --p-highlight-focus-color: var(--p-primary-color) !important;
 }
-
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
@@ -71,7 +71,6 @@
   z-index: 9999;
 }
 
-
 @utility s-color-* {
   --s-color: --value([color]);
   --s-c1: --value([color]);
@@ -81,32 +80,36 @@
   --s-c5: --value([color]);
   --s-c6: --value([color]);
   --s-c7: --value([color]);
-  --s-color: --value(--color-*);
-  --s-c1: --value(--color-*);
-  --s-c2: --value(--color-*);
-  --s-c3: --value(--color-*);
-  --s-c4: --value(--color-*);
-  --s-c5: --value(--color-*);
-  --s-c6: --value(--color-*);
-  --s-c7: --value(--color-*);
+  --s-color: --value(--color- *);
+  --s-c1: --value(--color- *);
+  --s-c2: --value(--color- *);
+  --s-c3: --value(--color- *);
+  --s-c4: --value(--color- *);
+  --s-c5: --value(--color- *);
+  --s-c6: --value(--color- *);
+  --s-c7: --value(--color- *);
 }
 
 @utility s-deco-* {
   --s-deco: --value([color]);
-  --s-deco: --value(--color-*);
+  --s-deco: --value(--color- *);
 }
 
 @utility s-bg-* {
   --s-bg: --value([color]);
-  --s-bg: --value(--color-*);
+  --s-bg: --value(--color- *);
 }
 
 @utility s-bg-2-* {
   --s-bg-2: --value([color]);
-  --s-bg-2: --value(--color-*);
+  --s-bg-2: --value(--color- *);
 }
 
 @utility s-bg-3-* {
   --s-bg-3: --value([color]);
-  --s-bg-3: --value(--color-*);
+  --s-bg-3: --value(--color- *);
+}
+
+@utility s-size-* {
+  --s-size: --value(number);
 }

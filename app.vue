@@ -9,6 +9,7 @@ const path = computed(() => {
 });
 const sProgress = ref(1);
 const scrollPanel = useTemplateRef<ComponentPublicInstance>("scrollPanel");
+const header = useTemplateRef<HTMLElement>("header");
 const sX = ref(0);
 const sY = ref(0);
 const sWidth = ref(0);
@@ -38,6 +39,16 @@ const handleScrollOrResize = () => {
     return;
   }
   sProgress.value = 1 - range(0, 1, scrollTop / clientHeight);
+};
+
+const handleHeaderFocus = () => {
+  mounted.value = false;
+  setTimeout(() => {
+    handleScrollOrResize();
+    nextTick(() => {
+      mounted.value = true;
+    });
+  }, 300);
 };
 
 onMounted(() => {
@@ -200,11 +211,15 @@ provide("latestRelease", latestRelease);
     }"
   >
     <header
-      class="fixed w-full z-10 px-12"
+      tabindex="0"
+      class="fixed w-full h-15 z-10 px-4 sm:px-8 lg:px-12 translate-y-[calc(var(--s-progress)*4*var(--spacing))] sm:translate-y-[calc(var(--s-progress)*8*var(--spacing))] lg:translate-y-[calc(var(--s-progress)*12*var(--spacing))] before:translate-x-[calc(var(--s-progress)*4*var(--spacing))] sm:before:translate-x-[calc(var(--s-progress)*8*var(--spacing))] lg:before:translate-x-[calc(var(--s-progress)*12*var(--spacing))] before:w-[calc(100%-var(--s-progress)*8*var(--spacing))] sm:before:w-[calc(100%-var(--s-progress)*16*var(--spacing))] lg:before:w-[calc(100%-var(--s-progress)*24*var(--spacing))] sm:h-auto focus-within:h-auto before:h-15 focus-within:before:h-82.5 sm:before:h-full focus-within:sm:before:h-full overflow-hidden focus-within:overflow-visible transition-discrete group"
+      ref="header"
       :style="{ '--s-progress': sProgress }"
+      @click="if (!header?.matches(':focus-within')) header?.focus();"
+      @focus="handleHeaderFocus"
     >
       <nav
-        class="relative flex px-8 h-15 items-center"
+        class="relative flex px-2.5 md:px-4 lg:px-8 items-center flex-col md:flex-row before:opacity-0 group-focus-within:before:opacity-100 sm:before:opacity-100 before:origin-top before:scale-0 group-focus-within:before:scale-100 sm:before:scale-100 before:translate-x-[calc(50vw-14.5*var(--spacing))] before:translate-y-15 group-focus-within:before:translate-x-[calc(var(--s-x)*1px)] group-focus-within:before:translate-y-[calc(var(--s-y)*1px)] sm:before:translate-x-[calc(var(--s-x)*1px)] sm:before:translate-y-[calc(var(--s-y)*1px)]"
         :class="{ mounted }"
         :style="{
           '--s-x': sX,
@@ -213,56 +228,79 @@ provide("latestRelease", latestRelease);
           '--s-height': sHeight,
         }"
       >
-        <NuxtLink to="/" class="flex items-center">
-          <Icon
-            name="sp:spark"
-            class="text-4xl mr-2 s-color-primary-color"
-            mode="svg"
+        <div
+          class="flex h-15 w-full sm:w-auto px-2 justify-between items-center"
+        >
+          <NuxtLink class="flex items-center">
+            <Icon
+              name="sp:spark"
+              class="text-4xl sm:mr-2 s-color-primary-color"
+              mode="svg"
+            />
+          </NuxtLink>
+          <NuxtLink class="flex items-center">
+            <h1 class="font-(family-name:--s-title-font) text-surface-500">
+              SPARK
+            </h1>
+          </NuxtLink>
+          <div class="sm:hidden relative">
+            <span
+              class="pi pi-ellipsis-v text-surface-400 font-bold! text-xl! group-focus-within:opacity-0 group-focus-within:rotate-90 transition-all duration-300"
+            ></span>
+            <span
+              class="absolute top-0 left-0 pi pi-times text-surface-400 font-bold! text-xl! opacity-0 -rotate-90 group-focus-within:opacity-100 group-focus-within:rotate-0 transition-all duration-300"
+            ></span>
+          </div>
+        </div>
+        <div
+          class="flex grow pb-2.5 md:pt-2.5 items-end sm:items-center flex-row-reverse sm:flex-row w-full sm:w-auto justify-between md:justify-end opacity-0 group-focus-within:opacity-100 sm:opacity-100 origin-top scale-0 group-focus-within:scale-100 sm:scale-100 transition-transform duration-300"
+        >
+          <div
+            class="flex flex-col gap-1 mr-1.5 md:mr-1 lg:gap-2 lg:mr-2 sm:flex-row items-end sm:items-center"
+          >
+            <NuxtLink to="/" class="nav-link" active-class="active">
+              首页
+            </NuxtLink>
+            <NuxtLink to="/download" class="nav-link" active-class="active">
+              下载
+            </NuxtLink>
+            <a
+              href="https://bbs.spark-app.store/"
+              class="nav-link"
+              active-class="active"
+            >
+              社区
+            </a>
+            <a
+              href="https://wiki.spark-app.store/"
+              class="nav-link"
+              active-class="active"
+            >
+              帮助
+            </a>
+            <NuxtLink to="/about" class="nav-link" active-class="active">
+              关于
+            </NuxtLink>
+            <a href="https://gxde.top/" class="nav-link" active-class="active">
+              GXDE OS
+            </a>
+          </div>
+          <Button
+            :icon="`pi ${
+              sDarkConfig === 'auto'
+                ? 'pi-bullseye'
+                : sDarkConfig === 'dark'
+                ? 'pi-moon'
+                : 'pi-sun'
+            }`"
+            aria-label="Toggle Dark Mode"
+            size="small"
+            class="shrink-0 m-1.5 sm:m-0"
+            rounded
+            severity="secondary"
+            @click="toggleDarkMode"
           />
-          <h1 class="font-(family-name:--s-title-font)">SPARK</h1>
-        </NuxtLink>
-        <div class="grow" />
-        <NuxtLink to="/" class="nav-link" active-class="active">
-          首页
-        </NuxtLink>
-        <NuxtLink to="/download" class="nav-link" active-class="active">
-          下载
-        </NuxtLink>
-        <a
-          href="https://bbs.spark-app.store/"
-          class="nav-link"
-          active-class="active"
-        >
-          社区
-        </a>
-        <a
-          href="https://wiki.spark-app.store/"
-          class="nav-link"
-          active-class="active"
-        >
-          帮助
-        </a>
-        <NuxtLink to="/about" class="nav-link" active-class="active">
-          关于
-        </NuxtLink>
-        <a href="https://gxde.top/" class="nav-link" active-class="active">
-          GXDE OS
-        </a>
-        <Button
-          :icon="`pi ${
-            sDarkConfig === 'auto'
-              ? 'pi-bullseye'
-              : sDarkConfig === 'dark'
-              ? 'pi-moon'
-              : 'pi-sun'
-          }`"
-          aria-label="Toggle Dark Mode"
-          size="small"
-          class="shrink-0"
-          rounded
-          severity="secondary"
-          @click="toggleDarkMode"
-        />
+        </div>
       </nav>
     </header>
     <div>
@@ -322,10 +360,11 @@ provide("latestRelease", latestRelease);
 
 <style scoped lang="scss">
 header {
-  transform: translateY(calc(var(--s-progress) * 12 * var(--spacing)));
+  transform: translateY();
   transition: {
-    property: transform;
-    duration: 0.1s;
+    property: transform, overflow;
+    duration: 0.1s, 0s;
+    delay: 0s, 0.3s;
   }
 
   &::before {
@@ -334,21 +373,27 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    transform: translateX(calc(var(--s-progress) * 12 * var(--spacing)));
-    width: calc(100% - var(--s-progress) * 24 * var(--spacing));
-    border-radius: calc(var(--s-progress) * 4 * var(--spacing));
-    height: 100%;
+    border-radius: calc(var(--s-progress) * var(--radius-2xl));
+    border-bottom-right-radius: calc(var(--s-progress) * var(--radius-2xl));
+    border-bottom-left-radius: calc(var(--s-progress) * var(--radius-2xl));
     background-color: var(--p-surface-0);
+    backdrop-filter: blur(calc(4 * var(--spacing)));
     z-index: -1;
     transition: {
-      property: transform, width, border-radius;
-      duration: 0.1s;
+      property: transform, width, border-radius, background-color, height;
+      duration: 0.1s, 0.1s, 0.1s, 0.3s, 0.3s;
     }
+  }
+
+  &:focus-within::before,
+  &:hover::before {
+    background-color: rgba(from var(--p-surface-0) r g b / 0.8);
+    border-bottom-right-radius: var(--radius-2xl);
+    border-bottom-left-radius: var(--radius-2xl);
   }
 
   h1 {
     font-size: 1.75em;
-    color: var(--p-surface-500);
   }
 
   nav::before {
@@ -356,16 +401,15 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    transform: translate(calc(var(--s-x) * 1px), calc(var(--s-y) * 1px));
     width: calc(var(--s-width) * 1px);
     height: calc(var(--s-height) * 1px);
     background-color: var(--p-primary-200);
     border-radius: calc(var(--spacing) * 4.75);
     z-index: -1;
+    visibility: hidden;
   }
 
   .nav-link {
-    margin-right: calc(var(--spacing) * 2);
     padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
     border-radius: calc(var(--spacing) * 4.75);
     font-weight: bold;
@@ -379,8 +423,9 @@ header {
 
   nav.mounted {
     &::before {
+      visibility: visible;
       transition: {
-        property: width, transform;
+        property: width, transform, opacity, scale, translate;
         duration: 0.3s;
       }
     }
