@@ -113,3 +113,13 @@
 @utility s-size-* {
   --s-size: --value(number);
 }
+
+@utility writing-mode-* {
+  writing-mode: --value(
+    "horizontal-tb",
+    "vertical-rl",
+    "vertical-lr",
+    "sideways-rl",
+    "sideways-lr"
+  );
+}
