@@ -24,7 +24,7 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
 <template>
   <div class="page">
     <section
-      class="relative flex items-center justify-center gap-10 pt-24 flex-col sm:flex-row"
+      class="relative flex items-center justify-center gap-10 pt-24 pb-12 sm:pb-0 flex-col sm:flex-row"
     >
       <div
         class="fixed w-full h-full s-size-4 lg:s-size-5.5 top-0 left-0 z-[-1] flex items-end sm:justify-center"
