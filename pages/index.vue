@@ -364,7 +364,7 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
           }"
         />
         <h2
-          class="text-3xl md:text-4xl lg:text-5xl text-primary-color font-bold leading-[1.3] dark:text-primary-400"
+          class="text-2xl md:text-4xl lg:text-5xl text-primary-color font-bold leading-[1.3] dark:text-primary-400"
         >
           <span
             class="font-(family-name:--s-title-font) text-primary-400 font-normal dark:opacity-50"
