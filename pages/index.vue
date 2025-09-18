@@ -280,14 +280,16 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
       </p>
       <div class="h-35"></div>
     </section>
-    <section class="flex items-center justify-center gap-16 pt-15">
+    <section
+      class="flex flex-col sm:flex-row pb-24 sm:pb-0 items-center justify-center gap-8 sm:gap-16 pt-24 sm:pt-15"
+    >
       <div
-        class="flex bg-primary-200 rounded-4xl px-6 py-4 h-134 gap-6 overflow-hidden dark:bg-primary-900"
+        class="flex bg-primary-200 rounded-4xl px-4 lg:px-6 py-4 h-96 lg:h-134 gap-4 lg:gap-6 overflow-hidden dark:bg-primary-900"
       >
         <div
           v-for="i in 5"
           :key="i"
-          class="flex flex-col gap-6"
+          class="flex flex-col gap-4 lg:gap-6"
           :class="i % 2 === 0 ? '-mt-55' : '-mt-66'"
           :style="{
             transform: `translateY(calc(${
@@ -307,7 +309,7 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
           <div
             v-for="j in 12"
             :key="j"
-            class="w-16 h-16 bg-white rounded-2xl shrink-0 app-icon bg-contain"
+            class="w-12 lg:w-16 h-12 lg:h-16 bg-white rounded-2xl shrink-0 app-icon bg-contain"
             :style="{
               '--s-avif': `url('/app-icons/${
                 appIcons[((i - 1) * 9 + j - 1) % appIcons.length]
@@ -326,21 +328,21 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
         <div class="flex items-center gap-6">
           <Icon
             name="sp:spark"
-            class="text-6xl s-color-primary-500"
+            class="text-4xl md:text-5xl lg:text-6xl s-color-primary-500"
             mode="svg"
           />
           <h2
-            class="text-4xl font-(family-name:--s-title-font) text-primary-500"
+            class="text-2xl md:text-3xl lg:text-4xl font-(family-name:--s-title-font) text-primary-500"
           >
             WHAT'S NEW ?
           </h2>
         </div>
-        <p class="text-5xl leading-[1.5]">
+        <p class="text-3xl md:text-4xl lg:text-5xl leading-[1.5]">
           不想错过 Linux<br />
           日新月异的软件生态？
         </p>
-        <p class="text-5xl leading-[1.5] font-bold">
-          或许现在，<br />
+        <p class="text-3xl md:text-4xl lg:text-5xl leading-[1.5] font-bold">
+          或许现在，<br class="hidden sm:block" />
           你只需要一个<br />
           <span class="text-primary-color">星火应用商店。</span>
         </p>
