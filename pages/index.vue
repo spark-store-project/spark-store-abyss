@@ -374,7 +374,7 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
         </h2>
       </div>
       <div
-        class="flex gap-4 lg:gap-16 flex-col-reverse sm:flex-row items-center grow-1 sm:grow-0"
+        class="flex gap-4 lg:gap-16 max-w-full flex-col-reverse sm:flex-row items-center grow-1 sm:grow-0"
       >
         <div
           class="flex flex-col py-0 sm:py-8 lg:py-12 gap-6 items-center sm:items-start"
