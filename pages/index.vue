@@ -174,11 +174,11 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
       </div>
     </section>
     <section
-      class="flex flex-col justify-center items-center gap-8 relative pt-15"
+      class="flex flex-col justify-center items-start sm:items-center pl-8 sm:pl-0 gap-8 relative pt-15"
     >
       <div class="fixed top-0 left-0 w-full h-full z-[-1]">
         <div
-          class="absolute top-0 left-0 w-full h-full flex justify-between items-center s2d"
+          class="absolute top-0 left-0 w-full h-full flex justify-between items-center s2d before:invisible sm:before:visible"
           :style="{
             transform: `rotate(${
               (riro(range(-0.5, 0.5, sProgress - 1) + 0.5) - 0.5) * -60
@@ -189,7 +189,7 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
           }"
         ></div>
         <div
-          class="absolute bottom-0 left-1/2 -translate-x-1/2 rounded-t-4xl px-6 pt-4 flex gap-6 from-primary-300 to-[transparent] bg-linear-to-b after:from-(transparent) after:from-50 after:to-(--s-to) after:bg-linear-to-b after:absolute after:top-0 after:left-0 after:w-full after:h-full after:z-2 dark:from-primary-800"
+          class="absolute -bottom-8 sm:bottom-0 left-8 sm:left-1/2 sm:-translate-x-1/2 rounded-t-4xl px-6 pt-4 flex gap-6 from-primary-300 to-[transparent] bg-linear-to-b after:from-(transparent) after:from-50 after:to-(--s-to) after:bg-linear-to-b after:absolute after:top-0 after:left-0 after:w-full after:h-full after:z-2 dark:from-primary-800"
           style="
             --s-to: color-mix(in srgb, var(--s-background), transparent 20%);
           "
@@ -254,16 +254,28 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
         </div>
       </div>
       <h2
-        class="text-center text-6xl font-bold text-primary-color dark:text-primary-400"
+        class="text-center text-5xl md:text-6xl font-bold text-primary-color dark:text-primary-400"
       >
-        星星之火，可以燎原。
+        星星之火，<br class="sm:hidden" />可以燎原。
       </h2>
-      <p class="text-center text-xl leading-[2] dark:text-surfacce-200">
-        每个普通用户的需求反馈、每名开发者的代码贡献、每一次社区的互助分享，<br />
+      <p
+        class="sm:text-center text-base sm:text-lg md:text-xl leading-[2] dark:text-surfacce-200"
+      >
+        每个普通用户的需求反馈、<br
+          class="sm:hidden"
+        />每名开发者的代码贡献、<br
+          class="sm:hidden"
+        />每一次社区的互助分享，<br />
         都在为 Linux 桌面生态注入蓬勃活力。<br />
-        我们深信「人人为我，我为人人」，以共享之火照亮开源之路。<br />
-        您上传的应用可能成为他人工作的桥梁，他人分享的工具也可能为您带来方便。<br />
-        我们珍视开源世界的共建基因，以微小而持久的善意融入这场共享长跑，<br />
+        我们深信「人人为我，我为人人」，<br
+          class="sm:hidden"
+        />以共享之火照亮开源之路。<br />
+        您上传的应用可能成为他人工作的桥梁，<br
+          class="sm:hidden"
+        />他人分享的工具也可能为您带来方便。<br />
+        我们珍视开源世界的共建基因，<br
+          class="sm:hidden"
+        />以微小而持久的善意融入这场共享长跑，<br />
         让技术普惠的星火在彼此照映中汇聚成光。
       </p>
       <div class="h-35"></div>
@@ -688,16 +700,7 @@ section {
   }
 }
 .s2d {
-  &::before {
-    content: "";
-    width: calc(64 * var(--spacing));
-    height: calc(128 * var(--spacing));
-    background-image: url("~/assets/images/index/s2d.png");
-    background-image: url("~/assets/images/index/s2d.webp");
-    background-image: url("~/assets/images/index/s2d.avif");
-    background-size: contain;
-    background-position: center;
-  }
+  &::before,
   &::after {
     content: "";
     width: calc(64 * var(--spacing));
@@ -706,7 +709,10 @@ section {
     background-image: url("~/assets/images/index/s2d.webp");
     background-image: url("~/assets/images/index/s2d.avif");
     background-size: contain;
-    background-position: center;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+  &::after {
     transform: rotate(180deg);
   }
 }
