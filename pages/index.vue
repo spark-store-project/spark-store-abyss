@@ -23,12 +23,13 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
 
 <template>
   <div class="page">
-    <section class="relative flex items-center justify-center gap-10">
+    <section
+      class="relative flex items-center justify-center gap-10 pt-24 flex-col sm:flex-row"
+    >
       <div
-        class="fixed w-full h-full top-0 left-0 z-[-1] flex items-end justify-center"
+        class="fixed w-full h-full s-size-4 lg:s-size-5.5 top-0 left-0 z-[-1] flex items-end sm:justify-center"
         :style="{
           opacity: 1 - range(0, 0.5, sProgress) * 2,
-          '--s-size': 5.5,
           '--s-n': 16,
           '--s-progress': range(0, 0.5, sProgress) * 2,
         }"
@@ -55,14 +56,13 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
               :style="{
                 '--s-row': r,
                 '--s-col': c,
-                '--s-size': 5.5,
                 '--s-n': 16,
               }"
             />
           </div>
         </div>
         <div
-          class="flex flex-col items-center justify-center mb-10 text-secondary-400 text-lg gap-2 tracking-[0.5em] transition-all duration-[.03s] dark:text-secondary-600"
+          class="flex flex-col sm:items-center justify-center ml-4 sm:ml-0 mb-4 sm:mb-10 text-secondary-400 text-sm sm:text-lg sm:gap-2 tracking-[0.5em] transition-all duration-[.03s] dark:text-secondary-600"
           :style="{
             transform: `translateY(${range(0, 0.5, sProgress) * -500}%) scale(${
               1 + range(0, 0.5, sProgress) * 0.2
@@ -73,23 +73,49 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
           <i class="pi pi-angle-down"></i>
         </div>
       </div>
-      <i class="w-96 h-144 figure-container" />
-      <div class="card flex flex-col px-9 py-15 rounded-tl-3xl gap-8">
-        <div class="flex gap-4">
-          <h1 class="font-bold text-6xl dark:text-surface-50">星火应用商店</h1>
-          <div class="flex flex-col items-start justify-between">
+      <div
+        class="sm:w-96 sm:h-auto h-144 aspect-96/144 figure-container scale-120 relative sm:scale-100 -translate-x-1/10 sm:translate-x-0"
+      >
+        <div class="absolute left-3/4 top-1/10 flex flex-col gap-2 sm:hidden">
+          <span
+            class="text-sm font-(family-name:--s-title-font) px-4 py-0.5 text-white from-primary-400 to-primary-500 bg-linear-to-r rounded-full dark:from-primary-500 dark:to-primary-600"
+            >V{{ latestRelease?.tag_name }}</span
+          >
+          <h2
+            class="text-base font-(family-name:--s-title-font) text-primary-500 writing-mode-sideways-rl"
+          >
+            SPARK<br />STORE
+          </h2>
+        </div>
+      </div>
+      <div
+        class="card flex flex-col px-4 md:px-6 lg:px-9 rounded-tl-3xl gap-4 sm:gap-8 py-4 pb-15 sm:py-15 before:hidden sm:before:block after:hidden sm:after:block"
+      >
+        <div
+          class="flex gap-4 flex-col lg:flex-row justify-center sm:justify-start"
+        >
+          <h1
+            class="font-bold text-4xl sm:text-5xl lg:text-6xl text-center sm:text-start dark:text-surface-50"
+          >
+            <i class="text-3xl! sm:hidden! pi pi-sparkles text-primary-200" />
+            星火应用商店
+            <i class="text-3xl! sm:hidden! pi pi-sparkles text-primary-200" />
+          </h1>
+          <div
+            class="flex-row-reverse lg:flex-col items-center lg:items-start justify-end lg:justify-between gap-4 lg:gap-0 hidden sm:flex"
+          >
             <span
-              class="font-(family-name:--s-title-font) px-4 py-0.5 text-white from-primary-400 to-primary-500 bg-linear-to-r rounded-full dark:from-primary-500 dark:to-primary-600"
+              class="text-sm lg:text-base font-(family-name:--s-title-font) px-4 py-0.5 text-white from-primary-400 to-primary-500 bg-linear-to-r rounded-full dark:from-primary-500 dark:to-primary-600"
               >V{{ latestRelease?.tag_name }}</span
             >
             <h2
-              class="text-lg font-(family-name:--s-title-font) text-primary-500"
+              class="text-base lg:text-lg leading-none lg:leading-normal font-(family-name:--s-title-font) text-primary-500"
             >
               SPARK STORE
             </h2>
           </div>
         </div>
-        <div class="flex -mt-3 gap-2">
+        <div class="flex -mt-3 gap-2 justify-center sm:justify-start">
           <img
             src="https://gitee.com/spark-store-project/spark-store/badge/star.svg?theme=gvp"
             height="21"
@@ -102,38 +128,47 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
           />
         </div>
         <div
-          class="flex flex-col text-xl text-surface-500 gap-1 dark:text-surface-200"
+          class="flex flex-col text-surface-500 gap-1 text-lg sm:text-xl text-center sm:text-start dark:text-surface-200"
         >
           <p>适用于 Debian 社区和其他 Linux 发行版的社区应用商店；</p>
-          <p>从社区中来，到社区中去，聚星星之火，成燎原之势。</p>
-          <p class="text-lg font-bold text-black dark:text-surface-100">
+          <p>
+            从社区中来，到社区中去，<br
+              class="sm:hidden"
+            />聚星星之火，成燎原之势。
+          </p>
+          <p
+            class="text-base sm:text-lg font-bold text-black dark:text-surface-100"
+          >
             {{ appConfig.latestNews.title }}
             <a :href="appConfig.latestNews.link" class="text-secondary-600"
-              >了解更多 →</a
-            >
+              >了解更多 <i class="pi pi-arrow-right font-bold!"></i
+            ></a>
           </p>
         </div>
         <div class="flex gap-4">
           <NuxtLink
             to="/download"
-            class="px-12 py-2.5 text-2xl font-bold text-white from-primary-400 to-primary-500 bg-linear-to-r rounded-full dark:from-primary-500 dark:to-primary-600"
+            class="px-4 md:px-12 grow-1 md:grow-0 flex justify-center py-2 md:py-2.5 text-xl md:text-2xl font-bold text-white from-primary-400 to-primary-500 bg-linear-to-r rounded-full dark:from-primary-500 dark:to-primary-600"
           >
-            <i class="pi pi-download text-xl! font-bold! pr-4" /> 前往下载
+            <i class="pi pi-download text-lg! md:text-xl! font-bold! pr-4" />
+            前往下载
           </NuxtLink>
           <a
-            class="px-2.5 bg-primary-200 border-primary-400 border-4 rounded-full flex items-center justify-center dark:bg-primary-900 dark:border-secondary-600"
+            class="px-2 md:px-2.5 bg-primary-200 border-primary-400 border-4 rounded-full flex items-center justify-center dark:bg-primary-900 dark:border-secondary-600"
             href="https://gitee.com/spark-store-project"
           >
             <Icon
               name="simple-icons:gitee"
-              class="text-2xl! font-bold! text-primary-color"
+              class="text-xl! md:text-2xl! font-bold! text-primary-color"
             />
           </a>
           <a
-            class="px-2.5 bg-primary-200 border-primary-400 border-4 rounded-full flex items-center justify-center dark:bg-primary-900 dark:border-secondary-600"
+            class="px-2 md:px-2.5 bg-primary-200 border-primary-400 border-4 rounded-full flex items-center justify-center dark:bg-primary-900 dark:border-secondary-600"
             href="https://github.com/spark-store-project"
           >
-            <i class="pi pi-github text-2xl! font-bold! text-primary-color" />
+            <i
+              class="pi pi-github text-xl! md:text-2xl! font-bold! text-primary-color"
+            />
           </a>
         </div>
       </div>
