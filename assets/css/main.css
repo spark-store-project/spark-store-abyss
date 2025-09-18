@@ -123,3 +123,11 @@
     "sideways-lr"
   );
 }
+
+@utility counter-reset-* {
+  counter-reset: --value([ *]);
+}
+
+@utility counter-increment-* {
+  counter-increment: --value([ *]) 1;
+}

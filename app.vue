@@ -2,6 +2,8 @@
 import ScrollPanel from "primevue/scrollpanel";
 import Button from "primevue/button";
 
+import { useToast } from "primevue/usetoast";
+
 const appConfig = useAppConfig();
 
 const path = computed(() => {
@@ -71,7 +73,7 @@ onMounted(() => {
 const qrWidth = ref(0);
 
 onMounted(() => {
-  const qrEl = document.querySelector("footer .flex:nth-child(3) svg");
+  const qrEl = document.querySelector("footer h2+svg");
   if (qrEl) {
     qrEl.addEventListener("resize", () => {
       qrWidth.value = qrEl.getBoundingClientRect().height;
@@ -197,6 +199,37 @@ const { data: latestRelease } = await useAsyncData(
 );
 
 provide("latestRelease", latestRelease);
+
+const dialog = ref(false);
+
+const joinGroup = () => {
+  dialog.value = true;
+  window.open(
+    "https://qm.qq.com/cgi-bin/qm/qr?authKey=1Oz2h5JBFSxBsHM63bwY1x0OswtQ08SBKj%2Fw9CRTxZ9%2B8%2FRKNIEv35s%2FhjOdRqkj&k=e7gkRbeGAjTfGupzsWbSbI8mOJM3ZqHQ&noverify=0",
+    "_blank"
+  );
+};
+
+const toast = useToast();
+
+const copyGroupNumber = async () => {
+  try {
+    await navigator.clipboard.writeText("424677882");
+    toast.add({
+      severity: "success",
+      summary: "复制成功",
+      detail: "QQ群号已复制到剪贴板",
+      life: 5000,
+    });
+  } catch {
+    toast.add({
+      severity: "error",
+      summary: "复制失败",
+      detail: "请手动复制QQ群号：424677882",
+      life: 5000,
+    });
+  }
+};
 </script>
 
 <template>
@@ -307,28 +340,31 @@ provide("latestRelease", latestRelease);
       <NuxtPage />
     </div>
     <footer
-      class="w-full flex justify-around bg-white snap-start overflow-hidden p-14 dark:bg-surface-900"
+      class="w-full flex justify-around bg-white snap-start overflow-hidden p-8 md:p-14 gap-4 dark:bg-surface-900 flex-col-reverse md:flex-row"
     >
-      <div class="flex flex-col items-start gap-6">
+      <div
+        class="flex md:flex-col justify-end items-center md:items-start gap-2 md:gap-6"
+      >
         <Icon
           name="sp:spark"
-          class="grow"
+          class="md:grow w-8 h-8 md:w-auto md:h-auto max-w-40 max-h-40"
           mode="svg"
-          :style="{
-            width: 'auto',
-            height: 'auto',
-          }"
         />
         <h2
-          class="font-(family-name:--s-title-font) text-5xl text-surface-500 dark:text-surface-100"
+          class="font-(family-name:--s-title-font) text-base md:text-5xl text-surface-500 dark:text-surface-100"
         >
           SPARK
         </h2>
+        <p class="grow text-end text-base md:text-2xl md:hidden">
+          © 2020-{{ new Date().getFullYear() }} 星火社区
+        </p>
       </div>
-      <div class="flex flex-col gap-4">
-        <h2 class="text-2xl font-bold dark:text-surface-100">关于星火社区</h2>
+      <div class="flex flex-col gap-2 md:gap-4">
+        <h2 class="text-lg md:text-2xl font-bold dark:text-surface-100">
+          关于星火社区
+        </h2>
         <p
-          class="leading-[2] text-surface-600 max-w-[25.8em] dark:text-surface-200"
+          class="text-sm md:text-base leading-loose text-surface-600 md:max-w-[25.8em] dark:text-surface-200"
         >
           星火社区是以丰富 Linux
           应用生态为核心目标的开源协作平台，汇聚年轻开发者团队。核心项目星火应用商店通过整合分散资源、提供海量软件下载及安装功能，解决
@@ -336,8 +372,8 @@ provide("latestRelease", latestRelease);
           和形象 IP 等传播方式构建开放协作生态。
         </p>
       </div>
-      <div class="flex flex-col items-end gap-8">
-        <div class="flex grow items-end gap-6">
+      <div class="flex-col items-end gap-4 lg:gap-8 hidden md:flex">
+        <div class="flex flex-col lg:flex-row grow items-end gap-2 lg:gap-6">
           <h2 class="whitespace-nowrap text-right text-2xl font-bold">
             加入星火应用商店<br />
             用户交流群
@@ -352,8 +388,71 @@ provide("latestRelease", latestRelease);
             }"
           />
         </div>
-        <p class="text-2xl">© 2020-{{ new Date().getFullYear() }} 星火社区</p>
+        <p class="text-lg lg:text-2xl">
+          © 2020-{{ new Date().getFullYear() }} 星火社区
+        </p>
       </div>
+      <button
+        class="md:hidden self-center flex items-center gap-2 px-6 py-2 text-lg font-bold text-primary-600 bg-primary-200 rounded-full hover:bg-primary-300 dark:text-primary-400 dark:bg-[rgba(from_var(--p-primary-500)r_g_b/0.3)] dark:hover:bg-[rgba(from_var(--p-primary-500)r_g_b/0.5)] cursor-pointer"
+        @click="joinGroup"
+      >
+        <Icon name="simple-icons:qq" class="text-2xl! font-bold!" />
+        点击这里加入用户交流群
+      </button>
+      <Dialog
+        v-model:visible="dialog"
+        modal
+        :show-header="false"
+        class="w-7/8 rounded-3xl!"
+        :style="{
+          '--p-dialog-border-color': 'transparent',
+        }"
+        content-class="flex flex-col items-center p-5! w-full h-full gap-4 overflow-hidden!"
+        :pt="{
+          mask: {
+            class:
+              'backdrop-blur-2xl s-bg-[rgba(255,255,255,0.4)] s-deco-surface-950 dark:s-bg-[rgba(0,0,0,0.4)] dark:s-deco-surface-100',
+            style: {
+              '--p-mask-background': 'var(--s-bg)',
+              '--p-dialog-color': 'var(--s-deco)',
+            },
+          },
+        }"
+        dismissable-mask
+      >
+        <p class="flex items-center justify-center gap-2 font-bold">
+          <Icon name="simple-icons:qq" class="text-2xl!" />
+          正在拉起手机 QQ
+          <i class="pi pi-spin pi-spinner font-bold!"></i>
+        </p>
+        <p class="text-sm text-surface-600">
+          如未响应，可通过以下方式加入交流群
+        </p>
+        <Icon
+          name="s:qrcode-3"
+          class="s-color-primary-600 bg-primary-100 dark:s-color-primary-400 dark:bg-[rgba(from_var(--p-primary-500)r_g_b/0.3)] w-48 h-48 p-3 rounded-2xl"
+          mode="svg"
+        />
+        <ol
+          class="text-sm flex flex-col gap-2 *:pl-6 *:relative *:before:content-[counter(qq)] *:before:counter-increment-[qq] *:before:absolute *:before:left-0 *:before:bg-primary-600 *:before:w-5 *:before:h-5 *:before:text-center *:before:leading-5 *:before:text-xs *:before:font-bold *:before:rounded-full *:before:text-white counter-reset-[qq]"
+        >
+          <li>
+            长按保存或截图上方群二维码，启动
+            QQ，点击右上角“+”-“扫一扫”-“相册”，选中此二维码以识别，申请加入群聊；
+          </li>
+          <li>
+            搜索 QQ 群号<span
+              class="font-bold py-0.5 px-2 mx-1 bg-primary-100 text-primary-600 rounded-full dark:text-primary-400 dark:bg-[rgba(from_var(--p-primary-500)r_g_b/0.3)]"
+              >424677882</span
+            >
+            <i
+              class="pi pi-clone text-xs! bg-surface-50 hover:bg-surface-100 px-2 py-0.5 rounded-full font-bold! dark:bg-surface-800 dark:hover:bg-surface-700 dark:text-surface-300 cursor-pointer"
+              @click="copyGroupNumber"
+            ></i>
+          </li>
+        </ol>
+      </Dialog>
+      <Toast />
     </footer>
   </ScrollPanel>
 </template>
