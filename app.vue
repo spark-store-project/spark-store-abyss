@@ -211,9 +211,9 @@ provide("latestRelease", latestRelease);
     }"
   >
     <header
+      ref="header"
       tabindex="0"
       class="fixed w-full h-15 z-10 px-4 sm:px-8 lg:px-12 translate-y-[calc(var(--s-progress)*4*var(--spacing))] sm:translate-y-[calc(var(--s-progress)*8*var(--spacing))] lg:translate-y-[calc(var(--s-progress)*12*var(--spacing))] before:translate-x-[calc(var(--s-progress)*4*var(--spacing))] sm:before:translate-x-[calc(var(--s-progress)*8*var(--spacing))] lg:before:translate-x-[calc(var(--s-progress)*12*var(--spacing))] before:w-[calc(100%-var(--s-progress)*8*var(--spacing))] sm:before:w-[calc(100%-var(--s-progress)*16*var(--spacing))] lg:before:w-[calc(100%-var(--s-progress)*24*var(--spacing))] sm:h-auto focus-within:h-auto before:h-15 focus-within:before:h-82.5 sm:before:h-full focus-within:sm:before:h-full overflow-hidden focus-within:overflow-visible transition-discrete group"
-      ref="header"
       :style="{ '--s-progress': sProgress }"
       @click="if (!header?.matches(':focus-within')) header?.focus();"
       @focus="handleHeaderFocus"
