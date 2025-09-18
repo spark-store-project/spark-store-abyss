@@ -348,8 +348,12 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
         </p>
       </div>
     </section>
-    <section class="flex flex-col items-center justify-center gap-10 pt-15">
-      <div class="flex items-center justify-center gap-6">
+    <section
+      class="flex flex-col items-center justify-center gap-8 lg:gap-10 px-8 pb-24 pt-24"
+    >
+      <div
+        class="flex items-center justify-center self-start sm:self-center gap-6"
+      >
         <Icon
           name="s:community"
           mode="svg"
@@ -360,7 +364,7 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
           }"
         />
         <h2
-          class="text-5xl text-primary-color font-bold leading-[1.3] dark:text-primary-400"
+          class="text-3xl md:text-4xl lg:text-5xl text-primary-color font-bold leading-[1.3] dark:text-primary-400"
         >
           <span
             class="font-(family-name:--s-title-font) text-primary-400 font-normal dark:opacity-50"
@@ -369,29 +373,36 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
           社区共筑&nbsp;&nbsp;精挑细选
         </h2>
       </div>
-      <div class="flex gap-16">
-        <!-- 左侧内容区域 -->
-        <div class="flex flex-col py-12 gap-6">
-          <div class="flex flex-col">
-            <p class="text-5xl leading-[1.5]">凝聚开发者智慧</p>
-            <p class="text-5xl font-bold leading-[1.5]">
+      <div
+        class="flex gap-4 lg:gap-16 flex-col-reverse sm:flex-row items-center grow-1 sm:grow-0"
+      >
+        <div
+          class="flex flex-col py-0 sm:py-8 lg:py-12 gap-6 items-center sm:items-start"
+        >
+          <div class="flex flex-col items-center sm:items-start">
+            <p class="text-3xl md:text-4xl lg:text-5xl leading-[1.5]">
+              凝聚开发者智慧
+            </p>
+            <p class="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.5]">
               以开源精神守护应用品质
             </p>
           </div>
           <p
-            class="text-lg text-surface-700 leading-[2] max-w-[31.8em] dark:text-surface-200"
+            class="text-base sm:text-lg text-center sm:text-start text-surface-700 leading-[2] max-w-[31.8em] dark:text-surface-200"
           >
             星火社区构建 Linux
             生态「应用银河」，持续上架丰富的跨平台、跨生态应用程序，涵盖系统工具、影音娱乐等精选资源，精准匹配用户需求。年轻开发团队以
             00 后为主力，致力让技术成果如星火般点亮数字原野。
           </p>
           <div class="flex items-center gap-4 dark:opacity-80">
-            <p class="font-bold text-3xl text-primary-500">
+            <p
+              class="font-bold text-xl md:text-2xl lg:text-3xl text-primary-500"
+            >
               全架构<br />
               上架应用
             </p>
             <p
-              class="text-7xl font-(family-name:--s-title-font) text-primary-500"
+              class="text-5xl md:text-6xl lg:text-7xl font-(family-name:--s-title-font) text-primary-500"
             >
               {{
                 Math.floor(
@@ -426,15 +437,10 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
           </div>
         </div>
 
-        <!-- 右侧图片区域 -->
         <Icon
           name="s:community-deco"
-          class="s-deco-secondary-900 s-bg-primary-200 dark:s-deco-secondary-100 dark:s-bg-primary-500"
+          class="w-auto h-auto grow-1 sm:grow-0 sm:w-auto sm:h-full s-deco-secondary-900 s-bg-primary-200 dark:s-deco-secondary-100 dark:s-bg-primary-500"
           mode="svg"
-          :style="{
-            height: '100%',
-            width: 'auto',
-          }"
         />
       </div>
     </section>
