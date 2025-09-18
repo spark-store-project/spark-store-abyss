@@ -444,8 +444,12 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
         />
       </div>
     </section>
-    <section class="flex flex-col items-center justify-center gap-10 pt-15">
-      <div class="flex items-center justify-center gap-6">
+    <section
+      class="flex flex-col items-center justify-center gap-8 lg:gap-10 px-8 pb-24 pt-24"
+    >
+      <div
+        class="flex items-center justify-center self-start sm:self-center gap-6"
+      >
         <Icon
           name="s:superspeed"
           class="s-deco-secondary-700 s-bg-secondary-100 s-bg-2-secondary-200 s-bg-3-secondary-400 dark:s-deco-primary-400 dark:s-bg-primary-800 dark:s-bg-2-secondary-600 dark:s-bg-3-primary-900"
@@ -456,7 +460,7 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
           }"
         />
         <h2
-          class="text-5xl text-primary-color font-bold leading-[1.3] dark:text-primary-400"
+          class="text-2xl md:text-4xl lg:text-5xl text-primary-color font-bold leading-[1.3] dark:text-primary-400"
         >
           <span
             class="font-(family-name:--s-title-font) text-primary-400 font-normal dark:opacity-50"
@@ -465,11 +469,12 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
           极速下载&nbsp;&nbsp;瞬息可达
         </h2>
       </div>
-      <div class="flex gap-16">
-        <!-- 左侧图片区域 -->
+      <div
+        class="flex gap-4 lg:gap-16 max-w-full flex-col sm:flex-row items-center grow-1 sm:grow-0"
+      >
         <Icon
           name="s:superspeed-deco"
-          class="s-deco-secondary-900 s-bg-primary-200 dark:s-deco-secondary-100 dark:s-bg-primary-500"
+          class="w-auto h-auto grow-1 sm:grow-0 sm:w-auto sm:h-full s-deco-secondary-900 s-bg-primary-200 dark:s-deco-secondary-100 dark:s-bg-primary-500"
           mode="svg"
           :style="{
             height: '100%',
@@ -477,14 +482,19 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
           }"
         />
 
-        <!-- 右侧内容区域 -->
-        <div class="flex flex-col py-12 gap-6">
-          <div class="flex flex-col">
-            <p class="text-5xl leading-[1.5]">下载「黑科技」</p>
-            <p class="text-5xl font-bold leading-[1.5]">APTSS 重构智能网络</p>
+        <div
+          class="flex flex-col py-0 sm:py-8 lg:py-12 gap-6 items-center sm:items-start"
+        >
+          <div class="flex flex-col items-center sm:items-start">
+            <p class="text-3xl md:text-4xl lg:text-5xl leading-[1.5]">
+              下载「黑科技」
+            </p>
+            <p class="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.5]">
+              APTSS 重构智能网络
+            </p>
           </div>
           <p
-            class="text-lg text-surface-700 leading-[2] max-w-[31em] dark:text-surface-200"
+            class="text-base sm:text-lg text-center sm:text-start text-surface-700 leading-[2] max-w-[31em] dark:text-surface-200"
           >
             下载速度是应用商店的关键指标，而星火应用商店在这方面表现卓越。在软件分发阶段，商店采用基于
             APT-Fast 优化的下载工具 APTSS，准备速度较原版提升 300%
@@ -492,7 +502,7 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
           </p>
           <a
             href="https://gitee.com/GXDE-OS/aptss"
-            class="text-xl font-bold text-secondary-600 dark:text-secondary-500"
+            class="text-lg sm:text-xl self-end sm:self-start font-bold text-secondary-600 dark:text-secondary-500"
             >🎯 APTSS 源码仓库地址 →</a
           >
         </div>
