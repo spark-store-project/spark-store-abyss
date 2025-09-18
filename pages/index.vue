@@ -364,7 +364,7 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
           }"
         />
         <h2
-          class="text-2xl md:text-4xl lg:text-5xl text-primary-color font-bold leading-[1.3] dark:text-primary-400"
+          class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primary-color font-bold leading-[1.3] dark:text-primary-400"
         >
           <span
             class="font-(family-name:--s-title-font) text-primary-400 font-normal dark:opacity-50"
@@ -379,11 +379,17 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
         <div
           class="flex flex-col py-0 sm:py-8 lg:py-12 gap-6 items-center sm:items-start"
         >
-          <div class="flex flex-col items-center sm:items-start">
-            <p class="text-3xl md:text-4xl lg:text-5xl leading-[1.5]">
+          <div
+            class="flex flex-col text-center sm:text-start items-center sm:items-start"
+          >
+            <p
+              class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1.5]"
+            >
               凝聚开发者智慧
             </p>
-            <p class="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.5]">
+            <p
+              class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.5] whitespace-nowrap"
+            >
               以开源精神守护应用品质
             </p>
           </div>
@@ -460,7 +466,7 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
           }"
         />
         <h2
-          class="text-2xl md:text-4xl lg:text-5xl text-primary-color font-bold leading-[1.3] dark:text-primary-400"
+          class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primary-color font-bold leading-[1.3] dark:text-primary-400"
         >
           <span
             class="font-(family-name:--s-title-font) text-primary-400 font-normal dark:opacity-50"
@@ -485,11 +491,17 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
         <div
           class="flex flex-col py-0 sm:py-8 lg:py-12 gap-6 items-center sm:items-start"
         >
-          <div class="flex flex-col items-center sm:items-start">
-            <p class="text-3xl md:text-4xl lg:text-5xl leading-[1.5]">
+          <div
+            class="flex flex-col text-center sm:text-start items-center sm:items-start"
+          >
+            <p
+              class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1.5]"
+            >
               下载「黑科技」
             </p>
-            <p class="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.5]">
+            <p
+              class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.5] whitespace-nowrap"
+            >
               APTSS 重构智能网络
             </p>
           </div>
@@ -508,8 +520,12 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
         </div>
       </div>
     </section>
-    <section class="flex flex-col items-center justify-center gap-10 pt-15">
-      <div class="flex items-center justify-center gap-6">
+    <section
+      class="flex flex-col items-center justify-center gap-8 lg:gap-10 px-8 pb-24 pt-24"
+    >
+      <div
+        class="flex items-center justify-center self-start sm:self-center gap-6"
+      >
         <Icon
           name="s:convenience"
           class="s-deco-secondary-700 s-bg-secondary-100 s-bg-2-secondary-200 s-bg-3-secondary-400 dark:s-deco-primary-400 dark:s-bg-primary-800 dark:s-bg-2-secondary-600 dark:s-bg-3-primary-900"
@@ -520,7 +536,7 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
           }"
         />
         <h2
-          class="text-5xl text-primary-color font-bold leading-[1.3] dark:text-primary-400"
+          class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primary-color font-bold leading-[1.3] dark:text-primary-400"
         >
           <span
             class="font-(family-name:--s-title-font) text-primary-400 font-normal dark:opacity-50"
@@ -528,17 +544,29 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
           ><br />一键安装&nbsp;&nbsp;即刻掌控
         </h2>
       </div>
-      <div class="flex gap-16">
+      <div
+        class="flex gap-4 lg:gap-16 max-w-full flex-col-reverse sm:flex-row items-center grow-1 sm:grow-0"
+      >
         <!--左侧内容区域 -->
-        <div class="flex flex-col py-12 gap-6">
-          <div class="flex flex-col">
-            <p class="text-5xl leading-[1.5]">一站式安装体验</p>
-            <p class="text-5xl font-bold leading-[1.5]">
+        <div
+          class="flex flex-col py-0 sm:py-8 lg:py-12 gap-6 items-center sm:items-start"
+        >
+          <div
+            class="flex flex-col text-center sm:text-start items-center sm:items-start"
+          >
+            <p
+              class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1.5]"
+            >
+              一站式安装体验
+            </p>
+            <p
+              class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.5] whitespace-nowrap"
+            >
               让技术普惠真正触手可及
             </p>
           </div>
           <p
-            class="text-lg text-surface-700 leading-[2] max-w-[31em] dark:text-surface-200"
+            class="text-base sm:text-lg text-center sm:text-start text-surface-700 leading-[2] max-w-[31em] dark:text-surface-200"
           >
             星火商店所有程序经过深度适配优化；用户轻点按钮，系统自动完成依赖解析与环境配置，处理复杂软件如搭积木般严丝合缝。从图形应用到编程工具，从
             Wine 移植应用到 Android
@@ -557,7 +585,9 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
         />
       </div>
     </section>
-    <section class="flex items-center justify-center gap-6 pt-15">
+    <section
+      class="flex flex-col items-center justify-center gap-8 px-8 pb-24 pt-24"
+    >
       <div
         class="fixed top-0 left-0 w-full h-full z-[-1]"
         :style="{
@@ -577,35 +607,48 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
           }"
         />
       </div>
-      <!-- 左侧内容区域 -->
-      <div class="flex flex-col gap-4 items-start">
-        <div class="flex items-center gap-4">
-          <p class="font-bold text-3xl text-primary-color">星火应用商店</p>
-          <p
-            class="font-bold text-2xl text-secondary-300 font-(family-name:--s-title-font) dark:text-secondary-600"
-          >
-            SPARK STORE
+      <div class="flex items-center sm:gap-6 max-w-full">
+        <!-- 左侧内容区域 -->
+        <div class="flex flex-col gap-4 items-start">
+          <div class="flex flex-col md:flex-row md:items-center md:gap-4">
+            <p class="font-bold text-2xl md:text-3xl text-primary-color">
+              星火应用商店
+            </p>
+            <p
+              class="font-bold text-lg sm:text-2xl text-secondary-300 font-(family-name:--s-title-font) dark:text-secondary-600"
+            >
+              SPARK STORE
+            </p>
+          </div>
+          <p class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1.5]">
+            更多精彩，<br />
+            <span class="font-bold whitespace-nowrap">邀您下载体验。</span>
           </p>
+          <p
+            class="text-base lg:text-lg leading-[2] text-surface-900 dark:text-surface-200"
+          >
+            Linux
+            软件生态的构建并非依赖个体的孤立努力，而需要全社区共同参与；<br />
+            只有当大家的「星火」聚集一处，方可引发「燎原之势」。
+          </p>
+          <NuxtLink
+            to="/download"
+            class="hidden sm:block px-8 md:px-14 py-3 text-2xl font-bold text-white from-primary-400 to-primary-500 bg-linear-to-r rounded-full dark:from-primary-500 dark:to-primary-600"
+          >
+            <i class="pi pi-download text-xl! font-bold! pr-4" /> 前往下载
+          </NuxtLink>
         </div>
-        <p class="text-5xl leading-[1.5]">
-          更多精彩，<br />
-          <span class="font-bold">邀您下载体验。</span>
-        </p>
-        <p class="text-lg leading-[2] text-surface-900 dark:text-surface-200">
-          Linux 软件生态的构建并非依赖个体的孤立努力，而需要全社区共同参与；<br />
-          只有当大家的「星火」聚集一处，方可引发「燎原之势」。
-        </p>
-        <NuxtLink
-          to="/download"
-          class="px-14 py-3 text-2xl font-bold text-white from-primary-400 to-primary-500 bg-linear-to-r rounded-full dark:from-primary-500 dark:to-primary-600"
-        >
-          <i class="pi pi-download text-xl! font-bold! pr-4" /> 前往下载
-        </NuxtLink>
+        <!-- 右侧图片区域 -->
+        <i
+          class="w-64 h-auto aspect-96/144 sm:w-96 sm:h-144 scale-200 sm:scale-100 translate-x-1/5 sm:translate-x-0 figure-container"
+        />
       </div>
-      <!-- 右侧图片区域 -->
-      <div class="flex items-center">
-        <i class="w-96 h-144 figure-container" />
-      </div>
+      <NuxtLink
+        to="/download"
+        class="sm:hidden px-14 py-3 text-2xl font-bold text-white from-primary-400 to-primary-500 bg-linear-to-r rounded-full dark:from-primary-500 dark:to-primary-600"
+      >
+        <i class="pi pi-download text-xl! font-bold! pr-4" /> 前往下载
+      </NuxtLink>
     </section>
   </div>
 </template>
