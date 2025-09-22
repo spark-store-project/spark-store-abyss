@@ -1,7 +1,7 @@
 export default defineAppConfig({
   latestNews: {
     title: "🎉社区吉祥物「星小火」",
-    link: "https://tai3.cn",
+    link: "https://wiki.spark-app.store/#/Community/Sparky.md",
   },
   appIcons: [
     "hmcl",
