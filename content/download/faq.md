@@ -1,12 +1,12 @@
-### 对于 Ubuntu 20.04 用户
+### 安装指南
 
-1. **下载依赖包**
+0. **如果你在使用Arch , Fedora 或者银河麒麟**
 
-- 请访问[星火应用商店依赖包下载页面](https://gitee.com/spark-store-project/spark-store-dependencies/releases/tag/1.0)，下载最新的依赖包。
-- 请多次解压依赖包，直到你可以看到诸多以 deb 结尾的安装包。
-- 请根据依赖包内的说明，一次性安装所有的依赖包。
+星火新增了 APM 软件商店，广泛地兼容更多的发行，详情请查看 **[琥珀软件包](https://gitee.com/amber-ce/amber-pm/releases/ )**
 
-2. **下载并安装**
+您不需要安装星火商店客户端，详情可进群交流：https://blog.shenmo.tech/post/%E6%95%85%E9%9A%9C%E5%85%AC%E5%91%8A/
+
+1. **下载并安装星火客户端（Debian Ubuntu deepin UOS等）**
 
    如果你已经正确选择了正确的计算机架构（amd64、arm64 或 loong64），点击下一步将自动下载最新版本的星火应用商店安装包。
 
@@ -18,7 +18,7 @@
    ```
 3. **ACE兼容环境**
 
-   如果您正在使用银河麒麟或者非Debian发行版，请参考以下链接来配置兼容环境以安装：https://blog.shenmo.tech/post/%E6%95%85%E9%9A%9C%E5%85%AC%E5%91%8A/
+   如果想要在 Arch 或 Fedora 上运行 Debian 版本的星火商店 ，请参考以下链接来配置兼容环境以安装：https://blog.shenmo.tech/post/%E6%95%85%E9%9A%9C%E5%85%AC%E5%91%8A/
 
    
 4. **社群地址**
