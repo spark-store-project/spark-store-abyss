@@ -26,7 +26,7 @@
 
 ## ACE兼容环境
 
-   如果想要在 Arch 或 Fedora 上运行 Debian 版本的星火商店 ，请参考以下链接来配置兼容环境以安装：https://blog.shenmo.tech/post/%E6%95%85%E9%9A%9C%E5%85%AC%E5%91%8A/
+   如果想要在 Arch 或 Fedora 上运行 Debian 版本的星火商店 ，请参考以下链接来配置兼容环境以安装：https://blog.shenmo.tech/post/%E4%BD%BF%E7%94%A8amber-ce%E5%AE%89%E8%A3%85%E6%98%9F%E7%81%AB%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97%E7%9A%84%E6%95%99%E7%A8%8B/
 
    
 ## 社群地址
