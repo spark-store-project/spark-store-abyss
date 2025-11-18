@@ -1,7 +1,7 @@
 ## Arch , Fedora 或者银河麒麟的安装指南
 
 
-请使用星火新增的 **APM 软件商店**，广泛地兼容更多的发行，详情请查看 **[琥珀软件包](https://gitee.com/amber-ce/amber-pm/releases/ )**
+请使用星火新增的 **APM 软件商店**，广泛地兼容更多的发行，详情请查看 **[APM 软件包](https://amber-pm.spark-app.store/)**
 
 您不需要安装星火商店客户端，详情可进群交流：https://blog.shenmo.tech/post/%E6%95%85%E9%9A%9C%E5%85%AC%E5%91%8A/
 
