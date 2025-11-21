@@ -1,4 +1,4 @@
-## Arch , Fedora 或者银河麒麟的安装指南
+## 银河麒麟，Arch 或 Fedora 的安装指南
 
 
 请使用星火新增的 **APM 软件商店**，广泛地兼容更多的发行，详情请查看 **[APM 软件包](https://amber-pm.spark-app.store/)**
