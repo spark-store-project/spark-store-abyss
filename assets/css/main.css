@@ -5,6 +5,7 @@
 @custom-variant dark (&:where(.s-dark, .s-dark *));
 
 @theme {
+  --breakpoint-xs: 30rem;
   --color-primary-color: var(--p-primary-color);
   --color-primary-50: var(--p-primary-50);
   --color-primary-100: var(--p-primary-100);

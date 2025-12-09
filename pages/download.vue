@@ -101,13 +101,13 @@ const { data: faqContent } = await useAsyncData("/download/faq", () => {
   <div>
     <section class="flex flex-col items-center relative justify-between">
       <div
-        class="pt-27 px-8 flex flex-col justify-center flex-grow relative w-full overflow-hidden gap-4 md:gap-10"
+        class="pt-20 xs:pt-27 px-8 flex flex-col justify-center flex-grow relative w-full overflow-hidden gap-4 md:gap-10"
       >
         <div class="flex flex-col gap-4 md:gap-0">
           <h1
             class="md:text-center text-4xl md:text-5xl font-bold text-primary-color"
           >
-            下载<br class="sm:hidden" />星火应用商店
+            下载<br class="hidden xs:block sm:hidden" />星火应用商店
           </h1>
           <p class="md:text-center md:text-lg md:leading-loose">
             基于 DTK 框架构建星火应用商店客户端，极小安装包体积，让 Linux
@@ -117,7 +117,7 @@ const { data: faqContent } = await useAsyncData("/download/faq", () => {
             </span>
           </p>
         </div>
-        <div class="flex justify-center gap-6 flex-col md:flex-row">
+        <div class="flex justify-center gap-4 lg:gap-6 flex-col md:flex-row">
           <div class="flex flex-col gap-2">
             <p class="font-bold">
               在这里选择计算机架构 <i class="pi pi-question-circle"></i>
@@ -151,7 +151,9 @@ const { data: faqContent } = await useAsyncData("/download/faq", () => {
               }"
             />
           </div>
-          <div class="flex gap-6 grow-1 lg:grow-0">
+          <div
+            class="flex flex-col xs:flex-row gap-4 lg:gap-6 grow-1 lg:grow-0"
+          >
             <button
               class="relative items-start flex flex-col justify-center py-2 pl-4 pr-4 lg:pr-26 grow-1 lg:grow-0 text-xl lg:text-2xl font-bold text-white rounded-2xl overflow-hidden from-primary-400 to-primary-500 bg-linear-to-r dark:from-primary-500 dark:to-primary-600"
               @click="dialog = true"
@@ -175,47 +177,58 @@ const { data: faqContent } = await useAsyncData("/download/faq", () => {
               />
             </button>
             <a
-              :href="consoleDownloadUrl"
-              class="relative items-center gap-2 flex py-2 px-4 font-bold rounded-2xl overflow-hidden from-primary-400 to-primary-500 bg-linear-to-r dark:from-primary-500 dark:to-primary-600 before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:border-5 before:border-[transparent] before:rounded-2xl before:bg-white before:bg-clip-content before:opacity-50 dark:before:bg-secondary-950 dark:before:opacity-80"
+              href="https://amber-pm.spark-app.store/"
+              class="relative items-center gap-2 flex py-2 px-4 lg:pr-26 grow-1 lg:grow-0 font-bold rounded-2xl overflow-hidden from-primary-200 to-primary-300 bg-linear-to-r dark:from-primary-800 dark:to-primary-900"
             >
-              <Icon
-                name="proicons:terminal"
-                class="text-primary-500 text-5xl lg:text-6xl"
-              />
               <div class="flex flex-col items-start">
                 <p
-                  class="text-sm sm:text-lg lg:text-xl writing-mode-vertical-rl sm:writing-mode-horizontal-tb text-primary-color z-[0]"
+                  class="text-md sm:text-lg lg:text-xl text-primary-color z-[0]"
                 >
-                  <span class="hidden sm:inline">下载</span>终端版
+                  <span class="hidden sm:inline">下载 </span>APM 包管理器
                 </p>
-                <p
-                  class="hidden sm:block text-xs lg:text-sm text-primary-color opacity-50"
-                >
-                  全平台支持 仅包含基本功能
+                <p class="text-xs lg:text-sm text-primary-color opacity-50">
+                  银河麒麟 Fedora Arch Linux
                 </p>
               </div>
+              <Icon
+                name="s:amber-pm"
+                class="absolute top-0 right-0 s-deco-primary-500 s-bg-primary-300 w-20 translate-x-1/6 -translate-y-2/9 opacity-60 dark:s-bg-primary-900 dark:opacity-40"
+                mode="svg"
+                :style="{
+                  height: 'auto',
+                }"
+              />
             </a>
           </div>
         </div>
         <div class="flex flex-col items-center justify-center gap-2">
           <div
-            class="flex gap-4 sm:gap-8 font-bold text-sm sm:text-base md:text-lg"
+            class="flex flex-col xs:flex-row items-center gap-4 sm:gap-8 font-bold text-sm sm:text-base md:text-lg"
           >
-            <a
-              class="border-b-2 border-primary-500 hover:border-primary-color"
-              href="https://gitee.com/spark-store-project/spark-store/releases"
-              ><span class="hidden sm:inline">查看</span>更新日志</a
-            >
-            <a
-              class="border-b-2 border-primary-500 hover:border-primary-color"
-              href="https://gitee.com/spark-store-project/spark-store"
-              ><span class="hidden sm:inline">访问 </span>Gitee 源码仓库</a
-            >
-            <a
-              class="border-b-2 border-primary-500 hover:border-primary-color"
-              href="https://github.com/spark-store-project/spark-store"
-              ><span class="hidden sm:inline">访问 </span>GitHub 源码仓库</a
-            >
+            <div class="flex gap-4 sm:gap-8">
+              <a
+                class="border-b-2 border-primary-500 hover:border-primary-color"
+                href="https://gitee.com/spark-store-project/spark-store/releases"
+                ><span class="hidden md:inline">查看</span>更新日志</a
+              >
+              <a
+                class="border-b-2 border-primary-500 hover:border-primary-color"
+                href="https://gitee.com/spark-store-project/spark-store"
+                ><span class="hidden md:inline">访问 </span>Gitee 源码仓库</a
+              >
+            </div>
+            <div class="flex gap-4 sm:gap-8">
+              <a
+                class="border-b-2 border-primary-500 hover:border-primary-color"
+                href="https://github.com/spark-store-project/spark-store"
+                ><span class="hidden md:inline">访问 </span>GitHub 源码仓库</a
+              >
+              <a
+                class="border-b-2 border-primary-500 hover:border-primary-color"
+                :href="consoleDownloadUrl"
+                ><span class="hidden md:inline">下载 </span>TUI 终端版本</a
+              >
+            </div>
           </div>
           <p class="opacity-60 text-sm md:text-base text-center">
             星火应用商店遵循 GNU GPLv3 协议开放<br
