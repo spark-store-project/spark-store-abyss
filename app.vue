@@ -314,6 +314,9 @@ const copyGroupNumber = async () => {
             <NuxtLink to="/about" class="nav-link" active-class="active">
               关于
             </NuxtLink>
+            <NuxtLink to="/commercial" class="nav-link" active-class="active">
+              商业版
+            </NuxtLink>
             <a href="https://gxde.top/" class="nav-link" active-class="active">
               GXDE OS
             </a>
