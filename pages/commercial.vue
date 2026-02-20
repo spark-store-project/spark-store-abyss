@@ -2,7 +2,7 @@
 import { onMounted, watchEffect, ref, inject } from 'vue';
 import type { Ref } from '@vue/reactivity';
 import type { ComponentPublicInstance } from '@vue/runtime-core';
-import { range, riro } from '~/utils/index';
+import { range } from '~/utils/index';
 import Dialog from 'primevue/dialog';
 
 const scrollPanel = inject<Ref<ComponentPublicInstance>>("scrollPanel");
@@ -11,10 +11,8 @@ const contactDialog = ref(false);
 
 onMounted(() => {
   watchEffect(() => {
-    const scrollTop = (
-      scrollPanel?.value as unknown as { lastScrollTop: number }
-    ).lastScrollTop;
-    const clientHeight = scrollPanel?.value?.$el.clientHeight;
+    const scrollTop = scrollPanel?.value?.lastScrollTop || 0;
+    const clientHeight = scrollPanel?.value?.$el.clientHeight || 1;
     sProgress.value = scrollTop / clientHeight;
   });
 });
@@ -134,7 +132,7 @@ const sendEmail = () => {
           </p>
         </div>
         <div class="w-full max-w-[400px] h-[300px] text-primary-500 dark:text-primary-400">
-          <CustomizationIllustration />
+          <Icon name="s:commercial-customization" mode="svg" class="w-full h-full" />
         </div>
       </div>
     </section>
@@ -172,7 +170,8 @@ const sendEmail = () => {
             <div class="px-4 py-2 bg-primary-200 rounded-full dark:bg-primary-900">兆芯</div>
             <div class="px-4 py-2 bg-primary-200 rounded-full dark:bg-primary-900">飞腾</div>
             <div class="px-4 py-2 bg-primary-200 rounded-full dark:bg-primary-900">海光</div>
-            <div class="px-4 py-2 bg-primary-200 rounded-full dark:bg-primary-900">华为麒麟、华为鲲鹏</div>
+            <div class="px-4 py-2 bg-primary-200 rounded-full dark:bg-primary-900">华为麒麟</div>
+            <div class="px-4 py-2 bg-primary-200 rounded-full dark:bg-primary-900">华为鲲鹏</div>
           </div>
         </div>
         <div class="w-full max-w-[400px] h-[300px] text-primary-500 dark:text-primary-400">
@@ -216,7 +215,7 @@ const sendEmail = () => {
           </div>
         </div>
         <div class="w-full max-w-[400px] h-[300px] text-primary-500 dark:text-primary-400">
-          <DistributionIllustration />
+          <Icon name="s:commercial-distribution" mode="svg" class="w-full h-full" />
         </div>
       </div>
     </section>
