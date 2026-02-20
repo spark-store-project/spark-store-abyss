@@ -7,9 +7,11 @@ import CustomizationIllustration from '~/components/illustrations/CustomizationI
 import ArchitectureIllustration from '~/components/illustrations/ArchitectureIllustration.vue';
 import ContactIllustration from '~/components/illustrations/ContactIllustration.vue';
 import DistributionIllustration from '~/components/illustrations/DistributionIllustration.vue';
+import Dialog from 'primevue/dialog';
 
 const scrollPanel = inject<Ref<ComponentPublicInstance>>("scrollPanel");
 const sProgress = ref(0);
+const contactDialog = ref(false);
 
 onMounted(() => {
   watchEffect(() => {
@@ -20,6 +22,15 @@ onMounted(() => {
     sProgress.value = scrollTop / clientHeight;
   });
 });
+
+const sendEmail = () => {
+  const to = 'shenmo@spark-app.store';
+  const cc = 'momen@spark-app.store';
+  const subject = encodeURIComponent('商业版咨询');
+  const body = encodeURIComponent('您好，我想咨询商业版的相关信息：\n\n');
+  window.location.href = `mailto:${to}?cc=${cc}&subject=${subject}&body=${body}`;
+  contactDialog.value = true;
+};
 </script>
 
 <template>
@@ -253,12 +264,12 @@ onMounted(() => {
             请联系我们的客服团队，详细沟通您的需求，我们将为您提供专业的咨询服务和合理的报价方案。
           </p>
           <div class="flex gap-4 mt-6">
-            <a
-              href="mailto:commercial@spark-app.store"
+            <button
+              @click="sendEmail"
               class="px-8 py-3 text-xl font-bold text-white from-primary-400 to-primary-500 bg-linear-to-r rounded-full dark:from-primary-500 dark:to-primary-600"
             >
               <i class="pi pi-envelope text-xl! font-bold! pr-4" /> 联系客服
-            </a>
+            </button>
           </div>
         </div>
         <div class="w-full max-w-[400px] h-[300px] text-primary-500 dark:text-primary-400">
@@ -266,6 +277,63 @@ onMounted(() => {
         </div>
       </div>
     </section>
+
+    <Dialog
+      v-model:visible="contactDialog"
+      modal
+      :show-header="false"
+      :style="{ width: '90vw', maxWidth: '500px' }"
+      :closable="false"
+    >
+      <div class="flex flex-col gap-6 p-6">
+        <div class="flex items-center gap-3">
+          <i class="pi pi-envelope text-3xl text-primary-500" />
+          <h3 class="text-2xl font-bold text-surface-900 dark:text-surface-0">
+            正在调用系统邮箱发信
+          </h3>
+        </div>
+        <div class="flex flex-col gap-4">
+          <div class="flex flex-col gap-2">
+            <p class="text-base font-semibold text-surface-700 dark:text-surface-300">
+              如果您的设备没有配置邮箱软件，请手动复制以下邮箱地址：
+            </p>
+            <div class="flex flex-col gap-2 bg-surface-100 dark:bg-surface-800 p-4 rounded-lg">
+              <div class="flex items-center gap-2">
+                <span class="text-sm font-medium text-surface-600 dark:text-surface-400">收件人：</span>
+                <span class="text-base font-mono text-surface-900 dark:text-surface-0">shenmo@spark-app.store</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-sm font-medium text-surface-600 dark:text-surface-400">抄送：</span>
+                <span class="text-base font-mono text-surface-900 dark:text-surface-0">momen@spark-app.store</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-2">
+            <p class="text-base font-semibold text-surface-700 dark:text-surface-300">
+              也可以通过QQ联系我们：
+            </p>
+            <div class="flex flex-col gap-2 bg-surface-100 dark:bg-surface-800 p-4 rounded-lg">
+              <div class="flex items-center gap-2">
+                <span class="text-sm font-medium text-surface-600 dark:text-surface-400">shenmo：</span>
+                <span class="text-base font-mono text-surface-900 dark:text-surface-0">1422953823</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-sm font-medium text-surface-600 dark:text-surface-400">momen：</span>
+                <span class="text-base font-mono text-surface-900 dark:text-surface-0">954551908</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-end">
+          <button
+            @click="contactDialog = false"
+            class="px-6 py-2 text-base font-semibold text-white bg-primary-500 rounded-lg hover:bg-primary-600 dark:bg-primary-600 dark:hover:bg-primary-700"
+          >
+            关闭
+          </button>
+        </div>
+      </div>
+    </Dialog>
   </div>
 </template>
 
