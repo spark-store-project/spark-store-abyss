@@ -3,6 +3,9 @@ import { onMounted, watchEffect, ref, inject } from 'vue';
 import type { Ref } from '@vue/reactivity';
 import type { ComponentPublicInstance } from '@vue/runtime-core';
 import { range, riro } from '~/utils/index';
+import CustomizationIllustration from '~/components/illustrations/CustomizationIllustration.vue';
+import ArchitectureIllustration from '~/components/illustrations/ArchitectureIllustration.vue';
+import ContactIllustration from '~/components/illustrations/ContactIllustration.vue';
 
 const scrollPanel = inject<Ref<ComponentPublicInstance>>("scrollPanel");
 const sProgress = ref(0);
@@ -120,6 +123,9 @@ onMounted(() => {
             商业版提供专属定制服务，可根据企业需求修改应用商店名称、logo、主题风格等，打造独一无二的企业级应用商店，提升企业品牌形象。
           </p>
         </div>
+        <div class="w-full max-w-[400px] h-[300px] text-primary-500 dark:text-primary-400">
+          <CustomizationIllustration />
+        </div>
       </div>
     </section>
 
@@ -157,81 +163,8 @@ onMounted(() => {
             <div class="px-4 py-2 bg-primary-200 rounded-full dark:bg-primary-900">loongarch64</div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section
-      class="flex flex-col items-center justify-center gap-8 lg:gap-10 px-8 pb-24 pt-24"
-    >
-      <div
-        class="flex gap-4 lg:gap-16 max-w-full flex-col sm:flex-row items-center grow-1 sm:grow-0"
-      >
-        <div
-          class="flex flex-col py-0 sm:py-8 lg:py-12 gap-6 items-center sm:items-start"
-        >
-          <div
-            class="flex flex-col text-center sm:text-start items-center sm:items-start"
-          >
-            <p
-              class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1.5]"
-            >
-              跨发行版支持
-            </p>
-            <p
-              class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.5] whitespace-nowrap"
-            >
-              广泛兼容各类 Linux 发行版
-            </p>
-          </div>
-          <p
-            class="text-base sm:text-lg text-center sm:text-start text-surface-700 leading-[2] max-w-[31.8em] dark:text-surface-200"
-          >
-            商业版提供 APM 包，支持跨多种 Linux 发行版安装和使用，包括统信 UOS、中科方德、银河麒麟等主流国产 Linux 操作系统。
-          </p>
-          <div class="flex flex-wrap gap-4 mt-4">
-            <div class="px-4 py-2 bg-primary-200 rounded-full dark:bg-primary-900">统信 UOS</div>
-            <div class="px-4 py-2 bg-primary-200 rounded-full dark:bg-primary-900">中科方德</div>
-            <div class="px-4 py-2 bg-primary-200 rounded-full dark:bg-primary-900">银河麒麟</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section
-      class="flex flex-col items-center justify-center gap-8 lg:gap-10 px-8 pb-24 pt-24"
-    >
-      <div
-        class="flex items-center justify-center self-start sm:self-center gap-6"
-      >
-        <h2
-          class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primary-color font-bold leading-[1.3] dark:text-primary-400"
-        >
-          发行版支持
-        </h2>
-      </div>
-      <div
-        class="flex flex-wrap justify-center gap-8 lg:gap-16 max-w-full py-8"
-      >
-        <div class="flex flex-col items-center gap-4 p-6 bg-primary-200 rounded-2xl dark:bg-primary-900">
-          <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center dark:bg-surface-800">
-            <span class="text-3xl font-bold text-primary-500">统信</span>
-          </div>
-          <h3 class="text-xl font-bold dark:text-surface-100">统信 UOS</h3>
-          <p class="text-center text-sm dark:text-surface-200">专业的国产 Linux 操作系统</p>
-        </div>
-        <div class="flex flex-col items-center gap-4 p-6 bg-primary-200 rounded-2xl dark:bg-primary-900">
-          <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center dark:bg-surface-800">
-            <span class="text-3xl font-bold text-primary-500">中科方德</span>
-          </div>
-          <h3 class="text-xl font-bold dark:text-surface-100">中科方德</h3>
-          <p class="text-center text-sm dark:text-surface-200">安全可靠的 Linux 发行版</p>
-        </div>
-        <div class="flex flex-col items-center gap-4 p-6 bg-primary-200 rounded-2xl dark:bg-primary-900">
-          <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center dark:bg-surface-800">
-            <span class="text-3xl font-bold text-primary-500">银河麒麟</span>
-          </div>
-          <h3 class="text-xl font-bold dark:text-surface-100">银河麒麟</h3>
-          <p class="text-center text-sm dark:text-surface-200">高性能的国产操作系统</p>
+        <div class="w-full max-w-[400px] h-[300px] text-primary-500 dark:text-primary-400">
+          <ArchitectureIllustration />
         </div>
       </div>
     </section>
@@ -282,6 +215,9 @@ onMounted(() => {
               <i class="pi pi-envelope text-xl! font-bold! pr-4" /> 联系客服
             </a>
           </div>
+        </div>
+        <div class="w-full max-w-[400px] h-[300px] text-primary-500 dark:text-primary-400">
+          <ContactIllustration />
         </div>
       </div>
     </section>
