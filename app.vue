@@ -297,6 +297,9 @@ const copyGroupNumber = async () => {
             <NuxtLink to="/download" class="nav-link" active-class="active">
               下载
             </NuxtLink>
+            <NuxtLink to="/commercial" class="nav-link" active-class="active">
+              商业版
+            </NuxtLink>
             <a
               href="https://bbs.spark-app.store/"
               class="nav-link"
@@ -313,9 +316,6 @@ const copyGroupNumber = async () => {
             </a>
             <NuxtLink to="/about" class="nav-link" active-class="active">
               关于
-            </NuxtLink>
-            <NuxtLink to="/commercial" class="nav-link" active-class="active">
-              商业版
             </NuxtLink>
             <a href="https://gxde.top/" class="nav-link" active-class="active">
               GXDE OS
