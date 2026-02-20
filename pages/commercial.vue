@@ -79,9 +79,11 @@ onMounted(() => {
         <div
           class="flex flex-col text-surface-500 gap-1 text-lg sm:text-xl text-center sm:text-start dark:text-surface-200"
         >
-          <p>为企业客户提供专业的应用商店解决方案，</p>
-          <p>支持定制化服务和多架构部署，</p>
-          <p>助力企业构建完善的软件分发体系。</p>
+          <p>为政府、企事业单位客户提供专业的应用商店解决方案，</p>
+          <p>- 支持安装在主流信创设备上</p>
+          <p>- 支持定制客户端和服务器端本地部署</p>
+          <p>- 支持指定软件适配服务（如：Windows软件迁移到信创设备）</p>
+          <p>助力客户构建完善的软件分发体系。</p>
         </div>
       </div>
     </section>
