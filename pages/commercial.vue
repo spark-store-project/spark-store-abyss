@@ -6,6 +6,7 @@ import { range, riro } from '~/utils/index';
 import CustomizationIllustration from '~/components/illustrations/CustomizationIllustration.vue';
 import ArchitectureIllustration from '~/components/illustrations/ArchitectureIllustration.vue';
 import ContactIllustration from '~/components/illustrations/ContactIllustration.vue';
+import DistributionIllustration from '~/components/illustrations/DistributionIllustration.vue';
 
 const scrollPanel = inject<Ref<ComponentPublicInstance>>("scrollPanel");
 const sProgress = ref(0);
@@ -165,6 +166,46 @@ onMounted(() => {
         </div>
         <div class="w-full max-w-[400px] h-[300px] text-primary-500 dark:text-primary-400">
           <ArchitectureIllustration />
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="flex flex-col items-center justify-center gap-8 lg:gap-10 px-8 pb-24 pt-24"
+    >
+      <div
+        class="flex gap-4 lg:gap-16 max-w-full flex-col sm:flex-row-reverse items-center grow-1 sm:grow-0"
+      >
+        <div
+          class="flex flex-col py-0 sm:py-8 lg:py-12 gap-6 items-center sm:items-start"
+        >
+          <div
+            class="flex flex-col text-center sm:text-start items-center sm:items-start"
+          >
+            <p
+              class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1.5]"
+            >
+              跨发行版支持
+            </p>
+            <p
+              class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.5] whitespace-nowrap"
+            >
+              适配主流 Linux 发行版
+            </p>
+          </div>
+          <p
+            class="text-base sm:text-lg text-center sm:text-start text-surface-700 leading-[2] max-w-[31.8em] dark:text-surface-200"
+          >
+            商业版支持多种主流 国产操作系统，包括但不限于统信UOS、银河麒麟、中科方德等，确保在不同发行版环境下都能稳定运行，为企业提供全生态覆盖的应用商店解决方案。
+          </p>
+          <div class="flex flex-wrap gap-4 mt-4">
+            <div class="px-4 py-2 bg-primary-200 rounded-full dark:bg-primary-900">统信UOS</div>
+            <div class="px-4 py-2 bg-primary-200 rounded-full dark:bg-primary-900">银河麒麟</div>
+            <div class="px-4 py-2 bg-primary-200 rounded-full dark:bg-primary-900">中科方德</div>
+          </div>
+        </div>
+        <div class="w-full max-w-[400px] h-[300px] text-primary-500 dark:text-primary-400">
+          <DistributionIllustration />
         </div>
       </div>
     </section>
