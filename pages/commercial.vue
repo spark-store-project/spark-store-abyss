@@ -159,9 +159,11 @@ onMounted(() => {
             商业版支持 amd64、arm64、loongarch64 等多种 CPU 架构部署，可在不同硬件平台上稳定运行，满足企业多样化的部署需求。
           </p>
           <div class="flex flex-wrap gap-4 mt-4">
-            <div class="px-4 py-2 bg-primary-200 rounded-full dark:bg-primary-900">amd64</div>
-            <div class="px-4 py-2 bg-primary-200 rounded-full dark:bg-primary-900">arm64</div>
-            <div class="px-4 py-2 bg-primary-200 rounded-full dark:bg-primary-900">loongarch64</div>
+            <div class="px-4 py-2 bg-primary-200 rounded-full dark:bg-primary-900">龙芯</div>
+            <div class="px-4 py-2 bg-primary-200 rounded-full dark:bg-primary-900">兆芯</div>
+            <div class="px-4 py-2 bg-primary-200 rounded-full dark:bg-primary-900">飞腾</div>
+            <div class="px-4 py-2 bg-primary-200 rounded-full dark:bg-primary-900">海光</div>
+            <div class="px-4 py-2 bg-primary-200 rounded-full dark:bg-primary-900">华为麒麟、华为鲲鹏</div>
           </div>
         </div>
         <div class="w-full max-w-[400px] h-[300px] text-primary-500 dark:text-primary-400">
