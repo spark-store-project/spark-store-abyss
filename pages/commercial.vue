@@ -3,10 +3,6 @@ import { onMounted, watchEffect, ref, inject } from 'vue';
 import type { Ref } from '@vue/reactivity';
 import type { ComponentPublicInstance } from '@vue/runtime-core';
 import { range, riro } from '~/utils/index';
-import CustomizationIllustration from '~/components/illustrations/CustomizationIllustration.vue';
-import ArchitectureIllustration from '~/components/illustrations/ArchitectureIllustration.vue';
-import ContactIllustration from '~/components/illustrations/ContactIllustration.vue';
-import DistributionIllustration from '~/components/illustrations/DistributionIllustration.vue';
 import Dialog from 'primevue/dialog';
 
 const scrollPanel = inject<Ref<ComponentPublicInstance>>("scrollPanel");
@@ -180,7 +176,7 @@ const sendEmail = () => {
           </div>
         </div>
         <div class="w-full max-w-[400px] h-[300px] text-primary-500 dark:text-primary-400">
-          <ArchitectureIllustration />
+          <Icon name="s:commercial-architecture" mode="svg" class="w-full h-full" />
         </div>
       </div>
     </section>
@@ -273,7 +269,7 @@ const sendEmail = () => {
           </div>
         </div>
         <div class="w-full max-w-[400px] h-[300px] text-primary-500 dark:text-primary-400">
-          <ContactIllustration />
+          <Icon name="s:commercial-contact" mode="svg" class="w-full h-full" />
         </div>
       </div>
     </section>
