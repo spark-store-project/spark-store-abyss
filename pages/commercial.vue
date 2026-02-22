@@ -224,6 +224,41 @@ const sendEmail = () => {
       class="flex flex-col items-center justify-center gap-8 lg:gap-10 px-8 pb-24 pt-24"
     >
       <div
+        class="flex gap-4 lg:gap-16 max-w-full flex-col sm:flex-row items-center grow-1 sm:grow-0"
+      >
+        <div
+          class="flex flex-col py-0 sm:py-8 lg:py-12 gap-6 items-center sm:items-start"
+        >
+          <div
+            class="flex flex-col text-center sm:text-start items-center sm:items-start"
+          >
+            <p
+              class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1.5]"
+            >
+              成功案例
+            </p>
+            <p
+              class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.5] whitespace-nowrap"
+            >
+              政务终端统一纳管
+            </p>
+          </div>
+          <p
+            class="text-base sm:text-lg text-center sm:text-start text-surface-700 leading-[2] max-w-[31.8em] dark:text-surface-200"
+          >
+            江苏省泰州市某机关单位的信创改造项目中，面临高度复杂的异构终端环境。该单位同时部署了搭载兆芯、飞腾、麒麟芯片的硬件设备，并交叉安装了统信UOS、银河麒麟与中科方德操作系统。通过部署星火应用商店专业版，该单位成功实现了跨架构、跨操作系统的软件统一分发与纳管，显著提升了政务终端的运维效率。
+          </p>
+        </div>
+        <div class="w-full max-w-[400px] h-[300px] text-primary-500 dark:text-primary-400">
+          <Icon name="s:commercial-case" mode="svg" class="w-full h-full" />
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="flex flex-col items-center justify-center gap-8 lg:gap-10 px-8 pb-24 pt-24"
+    >
+      <div
         class="flex items-center justify-center self-start sm:self-center gap-6"
       >
         <h2
