@@ -512,10 +512,15 @@ header {
   }
 
   .nav-link {
-    padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
+    padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2);
     border-radius: calc(var(--spacing) * 4.75);
     font-weight: bold;
     color: var(--p-surface-600);
+    white-space: nowrap;
+
+    @media (min-width: 1024px) {
+      padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
+    }
 
     &.active {
       color: var(--p-primary-600);
