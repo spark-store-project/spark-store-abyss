@@ -246,7 +246,7 @@ const copyGroupNumber = async () => {
     <header
       ref="header"
       tabindex="0"
-      class="fixed w-full h-15 z-10 px-4 sm:px-8 lg:px-12 translate-y-[calc(var(--s-progress)*4*var(--spacing))] sm:translate-y-[calc(var(--s-progress)*8*var(--spacing))] lg:translate-y-[calc(var(--s-progress)*12*var(--spacing))] before:translate-x-[calc(var(--s-progress)*4*var(--spacing))] sm:before:translate-x-[calc(var(--s-progress)*8*var(--spacing))] lg:before:translate-x-[calc(var(--s-progress)*12*var(--spacing))] before:w-[calc(100%-var(--s-progress)*8*var(--spacing))] sm:before:w-[calc(100%-var(--s-progress)*16*var(--spacing))] lg:before:w-[calc(100%-var(--s-progress)*24*var(--spacing))] sm:h-auto focus-within:h-auto before:h-15 focus-within:before:h-92.5 sm:before:h-full focus-within:sm:before:h-full overflow-hidden focus-within:overflow-visible transition-discrete group"
+      class="fixed w-full h-15 z-10 px-4 sm:px-8 lg:px-12 translate-y-[calc(var(--s-progress)*4*var(--spacing))] sm:translate-y-[calc(var(--s-progress)*8*var(--spacing))] lg:translate-y-[calc(var(--s-progress)*12*var(--spacing))] before:translate-x-[calc(var(--s-progress)*4*var(--spacing))] sm:before:translate-x-[calc(var(--s-progress)*8*var(--spacing))] lg:before:translate-x-[calc(var(--s-progress)*12*var(--spacing))] before:w-[calc(100%-var(--s-progress)*8*var(--spacing))] sm:before:w-[calc(100%-var(--s-progress)*16*var(--spacing))] lg:before:w-[calc(100%-var(--s-progress)*24*var(--spacing))] sm:h-auto focus-within:h-auto before:h-15 focus-within:before:h-93.5 sm:before:h-full focus-within:sm:before:h-full overflow-hidden focus-within:overflow-visible transition-discrete group"
       :style="{ '--s-progress': sProgress }"
       @click="if (!header?.matches(':focus-within')) header?.focus();"
       @focus="handleHeaderFocus"
@@ -291,33 +291,33 @@ const copyGroupNumber = async () => {
           <div
             class="flex flex-col gap-1 mr-1.5 md:mr-1 lg:gap-2 lg:mr-2 sm:flex-row items-end sm:items-center"
           >
-            <NuxtLink to="/" class="nav-link" active-class="active">
+            <NuxtLink to="/" class="nav-link px-4 py-2 sm:px-2 lg:px-4" active-class="active">
               首页
             </NuxtLink>
-            <NuxtLink to="/download" class="nav-link" active-class="active">
+            <NuxtLink to="/download" class="nav-link px-4 py-2 sm:px-2 lg:px-4" active-class="active">
               下载
             </NuxtLink>
-            <NuxtLink to="/commercial" class="nav-link" active-class="active">
+            <NuxtLink to="/commercial" class="nav-link px-4 py-2 sm:px-2 lg:px-4" active-class="active">
               商业版
             </NuxtLink>
             <a
               href="https://bbs.spark-app.store/"
-              class="nav-link"
+              class="nav-link px-4 py-2 sm:px-2 lg:px-4"
               active-class="active"
             >
               社区
             </a>
             <a
               href="https://wiki.spark-app.store/"
-              class="nav-link"
+              class="nav-link px-4 py-2 sm:px-2 lg:px-4"
               active-class="active"
             >
               帮助
             </a>
-            <NuxtLink to="/about" class="nav-link" active-class="active">
+            <NuxtLink to="/about" class="nav-link px-4 py-2 sm:px-2 lg:px-4" active-class="active">
               关于
             </NuxtLink>
-            <a href="https://gxde.top/" class="nav-link" active-class="active">
+            <a href="https://gxde.top/" class="nav-link px-4 py-2 sm:px-2 lg:px-4" active-class="active">
               GXDE OS
             </a>
           </div>
@@ -512,15 +512,10 @@ header {
   }
 
   .nav-link {
-    padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2);
     border-radius: calc(var(--spacing) * 4.75);
     font-weight: bold;
     color: var(--p-surface-600);
     white-space: nowrap;
-
-    @media (min-width: 1024px) {
-      padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
-    }
 
     &.active {
       color: var(--p-primary-600);
