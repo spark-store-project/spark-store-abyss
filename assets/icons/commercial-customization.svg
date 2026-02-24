@@ -1,24 +1,32 @@
 <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="100" cy="150" r="50" fill="currentColor" fill-opacity="0.15" />
-  <circle cx="100" cy="150" r="35" fill="currentColor" fill-opacity="0.2" />
-  <circle cx="100" cy="150" r="20" fill="currentColor" fill-opacity="0.3" />
+  <!-- UI Wireframe reflecting customization -->
+  <rect x="50" y="50" width="300" height="200" rx="16" stroke="currentColor" stroke-width="8" stroke-opacity="0.2" fill="currentColor" fill-opacity="0.05" />
   
-  <circle cx="200" cy="150" r="50" fill="currentColor" fill-opacity="0.12" />
-  <circle cx="200" cy="150" r="35" fill="currentColor" fill-opacity="0.18" />
-  <circle cx="200" cy="150" r="20" fill="currentColor" fill-opacity="0.25" />
+  <!-- Sidebar -->
+  <rect x="70" y="70" width="60" height="160" rx="8" fill="currentColor" fill-opacity="0.1" />
+  <rect x="80" y="90" width="40" height="12" rx="4" fill="currentColor" fill-opacity="0.2" />
+  <rect x="80" y="115" width="40" height="12" rx="4" fill="currentColor" fill-opacity="0.2" />
+  <rect x="80" y="140" width="40" height="12" rx="4" fill="currentColor" fill-opacity="0.2" />
   
-  <circle cx="300" cy="150" r="50" fill="currentColor" fill-opacity="0.15" />
-  <circle cx="300" cy="150" r="35" fill="currentColor" fill-opacity="0.2" />
-  <circle cx="300" cy="150" r="20" fill="currentColor" fill-opacity="0.3" />
+  <!-- Header -->
+  <rect x="150" y="70" width="180" height="30" rx="8" fill="currentColor" fill-opacity="0.1" />
   
-  <rect x="70" y="70" width="60" height="40" rx="8" fill="currentColor" fill-opacity="0.2" />
-  <rect x="170" y="70" width="60" height="40" rx="8" fill="currentColor" fill-opacity="0.15" />
-  <rect x="270" y="70" width="60" height="40" rx="8" fill="currentColor" fill-opacity="0.2" />
+  <!-- Content area being painted/customized -->
+  <rect x="150" y="120" width="180" height="110" rx="8" fill="currentColor" fill-opacity="0.05" />
   
-  <rect x="70" y="190" width="60" height="40" rx="8" fill="currentColor" fill-opacity="0.15" />
-  <rect x="170" y="190" width="60" height="40" rx="8" fill="currentColor" fill-opacity="0.2" />
-  <rect x="270" y="190" width="60" height="40" rx="8" fill="currentColor" fill-opacity="0.15" />
+  <!-- Floating Gear (Settings/Customization) -->
+  <circle cx="280" cy="180" r="24" stroke="currentColor" stroke-width="6" stroke-opacity="0.8" />
+  <path d="M 280 146 L 280 152 M 280 208 L 280 214 M 246 180 L 252 180 M 308 180 L 314 180 
+           M 256 156 L 260 160 M 300 200 L 304 204 M 256 204 L 260 200 M 300 160 L 304 156" 
+        stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-opacity="0.8" />
+  <circle cx="280" cy="180" r="10" fill="currentColor" fill-opacity="0.8" />
   
-  <path d="M 150 150 L 250 150" stroke="currentColor" stroke-width="2" stroke-opacity="0.3" stroke-dasharray="8 4" />
-  <path d="M 250 150 L 350 150" stroke="currentColor" stroke-width="2" stroke-opacity="0.3" stroke-dasharray="8 4" />
+  <!-- Magic Wand / Paintbrush -->
+  <path d="M 170 210 L 210 170 C 215 165, 225 165, 230 170 C 235 175, 235 185, 230 190 L 190 230 Z" fill="currentColor" fill-opacity="0.8"/>
+  <path d="M 160 220 L 170 210 L 190 230 L 180 240 Z" fill="currentColor" fill-opacity="0.6"/>
+  <path d="M 155 245 L 160 220 L 180 240 Z" fill="currentColor" fill-opacity="0.9"/>
+  <!-- Sparkles -->
+  <path d="M 220 140 L 225 155 L 240 160 L 225 165 L 220 180 L 215 165 L 200 160 L 215 155 Z" fill="currentColor" fill-opacity="0.8"/>
+  <circle cx="250" cy="140" r="3" fill="currentColor" fill-opacity="0.6"/>
+  <circle cx="190" cy="140" r="4" fill="currentColor" fill-opacity="0.5"/>
 </svg>

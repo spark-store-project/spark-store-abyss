@@ -1,19 +1,27 @@
 <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="40" y="40" width="320" height="220" rx="16" fill="currentColor" fill-opacity="0.1" />
-  <rect x="60" y="60" width="280" height="180" rx="12" fill="currentColor" fill-opacity="0.15" />
+  <!-- Large Speech/Chat Bubble representing consultation -->
+  <path d="M 240 60 C 295.228 60 340 95.817 340 140 C 340 178.69 304.755 210.966 258 218.5 L 200 240 L 210 211.5 C 168.176 200.72 140 173.223 140 140 C 140 95.817 184.772 60 240 60 Z" fill="currentColor" fill-opacity="0.05" stroke="currentColor" stroke-width="6" stroke-linejoin="round" stroke-opacity="0.6"/>
+  <!-- Chat visual lines inside bubble -->
+  <rect x="190" y="110" width="100" height="10" rx="5" fill="currentColor" fill-opacity="0.4" />
+  <rect x="190" y="140" width="70" height="10" rx="5" fill="currentColor" fill-opacity="0.4" />
   
-  <circle cx="100" cy="120" r="30" fill="currentColor" fill-opacity="0.2" />
-  <circle cx="100" cy="120" r="20" fill="currentColor" fill-opacity="0.3" />
-  
-  <rect x="150" y="80" width="160" height="20" rx="10" fill="currentColor" fill-opacity="0.25" />
-  <rect x="150" y="110" width="120" height="20" rx="10" fill="currentColor" fill-opacity="0.2" />
-  <rect x="150" y="140" width="140" height="20" rx="10" fill="currentColor" fill-opacity="0.25" />
-  
-  <circle cx="300" cy="200" r="40" fill="currentColor" fill-opacity="0.15" />
-  <circle cx="300" cy="200" r="25" fill="currentColor" fill-opacity="0.2" />
-  <circle cx="300" cy="200" r="12" fill="currentColor" fill-opacity="0.3" />
-  
-  <path d="M 80 240 L 100 220 L 120 240" stroke="currentColor" stroke-width="3" stroke-opacity="0.3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M 140 240 L 160 210 L 180 240" stroke="currentColor" stroke-width="3" stroke-opacity="0.25" fill="none" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M 200 240 L 220 215 L 240 240" stroke="currentColor" stroke-width="3" stroke-opacity="0.3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Envelope overlapping representing email/contact -->
+  <g transform="translate(60, 120)">
+    <rect x="0" y="0" width="120" height="80" rx="8" fill="currentColor" fill-opacity="0.9" stroke="currentColor" stroke-width="6" stroke-opacity="0.1"/>
+    <!-- Envelope flaps -->
+    <path d="M 5 5 L 60 45 L 115 5" stroke="var(--surface-0, #fff)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 5 75 L 45 45" stroke="var(--surface-0, #fff)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M 115 75 L 75 45" stroke="var(--surface-0, #fff)" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <!-- Headset on the chat bubble side -->
+  <g transform="translate(250, 70)">
+    <path d="M 0 35 C 0 15 15 0 35 0 C 55 0 70 15 70 35" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-opacity="0.8"/>
+    <!-- Earpieces -->
+    <rect x="-6" y="25" width="12" height="30" rx="6" fill="currentColor" fill-opacity="0.8"/>
+    <rect x="64" y="25" width="12" height="30" rx="6" fill="currentColor" fill-opacity="0.8"/>
+    <!-- Microphone -->
+    <path d="M 6 50 C 6 65 20 80 40 80" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-opacity="0.8"/>
+    <circle cx="40" cy="80" r="6" fill="currentColor" fill-opacity="0.8"/>
+  </g>
 </svg>

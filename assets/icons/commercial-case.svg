@@ -1,15 +1,37 @@
 <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="150" y="50" width="100" height="60" rx="10" fill="currentColor" fill-opacity="0.3" />
-  <circle cx="200" cy="80" r="15" fill="currentColor" fill-opacity="0.5" />
+  <!-- Central Cloud & Governance Building -->
+  <path d="M 120 180 C 120 160, 140 140, 160 140 C 170 120, 210 110, 240 130 C 260 130, 280 150, 280 170 C 290 170, 300 180, 300 190 C 300 200, 290 210, 280 210 L 130 210 C 115 210, 105 195, 120 180 Z" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="4" stroke-opacity="0.3"/>
   
-  <path d="M 200 110 L 200 150 M 200 150 L 100 150 L 100 190 M 200 150 L 300 150 L 300 190 M 200 150 L 200 190" stroke="currentColor" stroke-width="3" stroke-opacity="0.2" fill="none" />
+  <!-- Server / Data Center Building -->
+  <rect x="170" y="100" width="60" height="90" rx="8" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="6" stroke-opacity="0.8"/>
+  <rect x="180" y="115" width="40" height="15" rx="4" fill="currentColor" fill-opacity="0.6"/>
+  <rect x="180" y="140" width="40" height="15" rx="4" fill="currentColor" fill-opacity="0.6"/>
+  <rect x="180" y="165" width="40" height="15" rx="4" fill="currentColor" fill-opacity="0.6"/>
   
-  <rect x="50" y="190" width="100" height="60" rx="8" fill="currentColor" fill-opacity="0.2" />
-  <circle cx="100" cy="220" r="10" fill="currentColor" fill-opacity="0.4" />
-  
-  <rect x="150" y="190" width="100" height="60" rx="8" fill="currentColor" fill-opacity="0.15" />
-  <rect x="185" y="210" width="30" height="20" rx="4" fill="currentColor" fill-opacity="0.4" />
-  
-  <rect x="250" y="190" width="100" height="60" rx="8" fill="currentColor" fill-opacity="0.2" />
-  <polygon points="300,205 285,230 315,230" fill="currentColor" fill-opacity="0.4" />
+  <!-- Shield Icon (Management/Security) floats beside it -->
+  <path d="M 235 120 L 260 110 L 285 120 C 285 145, 275 165, 260 180 C 245 165, 235 145, 235 120 Z" fill="currentColor" fill-opacity="0.8"/>
+  <path d="M 250 145 L 255 150 L 270 135" stroke="var(--primary-color, currentColor)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Connections to terminals -->
+  <path d="M 140 260 Q 140 230 180 210" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-opacity="0.4" stroke-dasharray="6 6"/>
+  <path d="M 200 270 L 200 210" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-opacity="0.4" stroke-dasharray="6 6"/>
+  <path d="M 260 260 Q 260 230 220 210" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-opacity="0.4" stroke-dasharray="6 6"/>
+
+  <!-- Left Terminal (Laptop) -->
+  <g transform="translate(100, 250)">
+    <rect x="10" y="5" width="40" height="25" rx="4" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="4" stroke-opacity="0.8"/>
+    <path d="M 0 35 L 60 35" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-opacity="0.8"/>
+  </g>
+
+  <!-- Center Terminal (Desktop) -->
+  <g transform="translate(180, 260)">
+    <rect x="5" y="0" width="30" height="20" rx="3" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="4" stroke-opacity="0.8"/>
+    <path d="M 15 20 L 15 28 M 5 28 L 35 28" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-opacity="0.8"/>
+  </g>
+
+  <!-- Right Terminal (Laptop) -->
+  <g transform="translate(240, 250)">
+    <rect x="10" y="5" width="40" height="25" rx="4" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="4" stroke-opacity="0.8"/>
+    <path d="M 0 35 L 60 35" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-opacity="0.8"/>
+  </g>
 </svg>
