@@ -291,33 +291,33 @@ const copyGroupNumber = async () => {
           <div
             class="flex flex-col gap-1 mr-1.5 md:mr-1 lg:gap-2 lg:mr-2 sm:flex-row items-end sm:items-center"
           >
-            <NuxtLink to="/" class="nav-link px-4 py-2 sm:px-2 lg:px-4" active-class="active">
+            <NuxtLink to="/" class="nav-link" active-class="active">
               首页
             </NuxtLink>
-            <NuxtLink to="/download" class="nav-link px-4 py-2 sm:px-2 lg:px-4" active-class="active">
+            <NuxtLink to="/download" class="nav-link" active-class="active">
               下载
             </NuxtLink>
-            <NuxtLink to="/commercial" class="nav-link px-4 py-2 sm:px-2 lg:px-4" active-class="active">
+            <NuxtLink to="/commercial" class="nav-link" active-class="active">
               商业版
             </NuxtLink>
             <a
               href="https://bbs.spark-app.store/"
-              class="nav-link px-4 py-2 sm:px-2 lg:px-4"
+              class="nav-link"
               active-class="active"
             >
               社区
             </a>
             <a
               href="https://wiki.spark-app.store/"
-              class="nav-link px-4 py-2 sm:px-2 lg:px-4"
+              class="nav-link"
               active-class="active"
             >
               帮助
             </a>
-            <NuxtLink to="/about" class="nav-link px-4 py-2 sm:px-2 lg:px-4" active-class="active">
+            <NuxtLink to="/about" class="nav-link" active-class="active">
               关于
             </NuxtLink>
-            <a href="https://gxde.top/" class="nav-link px-4 py-2 sm:px-2 lg:px-4" active-class="active">
+            <a href="https://gxde.top/" class="nav-link" active-class="active">
               GXDE OS
             </a>
           </div>
@@ -512,6 +512,7 @@ header {
   }
 
   .nav-link {
+    padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
     border-radius: calc(var(--spacing) * 4.75);
     font-weight: bold;
     color: var(--p-surface-600);
