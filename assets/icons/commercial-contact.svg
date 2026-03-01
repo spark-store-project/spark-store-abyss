@@ -1,27 +1,55 @@
-<svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Large Speech/Chat Bubble representing consultation -->
-  <path d="M 240 60 C 295.228 60 340 95.817 340 140 C 340 178.69 304.755 210.966 258 218.5 L 200 240 L 210 211.5 C 168.176 200.72 140 173.223 140 140 C 140 95.817 184.772 60 240 60 Z" fill="currentColor" fill-opacity="0.05" stroke="currentColor" stroke-width="6" stroke-linejoin="round" stroke-opacity="0.6"/>
-  <!-- Chat visual lines inside bubble -->
-  <rect x="190" y="110" width="100" height="10" rx="5" fill="currentColor" fill-opacity="0.4" />
-  <rect x="190" y="140" width="70" height="10" rx="5" fill="currentColor" fill-opacity="0.4" />
-  
-  <!-- Envelope overlapping representing email/contact -->
-  <g transform="translate(60, 120)">
-    <rect x="0" y="0" width="120" height="80" rx="8" fill="currentColor" fill-opacity="0.9" stroke="currentColor" stroke-width="6" stroke-opacity="0.1"/>
-    <!-- Envelope flaps -->
-    <path d="M 5 5 L 60 45 L 115 5" stroke="var(--surface-0, #fff)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M 5 75 L 45 45" stroke="var(--surface-0, #fff)" stroke-width="6" stroke-linecap="round"/>
-    <path d="M 115 75 L 75 45" stroke="var(--surface-0, #fff)" stroke-width="6" stroke-linecap="round"/>
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--s-bg)" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="var(--s-bg)" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="-10" dy="25" stdDeviation="30" flood-opacity="0.1" />
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="800" fill="url(#glow)" />
+
+  <!-- Background Abstract Message Shape -->
+  <g transform="translate(400, 420) rotate(-15)">
+    <rect x="-240" y="-180" width="480" height="360" rx="60" fill="var(--s-bg)" opacity="0.8"/>
   </g>
 
-  <!-- Headset on the chat bubble side -->
-  <g transform="translate(250, 70)">
-    <path d="M 0 35 C 0 15 15 0 35 0 C 55 0 70 15 70 35" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-opacity="0.8"/>
-    <!-- Earpieces -->
-    <rect x="-6" y="25" width="12" height="30" rx="6" fill="currentColor" fill-opacity="0.8"/>
-    <rect x="64" y="25" width="12" height="30" rx="6" fill="currentColor" fill-opacity="0.8"/>
-    <!-- Microphone -->
-    <path d="M 6 50 C 6 65 20 80 40 80" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-opacity="0.8"/>
-    <circle cx="40" cy="80" r="6" fill="currentColor" fill-opacity="0.8"/>
+  <!-- Mail / Contact Card floating in front -->
+  <g transform="translate(160, 220)" filter="url(#shadow)">
+    <!-- Base Card -->
+    <rect width="460" height="300" rx="30" fill="var(--s-bg)" stroke="var(--s-bg-2)" stroke-width="2" opacity="0.95"/>
+    
+    <!-- Top Bar -->
+    <path d="M 0 30 C 0 13.431 13.431 0 30 0 L 430 0 C 446.569 0 460 13.431 460 30 L 460 80 L 0 80 Z" fill="var(--s-bg-2)"/>
+    <circle cx="50" cy="40" r="16" fill="var(--s-bg)" opacity="0.8"/>
+    <rect x="80" y="32" width="160" height="16" rx="8" fill="var(--s-bg)" opacity="0.8"/>
+    
+    <!-- Messages Body -->
+    <rect x="40" y="110" width="220" height="50" rx="20" fill="var(--s-bg-2)"/>
+    <rect x="60" y="125" width="160" height="8" rx="4" fill="var(--s-bg)" opacity="0.9"/>
+    <rect x="60" y="140" width="100" height="8" rx="4" fill="var(--s-bg)" opacity="0.9"/>
+
+    <rect x="200" y="180" width="220" height="50" rx="20" fill="var(--s-bg-3)"/>
+    <rect x="220" y="195" width="180" height="8" rx="4" fill="var(--s-bg)" opacity="0.9"/>
+    <rect x="220" y="210" width="120" height="8" rx="4" fill="var(--s-bg)" opacity="0.9"/>
+    
+    <rect x="40" y="250" width="180" height="20" rx="10" fill="var(--s-bg-2)" opacity="0.8"/>
   </g>
+
+  <!-- Floating Stats Card (Graph) representing Solution/Quote -->
+  <g transform="translate(520, 440) rotate(8)" filter="url(#shadow)">
+    <rect width="200" height="220" rx="30" fill="var(--s-bg)" stroke="var(--s-deco)" stroke-width="3" opacity="0.95"/>
+    <rect x="30" y="30" width="140" height="140" rx="70" fill="none" stroke="var(--s-bg-2)" stroke-width="20"/>
+    <path d="M 100 30 A 70 70 0 0 1 170 100" fill="none" stroke="var(--s-deco)" stroke-width="20" stroke-linecap="round"/>
+    <circle cx="100" cy="100" r="24" fill="var(--s-bg-3)"/>
+    <rect x="40" y="180" width="120" height="16" rx="8" fill="var(--s-bg-2)"/>
+  </g>
+
+  <!-- Accent Elements -->
+  <circle cx="680" cy="220" r="15" fill="var(--s-deco)"/>
+  <circle cx="150" cy="580" r="25" fill="var(--s-bg-3)"/>
+  <rect x="620" y="160" width="40" height="40" rx="10" fill="var(--s-deco)" transform="rotate(25 640 180)"/>
+  <circle cx="120" cy="380" r="15" fill="var(--s-bg-2)"/>
 </svg>

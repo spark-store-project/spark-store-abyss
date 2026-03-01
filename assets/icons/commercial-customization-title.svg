@@ -1,0 +1,10 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+
+    <g>
+        <circle cx="160" cy="160" r="64" fill="var(--s-bg-3)"/>
+        <circle cx="352" cy="112" r="48" fill="var(--s-bg-2)"/>
+        <circle cx="112" cy="352" r="48" fill="var(--s-bg)"/>
+        <path d="M 224 224 L 400 352 C 430 376 430 416 400 440 C 370 464 330 464 300 440 L 124 316 Z" fill="var(--s-deco)"/>
+        <circle cx="350" cy="400" r="16" fill="var(--s-bg)"/>
+    </g>
+</svg>

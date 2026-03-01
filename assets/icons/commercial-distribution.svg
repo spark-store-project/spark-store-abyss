@@ -1,47 +1,67 @@
-<svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Connections -->
-  <path d="M 200 220 L 100 120" stroke="currentColor" stroke-width="6" stroke-opacity="0.2" stroke-linecap="round" />
-  <path d="M 200 220 L 200 90" stroke="currentColor" stroke-width="6" stroke-opacity="0.2" stroke-linecap="round" />
-  <path d="M 200 220 L 300 120" stroke="currentColor" stroke-width="6" stroke-opacity="0.2" stroke-linecap="round" />
-  
-  <!-- Central App Store Box -->
-  <g transform="translate(160, 180)">
-    <path d="M 40 0 L 80 20 L 40 40 L 0 20 Z" fill="currentColor" fill-opacity="0.4" />
-    <path d="M 0 20 L 40 40 L 40 80 L 0 60 Z" fill="currentColor" fill-opacity="0.8" />
-    <path d="M 80 20 L 40 40 L 40 80 L 80 60 Z" fill="currentColor" fill-opacity="0.6" />
-    <!-- App icon inside -->
-    <circle cx="40" cy="20" r="6" fill="currentColor" fill-opacity="0.9" />
+<svg viewBox="-500 -500 1000 1000" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="20" stdDeviation="25" flood-color="var(--s-bg-3)" flood-opacity="0.25" />
+    </filter>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--s-bg-2)" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="var(--s-bg-3)" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Orbital patterns -->
+  <g opacity="0.6" stroke="var(--s-bg)" stroke-width="4" fill="none">
+    <ellipse cx="0" cy="0" rx="350" ry="150" transform="rotate(-25)" stroke-dasharray="25 10 5 10" />
+    <ellipse cx="0" cy="0" rx="400" ry="180" transform="rotate(25)" stroke-dasharray="10 20" stroke-width="8"/>
   </g>
 
-  <!-- Left OS Screen -->
-  <g transform="translate(30, 40)">
-    <rect x="0" y="0" width="100" height="70" rx="8" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="6" stroke-opacity="0.7"/>
-    <rect x="0" y="55" width="100" height="15" rx="0" fill="currentColor" fill-opacity="0.2"/>
-    <circle cx="15" cy="62.5" r="3" fill="currentColor" fill-opacity="0.8"/>
-    <!-- Screen Stand -->
-    <path d="M 40 70 L 30 90 L 70 90 L 60 70 Z" fill="currentColor" fill-opacity="0.5"/>
+  <!-- Central Hub (Spark Store) -->
+  <g filter="url(#shadow)">
+    <!-- Base aura -->
+    <circle cx="0" cy="0" r="110" fill="url(#grad1)"/>
+    <!-- Overlapping geometry -->
+    <circle cx="0" cy="0" r="70" fill="var(--s-deco)" opacity="0.4"/>
+    <rect x="-35" y="-35" width="70" height="70" rx="15" fill="var(--s-bg)" transform="rotate(45)"/>
+    <circle cx="0" cy="0" r="15" fill="var(--s-bg-3)" />
   </g>
 
-  <!-- Center OS Screen -->
-  <g transform="translate(150, 10)">
-    <rect x="0" y="0" width="100" height="70" rx="8" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="6" stroke-opacity="0.7"/>
-    <!-- Window inside -->
-    <rect x="20" y="15" width="60" height="40" rx="4" fill="currentColor" fill-opacity="0.2"/>
-    <circle cx="30" cy="22" r="3" fill="currentColor" fill-opacity="0.8"/>
-    <circle cx="40" cy="22" r="3" fill="currentColor" fill-opacity="0.8"/>
-    <!-- Screen Stand -->
-    <path d="M 40 70 L 30 90 L 70 90 L 60 70 Z" fill="currentColor" fill-opacity="0.5"/>
+  <!-- Outer orbiting nodes -->
+  <!-- Node 1: UOS / Deepin (Diamond-like) -->
+  <g transform="translate(180, -260) rotate(-25)" filter="url(#shadow)">
+     <rect x="-45" y="-45" width="90" height="90" rx="20" transform="rotate(45)" fill="var(--s-bg-2)"/>
+     <rect x="-25" y="-25" width="50" height="50" rx="10" transform="rotate(45)" fill="var(--s-deco)" opacity="0.5"/>
   </g>
+  <path d="M 60 -80 L 140 -200" stroke="var(--s-deco)" stroke-width="5" stroke-dasharray="8,8" opacity="0.7"/>
 
-  <!-- Right OS Screen -->
-  <g transform="translate(270, 40)">
-    <rect x="0" y="0" width="100" height="70" rx="8" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="6" stroke-opacity="0.7"/>
-    <!-- Sidebar UI inside -->
-    <rect x="0" y="0" width="25" height="70" rx="6" fill="currentColor" fill-opacity="0.2"/>
-    <circle cx="12.5" cy="15" r="4" fill="currentColor" fill-opacity="0.8"/>
-    <circle cx="12.5" cy="30" r="4" fill="currentColor" fill-opacity="0.5"/>
-    <circle cx="12.5" cy="45" r="4" fill="currentColor" fill-opacity="0.5"/>
-    <!-- Screen Stand -->
-    <path d="M 40 70 L 30 90 L 70 90 L 60 70 Z" fill="currentColor" fill-opacity="0.5"/>
+  <!-- Node 2: Kylin (Hexagon) -->
+  <g transform="translate(-280, 100) rotate(15)" filter="url(#shadow)">
+     <path d="M 0 -60 L 52 -30 L 52 30 L 0 60 L -52 30 L -52 -30 Z" fill="var(--s-bg-3)"/>
+     <circle cx="0" cy="0" r="25" fill="var(--s-bg)"/>
+  </g>
+  <path d="M -90 30 L -210 75" stroke="var(--s-bg-3)" stroke-width="5" stroke-dasharray="8,8" opacity="0.7"/>
+
+  <!-- Node 3: Fangde (Tech Container) -->
+  <g transform="translate(300, 180) rotate(-10)" filter="url(#shadow)">
+     <rect x="-60" y="-50" width="120" height="100" rx="25" fill="var(--s-bg)"/>
+     <rect x="-35" y="-25" width="70" height="50" rx="15" fill="var(--s-bg-2)"/>
+     <circle cx="-45" cy="-35" r="5" fill="var(--s-deco)"/>
+     <circle cx="45" cy="35" r="5" fill="var(--s-deco)"/>
+  </g>
+  <path d="M 80 50 L 230 140" stroke="var(--s-bg)" stroke-width="5" stroke-dasharray="8,8" opacity="0.7"/>
+
+  <!-- Node 4: Small satellite -->
+  <g transform="translate(-150, -180)" filter="url(#shadow)">
+    <circle cx="0" cy="0" r="30" fill="var(--s-deco)" opacity="0.8"/>
+  </g>
+  <path d="M -60 -60 L -120 -150" stroke="var(--s-deco)" stroke-width="3" stroke-dasharray="5,5" opacity="0.5"/>
+
+
+  <!-- Floating particles -->
+  <g filter="url(#shadow)">
+    <circle cx="360" cy="-60" r="20" fill="var(--s-bg)" opacity="0.6"/>
+    <circle cx="-60" cy="280" r="15" fill="var(--s-bg-3)" opacity="0.8"/>
+    <rect x="200" y="-50" width="15" height="15" rx="4" fill="var(--s-deco)" opacity="0.5"/>
+    <rect x="-100" y="150" width="20" height="20" rx="5" fill="var(--s-bg-2)" transform="rotate(30)"/>
   </g>
 </svg>

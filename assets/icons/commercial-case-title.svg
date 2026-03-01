@@ -1,0 +1,10 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(256, 256)">
+        <rect x="-160" y="-160" width="160" height="160" rx="32" fill="var(--s-bg-2)"/>
+        <rect x="0" y="-160" width="160" height="160" rx="32" fill="var(--s-bg)"/>
+        <rect x="-160" y="0" width="160" height="160" rx="32" fill="var(--s-bg-3)"/>
+        <rect x="0" y="0" width="160" height="160" rx="32" fill="var(--s-deco)"/>
+        <circle cx="0" cy="0" r="48" fill="var(--s-bg)" opacity="0.9"/>
+        <circle cx="0" cy="0" r="16" fill="var(--s-bg-2)"/>
+    </g>
+</svg>

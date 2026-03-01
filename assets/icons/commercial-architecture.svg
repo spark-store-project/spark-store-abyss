@@ -1,37 +1,76 @@
-<svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Connections -->
-  <path d="M 200 150 L 100 100" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-opacity="0.3" stroke-dasharray="8 8" />
-  <path d="M 200 150 L 300 100" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-opacity="0.3" stroke-dasharray="8 8" />
-  <path d="M 200 150 L 200 240" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-opacity="0.3" stroke-dasharray="8 8" />
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
 
-  <!-- Center Core -->
-  <g transform="translate(200, 150)">
-    <rect x="-40" y="-40" width="80" height="80" rx="16" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="6" stroke-opacity="0.8" transform="rotate(45)" />
-    <circle cx="0" cy="0" r="20" fill="currentColor" fill-opacity="0.8" />
-  </g>
-  
-  <!-- Left Chip (amd64) -->
-  <g transform="translate(60, 60)">
-    <rect x="0" y="0" width="80" height="80" rx="12" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="6" stroke-opacity="0.6" />
-    <rect x="20" y="20" width="40" height="40" rx="6" fill="currentColor" fill-opacity="0.5" />
-    <!-- Chip pins -->
-    <path d="M -10 20 h 10 M -10 40 h 10 M -10 60 h 10" stroke="currentColor" stroke-width="4" stroke-opacity="0.6" stroke-linecap="round"/>
-    <path d="M 80 20 h 10 M 80 40 h 10 M 80 60 h 10" stroke="currentColor" stroke-width="4" stroke-opacity="0.6" stroke-linecap="round"/>
-    <path d="M 20 -10 v 10 M 40 -10 v 10 M 60 -10 v 10" stroke="currentColor" stroke-width="4" stroke-opacity="0.6" stroke-linecap="round"/>
-    <path d="M 20 80 v 10 M 40 80 v 10 M 60 80 v 10" stroke="currentColor" stroke-width="4" stroke-opacity="0.6" stroke-linecap="round"/>
-  </g>
+  <defs>
+    <radialGradient id="hubglow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--s-bg-2)" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="var(--s-bg)" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="layer" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--s-bg)" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="var(--s-bg-2)" stop-opacity="0.5" />
+    </linearGradient>
+    <filter id="shadow-arch" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="-10" dy="25" stdDeviation="25" flood-opacity="0.15" />
+    </filter>
+  </defs>
 
-  <!-- Right Chip (arm64) -->
-  <g transform="translate(260, 60)">
-    <rect x="0" y="0" width="80" height="80" rx="12" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="6" stroke-opacity="0.6" />
-    <rect x="20" y="20" width="40" height="40" rx="6" fill="currentColor" fill-opacity="0.5" />
-    <path d="M -10 20 h 10 M -10 40 h 10 M -10 60 h 10 M 80 20 h 10 M 80 40 h 10 M 80 60 h 10 M 20 -10 v 10 M 40 -10 v 10 M 60 -10 v 10 M 20 80 v 10 M 40 80 v 10 M 60 80 v 10" stroke="currentColor" stroke-width="4" stroke-opacity="0.6" stroke-linecap="round"/>
-  </g>
+  <!-- Central Hub Layers -->
+  <g transform="translate(100, 420)">
+    <!-- Base Platform -->
+    <path d="M 300 100 L 500 200 L 300 300 L 100 200 Z" fill="var(--s-bg-2)" opacity="0.4" />
+    <path d="M 300 0 L 550 120 L 300 250 L 50 120 Z" fill="var(--s-bg-3)" opacity="0.3" transform="translate(0, -60)" />
+    
+    <!-- Central Core Layer -->
+    <!-- Center block -->
+    <g transform="translate(300, 50)" filter="url(#shadow-arch)">
+      <path d="M 0 0 L 100 -50 L 0 -100 L -100 -50 Z" fill="var(--s-deco)" />
+      <path d="M 0 0 L 100 -50 L 100 50 L 0 100 Z" fill="var(--s-deco)" opacity="0.7"/>
+      <path d="M 0 0 L -100 -50 L -100 50 L 0 100 Z" fill="var(--s-deco)" opacity="0.5"/>
+    </g>
 
-  <!-- Bottom Chip (loongarch64) -->
-  <g transform="translate(160, 200)">
-    <rect x="0" y="0" width="80" height="80" rx="12" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="6" stroke-opacity="0.6" />
-    <rect x="20" y="20" width="40" height="40" rx="6" fill="currentColor" fill-opacity="0.5" />
-    <path d="M -10 20 h 10 M -10 40 h 10 M -10 60 h 10 M 80 20 h 10 M 80 40 h 10 M 80 60 h 10 M 20 -10 v 10 M 40 -10 v 10 M 60 -10 v 10 M 20 80 v 10 M 40 80 v 10 M 60 80 v 10" stroke="currentColor" stroke-width="4" stroke-opacity="0.6" stroke-linecap="round"/>
+    <g transform="translate(300, -80)" filter="url(#shadow-arch)">
+      <path d="M 0 0 L 60 -30 L 0 -60 L -60 -30 Z" fill="var(--s-bg)" />
+      <path d="M 0 0 L 60 -30 L 60 40 L 0 70 Z" fill="var(--s-bg)" opacity="0.7"/>
+      <path d="M 0 0 L -60 -30 L -60 40 L 0 70 Z" fill="var(--s-bg)" opacity="0.5"/>
+    </g>
+    
+    <!-- Floating Architectural Nodes -->
+    <!-- Left Node -->
+    <g transform="translate(100, -20)" filter="url(#shadow-arch)">
+       <path d="M 0 0 L 50 -25 L 0 -50 L -50 -25 Z" fill="var(--s-bg-3)" />
+       <path d="M 0 0 L 50 -25 L 50 30 L 0 55 Z" fill="var(--s-bg-3)" opacity="0.7"/>
+       <path d="M 0 0 L -50 -25 L -50 30 L 0 55 Z" fill="var(--s-bg-3)" opacity="0.5"/>
+       <path d="M 0 -13 L 24 -25 L 0 -38 L -24 -25 Z" fill="var(--s-bg)" />
+    </g>
+
+    <!-- Top Node -->
+    <g transform="translate(300, -220)" filter="url(#shadow-arch)">
+       <path d="M 0 0 L 50 -25 L 0 -50 L -50 -25 Z" fill="var(--s-bg-2)" />
+       <path d="M 0 0 L 50 -25 L 50 30 L 0 55 Z" fill="var(--s-bg-2)" opacity="0.7"/>
+       <path d="M 0 0 L -50 -25 L -50 30 L 0 55 Z" fill="var(--s-bg-2)" opacity="0.5"/>
+       <path d="M 0 -13 L 24 -25 L 0 -38 L -24 -25 Z" fill="var(--s-deco)" />
+    </g>
+
+    <!-- Right Node -->
+    <g transform="translate(500, -20)" filter="url(#shadow-arch)">
+       <path d="M 0 0 L 50 -25 L 0 -50 L -50 -25 Z" fill="var(--s-bg-3)" />
+       <path d="M 0 0 L 50 -25 L 50 30 L 0 55 Z" fill="var(--s-bg-3)" opacity="0.7"/>
+       <path d="M 0 0 L -50 -25 L -50 30 L 0 55 Z" fill="var(--s-bg-3)" opacity="0.5"/>
+       <path d="M 0 -13 L 24 -25 L 0 -38 L -24 -25 Z" fill="var(--s-bg)" />
+    </g>
+    
+      <!-- Right Node 2-->
+      <g transform="translate(420, 140)" filter="url(#shadow-arch)">
+         <path d="M 0 0 L 50 -25 L 0 -50 L -50 -25 Z" fill="var(--s-bg-2)" />
+         <path d="M 0 0 L 50 -25 L 50 30 L 0 55 Z" fill="var(--s-bg-2)" opacity="0.7"/>
+         <path d="M 0 0 L -50 -25 L -50 30 L 0 55 Z" fill="var(--s-bg-2)" opacity="0.5"/>
+         <path d="M 0 -13 L 24 -25 L 0 -38 L -24 -25 Z" fill="var(--s-bg)" />
+      </g>
+
+    <!-- Connecting Datastreams -->
+    <path d="M 300 -80 L 300 -220" stroke="var(--s-deco)" stroke-width="4" stroke-dasharray="8,8" opacity="0.8" />
+    <path d="M 100 -20 L 300 80" stroke="var(--s-bg-3)" stroke-width="4" stroke-dasharray="8,8" />
+    <path d="M 500 -20 L 300 80" stroke="var(--s-bg-3)" stroke-width="4" stroke-dasharray="8,8" />
+    <path d="M 420 90 L 300 30" stroke="var(--s-bg-2)" stroke-width="4" stroke-dasharray="8,8" />
   </g>
 </svg>

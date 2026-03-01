@@ -1,37 +1,79 @@
-<svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Central Cloud & Governance Building -->
-  <path d="M 120 180 C 120 160, 140 140, 160 140 C 170 120, 210 110, 240 130 C 260 130, 280 150, 280 170 C 290 170, 300 180, 300 190 C 300 200, 290 210, 280 210 L 130 210 C 115 210, 105 195, 120 180 Z" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="4" stroke-opacity="0.3"/>
-  
-  <!-- Server / Data Center Building -->
-  <rect x="170" y="100" width="60" height="90" rx="8" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="6" stroke-opacity="0.8"/>
-  <rect x="180" y="115" width="40" height="15" rx="4" fill="currentColor" fill-opacity="0.6"/>
-  <rect x="180" y="140" width="40" height="15" rx="4" fill="currentColor" fill-opacity="0.6"/>
-  <rect x="180" y="165" width="40" height="15" rx="4" fill="currentColor" fill-opacity="0.6"/>
-  
-  <!-- Shield Icon (Management/Security) floats beside it -->
-  <path d="M 235 120 L 260 110 L 285 120 C 285 145, 275 165, 260 180 C 245 165, 235 145, 235 120 Z" fill="currentColor" fill-opacity="0.8"/>
-  <path d="M 250 145 L 255 150 L 270 135" stroke="var(--primary-color, currentColor)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--s-bg)" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="var(--s-bg)" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="25" stdDeviation="30" flood-opacity="0.1" />
+    </filter>
+  </defs>
 
-  <!-- Connections to terminals -->
-  <path d="M 140 260 Q 140 230 180 210" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-opacity="0.4" stroke-dasharray="6 6"/>
-  <path d="M 200 270 L 200 210" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-opacity="0.4" stroke-dasharray="6 6"/>
-  <path d="M 260 260 Q 260 230 220 210" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-opacity="0.4" stroke-dasharray="6 6"/>
+  <rect x="0" y="0" width="800" height="800" fill="url(#glow)" />
 
-  <!-- Left Terminal (Laptop) -->
-  <g transform="translate(100, 250)">
-    <rect x="10" y="5" width="40" height="25" rx="4" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="4" stroke-opacity="0.8"/>
-    <path d="M 0 35 L 60 35" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-opacity="0.8"/>
+  <!-- Connecting Lines for Dashboard & Nodes -->
+  <path d="M 400 400 L 200 250" fill="none" stroke="var(--s-deco)" stroke-width="4" stroke-dasharray="10 10"/>
+  <path d="M 400 400 L 650 300" fill="none" stroke="var(--s-bg-2)" stroke-width="4" stroke-dasharray="10 10"/>
+  <path d="M 400 400 L 250 600" fill="none" stroke="var(--s-bg-3)" stroke-width="4" stroke-dasharray="10 10"/>
+  <path d="M 400 400 L 600 650" fill="none" stroke="var(--s-deco)" stroke-width="4" stroke-dasharray="10 10"/>
+
+  <!-- Central Management Dashboard Panel -->
+  <g transform="translate(250, 250)" filter="url(#shadow)">
+    <!-- Base Panel - using bg instead of fixed #ffffff -->
+    <rect width="300" height="300" rx="30" fill="var(--s-bg)" stroke="var(--s-bg-3)" stroke-width="3" opacity="0.95"/>
+    
+    <!-- Top Header -->
+    <path d="M 0 30 C 0 13.431 13.431 0 30 0 L 270 0 C 286.569 0 300 13.431 300 30 L 300 60 L 0 60 Z" fill="var(--s-bg-2)" opacity="0.5"/>
+    <circle cx="30" cy="30" r="8" fill="var(--s-deco)"/>
+    <circle cx="55" cy="30" r="8" fill="var(--s-bg-2)"/>
+    <circle cx="80" cy="30" r="8" fill="var(--s-bg-3)"/>
+    
+    <!-- Data Bars inside Dashboard -->
+    <rect x="30" y="100" width="240" height="40" rx="12" fill="var(--s-bg-2)"/>
+    <rect x="30" y="155" width="240" height="40" rx="12" fill="var(--s-bg-3)"/>
+    <rect x="30" y="210" width="160" height="40" rx="12" fill="var(--s-deco)"/>
+    <rect x="205" y="210" width="65" height="40" rx="12" fill="var(--s-bg-2)"/>
+    
+    <!-- Status Checkmarks / Dots -->
+    <circle cx="240" cy="120" r="8" fill="var(--s-bg)" opacity="0.8"/>
+    <circle cx="240" cy="175" r="8" fill="var(--s-bg)" opacity="0.8"/>
+    <circle cx="160" cy="230" r="8" fill="var(--s-bg-2)"/>
   </g>
 
-  <!-- Center Terminal (Desktop) -->
-  <g transform="translate(180, 260)">
-    <rect x="5" y="0" width="30" height="20" rx="3" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="4" stroke-opacity="0.8"/>
-    <path d="M 15 20 L 15 28 M 5 28 L 35 28" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-opacity="0.8"/>
+  <!-- Peripheral Device 1 (Top Left) -->
+  <g transform="translate(100, 150) rotate(-15)" filter="url(#shadow)">
+    <rect width="180" height="120" rx="20" fill="var(--s-bg-2)"/>
+    <rect x="20" y="20" width="140" height="80" rx="12" fill="var(--s-bg)" opacity="0.9"/>
+    <rect x="40" y="40" width="100" height="12" rx="6" fill="var(--s-deco)"/>
+    <circle cx="50" cy="75" r="10" fill="var(--s-bg-2)"/>
+    <rect x="70" y="70" width="50" height="10" rx="5" fill="var(--s-bg-3)"/>
   </g>
 
-  <!-- Right Terminal (Laptop) -->
-  <g transform="translate(240, 250)">
-    <rect x="10" y="5" width="40" height="25" rx="4" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="4" stroke-opacity="0.8"/>
-    <path d="M 0 35 L 60 35" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-opacity="0.8"/>
+  <!-- Peripheral Device 2 (Top Right) -->
+  <g transform="translate(560, 200) rotate(10)" filter="url(#shadow)">
+    <rect width="140" height="160" rx="24" fill="var(--s-bg-2)"/>
+    <rect x="20" y="20" width="100" height="70" rx="15" fill="var(--s-bg)" opacity="0.95"/>
+    <rect x="20" y="100" width="100" height="20" rx="10" fill="var(--s-bg-3)"/>
+    <rect x="40" y="130" width="60" height="10" rx="5" fill="var(--s-deco)"/>
   </g>
+
+  <!-- Peripheral Device 3 (Bottom Left) -->
+  <g transform="translate(150, 520) rotate(5)" filter="url(#shadow)">
+    <rect width="160" height="140" rx="24" fill="var(--s-bg-3)"/>
+    <rect x="20" y="20" width="120" height="60" rx="12" fill="var(--s-bg)" opacity="0.95"/>
+    <circle cx="50" cy="105" r="15" fill="var(--s-deco)"/>
+    <rect x="80" y="100" width="50" height="10" rx="5" fill="var(--s-bg-2)"/>
+  </g>
+
+  <!-- Peripheral Device 4 (Bottom Right) -->
+  <g transform="translate(520, 550) rotate(-8)" filter="url(#shadow)">
+    <rect width="180" height="100" rx="20" fill="var(--s-bg-2)"/>
+    <rect x="20" y="20" width="60" height="60" rx="15" fill="var(--s-bg)" opacity="0.95"/>
+    <rect x="90" y="30" width="70" height="12" rx="6" fill="var(--s-deco)"/>
+    <rect x="90" y="55" width="50" height="12" rx="6" fill="var(--s-bg-3)"/>
+  </g>
+
+  <circle cx="350" cy="120" r="18" fill="var(--s-bg-3)"/>
+  <circle cx="680" cy="500" r="12" fill="var(--s-deco)"/>
+  <circle cx="100" cy="450" r="16" fill="var(--s-bg-2)"/>
 </svg>
