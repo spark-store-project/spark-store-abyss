@@ -92,8 +92,8 @@ const sDark = computed(() => {
       ? true
       : false
     : sDarkConfig.value === "dark"
-    ? true
-    : false;
+      ? true
+      : false;
 });
 
 provide("sDark", sDark);
@@ -150,7 +150,7 @@ onMounted(() => {
         `circle(0px at ${mouseX.value}px ${mouseY.value}px)`,
         `circle(${Math.hypot(
           Math.max(mouseX.value, innerWidth - mouseX.value),
-          Math.max(mouseY.value, innerHeight - mouseY.value)
+          Math.max(mouseY.value, innerHeight - mouseY.value),
         )}px at ${mouseX.value}px ${mouseY.value}px)`,
       ];
 
@@ -167,10 +167,10 @@ onMounted(() => {
           pseudoElement: `::view-transition-${
             sDarkValue ? "old" : "new"
           }(root)`,
-        }
+        },
       );
     },
-    { immediate: true }
+    { immediate: true },
   );
 });
 
@@ -192,10 +192,10 @@ const { data: latestRelease } = await useAsyncData(
       return appConfig.latestRelease;
     } else {
       return await $fetch(
-        "https://gitee.com/api/v5/repos/spark-store-project/spark-store/releases/latest"
+        "https://gitee.com/api/v5/repos/spark-store-project/spark-store/releases/latest",
       );
     }
-  }
+  },
 );
 
 provide("latestRelease", latestRelease);
@@ -206,7 +206,7 @@ const joinGroup = () => {
   dialog.value = true;
   window.open(
     "https://qm.qq.com/cgi-bin/qm/qr?authKey=1Oz2h5JBFSxBsHM63bwY1x0OswtQ08SBKj%2Fw9CRTxZ9%2B8%2FRKNIEv35s%2FhjOdRqkj&k=e7gkRbeGAjTfGupzsWbSbI8mOJM3ZqHQ&noverify=0",
-    "_blank"
+    "_blank",
   );
 };
 
@@ -246,13 +246,13 @@ const copyGroupNumber = async () => {
     <header
       ref="header"
       tabindex="0"
-      class="fixed w-full h-15 z-10 px-4 sm:px-8 lg:px-12 translate-y-[calc(var(--s-progress)*4*var(--spacing))] sm:translate-y-[calc(var(--s-progress)*8*var(--spacing))] lg:translate-y-[calc(var(--s-progress)*12*var(--spacing))] before:translate-x-[calc(var(--s-progress)*4*var(--spacing))] sm:before:translate-x-[calc(var(--s-progress)*8*var(--spacing))] lg:before:translate-x-[calc(var(--s-progress)*12*var(--spacing))] before:w-[calc(100%-var(--s-progress)*8*var(--spacing))] sm:before:w-[calc(100%-var(--s-progress)*16*var(--spacing))] lg:before:w-[calc(100%-var(--s-progress)*24*var(--spacing))] sm:h-auto focus-within:h-auto before:h-15 focus-within:before:h-82.5 sm:before:h-full focus-within:sm:before:h-full overflow-hidden focus-within:overflow-visible transition-discrete group"
+      class="fixed w-full h-15 z-10 px-4 sm:px-8 lg:px-12 translate-y-[calc(var(--s-progress)*4*var(--spacing))] sm:translate-y-[calc(var(--s-progress)*8*var(--spacing))] lg:translate-y-[calc(var(--s-progress)*12*var(--spacing))] before:translate-x-[calc(var(--s-progress)*4*var(--spacing))] sm:before:translate-x-[calc(var(--s-progress)*8*var(--spacing))] lg:before:translate-x-[calc(var(--s-progress)*12*var(--spacing))] before:w-[calc(100%-var(--s-progress)*8*var(--spacing))] sm:before:w-[calc(100%-var(--s-progress)*16*var(--spacing))] lg:before:w-[calc(100%-var(--s-progress)*24*var(--spacing))] sm:h-auto focus-within:h-auto before:h-15 focus-within:before:h-93.5 sm:before:h-full focus-within:sm:before:h-full overflow-hidden focus-within:overflow-visible transition-discrete group"
       :style="{ '--s-progress': sProgress }"
       @click="if (!header?.matches(':focus-within')) header?.focus();"
       @focus="handleHeaderFocus"
     >
       <nav
-        class="relative flex px-2.5 md:px-4 lg:px-8 items-center flex-col md:flex-row before:opacity-0 group-focus-within:before:opacity-100 sm:before:opacity-100 before:origin-top before:scale-0 group-focus-within:before:scale-100 sm:before:scale-100 before:translate-x-[calc(50vw-14.5*var(--spacing))] before:translate-y-15 group-focus-within:before:translate-x-[calc(var(--s-x)*1px)] group-focus-within:before:translate-y-[calc(var(--s-y)*1px)] sm:before:translate-x-[calc(var(--s-x)*1px)] sm:before:translate-y-[calc(var(--s-y)*1px)]"
+        class="relative flex px-2.5 md:px-4 lg:px-8 items-center flex-col lg:flex-row before:opacity-0 group-focus-within:before:opacity-100 sm:before:opacity-100 before:origin-top before:scale-0 group-focus-within:before:scale-100 sm:before:scale-100 before:translate-x-[calc(50vw-14.5*var(--spacing))] before:translate-y-15 group-focus-within:before:translate-x-[calc(var(--s-x)*1px)] group-focus-within:before:translate-y-[calc(var(--s-y)*1px)] sm:before:translate-x-[calc(var(--s-x)*1px)] sm:before:translate-y-[calc(var(--s-y)*1px)]"
         :class="{ mounted }"
         :style="{
           '--s-x': sX,
@@ -286,16 +286,19 @@ const copyGroupNumber = async () => {
           </div>
         </div>
         <div
-          class="flex grow pb-2.5 md:pt-2.5 items-end sm:items-center flex-row-reverse sm:flex-row w-full sm:w-auto justify-between md:justify-end opacity-0 group-focus-within:opacity-100 sm:opacity-100 origin-top scale-0 group-focus-within:scale-100 sm:scale-100 transition-transform duration-300"
+          class="flex grow pb-2.5 lg:pt-2.5 items-end sm:items-center flex-row-reverse sm:flex-row w-full sm:w-auto justify-between lg:justify-end opacity-0 group-focus-within:opacity-100 sm:opacity-100 origin-top scale-0 group-focus-within:scale-100 sm:scale-100 transition-transform duration-300"
         >
           <div
-            class="flex flex-col gap-1 mr-1.5 md:mr-1 lg:gap-2 lg:mr-2 sm:flex-row items-end sm:items-center"
+            class="flex flex-col gap-1 mr-1.5 lg:mr-1 lg:gap-2 lg:mr-2 sm:flex-row items-end sm:items-center"
           >
             <NuxtLink to="/" class="nav-link" active-class="active">
               首页
             </NuxtLink>
             <NuxtLink to="/download" class="nav-link" active-class="active">
               下载
+            </NuxtLink>
+            <NuxtLink to="/commercial" class="nav-link" active-class="active">
+              商业版
             </NuxtLink>
             <a
               href="https://bbs.spark-app.store/"
@@ -323,8 +326,8 @@ const copyGroupNumber = async () => {
               sDarkConfig === 'auto'
                 ? 'pi-bullseye'
                 : sDarkConfig === 'dark'
-                ? 'pi-moon'
-                : 'pi-sun'
+                  ? 'pi-moon'
+                  : 'pi-sun'
             }`"
             aria-label="Toggle Dark Mode"
             size="small"
@@ -513,6 +516,7 @@ header {
     border-radius: calc(var(--spacing) * 4.75);
     font-weight: bold;
     color: var(--p-surface-600);
+    white-space: nowrap;
 
     &.active {
       color: var(--p-primary-600);

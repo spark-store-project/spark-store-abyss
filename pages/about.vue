@@ -71,6 +71,16 @@ function scrollIntoView(id: string) {
             >我们期待通过社区用户的互助和支持，让星火计划的火焰持续燃烧，为
             Linux 生态系统带来持续的活力。
           </p>
+          <a
+            href="https://join-us.spark-app.store/"
+            target="_blank"
+            class="px-8 py-2.5 text-2xl font-bold text-white self-start mt-4 pointer-events-auto from-primary-400 to-primary-500 bg-linear-to-r rounded-full dark:from-primary-500 dark:to-primary-600"
+          >
+            <span class="font-(family-name:--s-title-font) opacity-60 mr-4"
+              >JOIN</span
+            >
+            加入我们
+          </a>
         </div>
       </div>
 
