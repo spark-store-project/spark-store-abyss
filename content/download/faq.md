@@ -1,11 +1,13 @@
-## 银河麒麟，Arch 或 Fedora 的安装指南
+## Arch 或 Fedora 的安装指南
 
 
-请使用星火新增的 **APM 软件商店**，广泛地兼容更多的发行，详情请查看 **[APM 软件包](https://amber-pm.spark-app.store/)**
+Fedora 请使用星火新增的 **APM 软件商店**，广泛地兼容更多的发行，详情请查看 **[APM 软件包](https://amber-pm.spark-app.store/)**
 
 您不需要安装星火商店客户端，详情可进群交流：https://blog.shenmo.tech/post/%E6%95%85%E9%9A%9C%E5%85%AC%E5%91%8A/
 
-## Debian Ubuntu deepin UOS等发行的安装指南
+Arch 请使用 `paru -S spark-store` 安装，安装后需重启一次以展示安装的应用
+
+## Debian Ubuntu deepin UOS 银河麒麟等发行的安装指南
 
 
 1. **下载并安装星火客户端**
@@ -19,9 +21,9 @@
    sudo apt install ./spark-store-*.deb
    ```
 
-    即可完成完整版星火商店的安装。
+    即可完成星火商店的安装。
 
-> 若您感兴趣，您亦可使用 APM 软件商店安装应用，详情见上条。
+> 若您无法安装部分应用，不妨试试对应的 APM 版本。注意：安装 APM 后需重启一次方可在系统中查看到安装好的应用。
 
 
 ## ACE兼容环境
