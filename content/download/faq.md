@@ -1,11 +1,13 @@
 ## Arch 或 Fedora 的安装指南
 
 
-Fedora 请使用星火新增的 **APM 软件商店**，广泛地兼容更多的发行，详情请查看 **[APM 软件包](https://amber-pm.spark-app.store/)**
+
+
+`Arch` 请使用 `paru -S spark-store` 安装，安装后需重启一次以展示安装的应用
+
+`Fedora` 请使用星火新增的 **APM 软件商店**，广泛地兼容更多的发行，详情请查看 **[APM 软件包](https://amber-pm.spark-app.store/)**
 
 您不需要安装星火商店客户端，详情可进群交流：https://blog.shenmo.tech/post/%E6%95%85%E9%9A%9C%E5%85%AC%E5%91%8A/
-
-Arch 请使用 `paru -S spark-store` 安装，安装后需重启一次以展示安装的应用
 
 ## Debian Ubuntu deepin UOS 银河麒麟等发行的安装指南
 
