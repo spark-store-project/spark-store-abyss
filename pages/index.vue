@@ -130,7 +130,7 @@ const latestRelease = inject<Ref<Release>>("latestRelease");
         <div
           class="flex flex-col text-surface-500 gap-1 text-lg sm:text-xl text-center sm:text-start dark:text-surface-200"
         >
-          <p>适用于 Debian 社区和其他 Linux 发行版的社区应用商店；</p>
+          <p>社区驱动的 Linux 应用商店，支持所有主流 Linux 发行版；</p>
           <p>
             从社区中来，到社区中去，<br
               class="sm:hidden"
