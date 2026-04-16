@@ -1,7 +1,7 @@
 ## Arch / Fedora / AOSC 的安装指南
 
 
-`Arch` 请使用 `paru -S spark-store` 安装，安装后需重启一次以展示安装的应用
+`Arch` 请使用 `paru -S spark-store` 安装
 
 `fedora`请使用`sudo dnf copr enable xmp360/spark-store && sudo dnf install spark-store` 安装
 
@@ -26,9 +26,7 @@
 > 若您无法安装部分应用，不妨试试对应的 APM 版本。注意：安装 APM 后需重启一次方可在系统中查看到安装好的应用。
 
 
-## ACE兼容环境
 
-   如果想要在 Arch 或 Fedora 上运行 Debian 版本的星火商店 ，请参考以下链接来配置兼容环境以安装：https://blog.shenmo.tech/post/%E4%BD%BF%E7%94%A8amber-ce%E5%AE%89%E8%A3%85%E6%98%9F%E7%81%AB%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97%E7%9A%84%E6%95%99%E7%A8%8B/
 
    
 ## 社群地址
