@@ -110,7 +110,7 @@ const { data: faqContent } = await useAsyncData("/download/faq", () => {
             下载<br class="hidden xs:block sm:hidden" />星火应用商店
           </h1>
           <p class="md:text-center md:text-lg md:leading-loose">
-            基于 DTK 框架构建星火应用商店客户端，极小安装包体积，让 Linux
+            星火应用商店兼容所有主流 Linux 发行版，让 Linux
             生态触手可及。
             <span class="md:hidden">
               <br />我们推荐您在 Linux 计算机上访问此页面，下载安装更便捷。
